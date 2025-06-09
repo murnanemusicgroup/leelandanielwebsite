@@ -69,6 +69,14 @@ header {
 	height: 100px;
 }
 
+/* Styling for the actual image logo */
+header .logo { /* Targeting the .logo class specifically within the header */
+    display: block; /* Ensures it behaves like a block element for margin auto */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 80px; /* Adjust this value to your desired maximum width */
+    margin: 10px auto 0; /* Center the image and add some top margin */
+}
+
 /* Big Name Logo (Logo 1) and Subtitle (Logo 2) */
 #logo {
 	position: relative;
