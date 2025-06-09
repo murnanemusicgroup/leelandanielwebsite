@@ -65,25 +65,16 @@ body {
 
 /* Sets the header background and height */
 header {
-    background-color: #6b4b20;
-    height: 100px; /* Keep initial height, adjust later if needed */
-    display: flex; /* Make the header a flex container */
-    align-items: center; /* Vertically center items (logo and nav) */
-    justify-content: space-between; /* Pushes logo to left, nav to right */
-    padding: 0 20px; /* Add some padding on the sides for spacing */
-    box-sizing: border-box; /* Include padding in the element's total width/height */
-    position: fixed; /* Keep it fixed at the top */
-    width: 100%; /* Ensure it spans full width */
-    top: 0;
-    left: 0;
-    z-index: 200; /* Ensure it stays above other content */
+	background-color: #6b4b20;
+	height: 100px;
 }
 
 /* Styling for the actual image logo */
-header .logo {
+header .logo { /* Targeting the .logo class specifically within the header */
+    display: block; /* Ensures it behaves like a block element for margin auto */
     height: auto; /* Maintain aspect ratio */
-    max-width: 60px; /* Adjusted to be a bit smaller than 80px for better inline fit */
-    margin: 0; /* Remove previous auto margin as flexbox will handle positioning */
+    max-width: 80px; /* Adjust this value to your desired maximum width */
+    margin: 10px auto 0; /* Center the image and add some top margin */
 }
 
 /* Big Name Logo (Logo 1) and Subtitle (Logo 2) */
@@ -229,14 +220,19 @@ header, .container-scrolled {
 }
 
 /* Nav container to center and set width */
-nav.container {
-    margin: 0; /* Remove previous auto margin */
-    height: auto; /* Let content define height */
-    width: auto; /* Let content define width, no need for full width container here */
-    background-color: transparent; /* Make nav container background transparent */
-    border-bottom: none; /* Remove border from nav container if not needed */
+.container {
+	margin: 0 auto;
+	z-index: 150;
+	height: 60px;
+	margin-bottom: -60px;
 }
 
+/* Background-color to the nav container. */
+nav { 
+	padding: .5em 0 .5em 0;
+	background-color: #e8e8e8;
+	border-bottom: .2em solid #6b4b20;
+}
 
 /* Since we'll have the "ul li" "float:left"
  * we need to add a clear after the container. */
@@ -250,16 +246,16 @@ nav:after {
 /* Removing padding, margin and "list-style" from the "ul",
  * and adding "position:reltive" */
 nav ul {
-	/* padding:0; */
- 	/* margin:0; */
+	padding:0;
+	margin:0;
 	list-style: none;
 	position: relative;
-	text-align:right;
+	text-align:center;
 }
 	
 /* Positioning the navigation items inline */
 nav ul li {
-	/* margin: 0px; */
+	margin: 0px;
 	display:inline-block;
 	text-align: center;
 	background-color: #e8e8e8;
