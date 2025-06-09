@@ -619,7 +619,8 @@ footer {
 }
 
 .footer-right a {
-    color: #a8a47c;
+    /* Remove or comment out the color property, or set it to 'inherit' */
+    /* color: #a8a47c; */ /* <-- Comment this line out */
     font-size: 1.5em; /* Adjust icon size as needed */
     margin: 0 0.5em; /* Space between icons */
     transition: opacity 0.3s ease-in-out;
