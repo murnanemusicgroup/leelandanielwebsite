@@ -61,8 +61,7 @@ header {
 #logo h1 {
 	display: block;
 	margin: .2em 0 0 0;
-	text-align: center;
-	letter-spacing: .2em;
+	text-align: left;
 	font: normal 300% 'Playfair Display', sans-serif;
 	color: #FFF;
 }
@@ -73,9 +72,9 @@ header {
 
 #logo h2 {
 	display: block;
-	text-align: center;
+	text-align: left;
 	letter-spacing: .35em;
-	font: normal 90% 'Tajawal', sans-serif;
+	font: normal 90% 'Playfair Display', sans-serif;
 	color: #FFF;
 }
 
