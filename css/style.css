@@ -519,29 +519,6 @@ h3.lines:after {
 
 /*********************************************** FOOTER *******************************************/
 
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 30px;
-  text-align: center;
-  text-decoration: none;
-}
-
-.fa-brands {
-    border-radius: 100px;
-    padding: 10px;
-    font-size: 2em; /* Make them larger. 2em means 2 times the parent's font-size. */
-    /* REMOVE: width: 10px; */ /* Font Awesome icons scale with font-size, width can mess them up */
-    text-align: center;
-    text-decoration: none;
-    /* Also, let's explicitly make sure the color is applied here if needed,
-       though the individual brand colors below should be more specific */
-    /* color: inherit; /* or a default color if you want them to be uniform */
-}
-
-.fa-brands:hover {
-  opacity: 0.7;
-}
 
 /* Footer (Entire Bottom under the Body) */
 footer {
@@ -607,26 +584,6 @@ footer {
     display: inline-block;
 }
 
-/* Now, let's ensure the brand colors are applied to the `i` element directly */
-.footer-right a .fa-facebook { /* More specific selector: a .fa-facebook inside footer-right */
-    color: #f7f5e6; /* Let's try this bright color for visibility */
-}
-.footer-right a .fa-instagram {
-    color: #f7f5e6;
-}
-.footer-right a .fa-tiktok {
-    color: #f7f5e6;
-}
-.footer-right a .fa-youtube {
-    color: #f7f5e6;
-}
-.footer-right a .fa-x-twitter {
-    color: #f7f5e6;
-}
-.footer-right a .fa-snapchat {
-    color: #f7f5e6;
-}
-
 .footer-right a:hover {
     opacity: 0.7; /* Opacity change on hover */
 }
@@ -642,15 +599,6 @@ ul#btmtext {
 #social_media {
     display: none;
 }
-
-.fa { /* Resetting general .fa styles that might cause issues */
-    padding: 0;
-    width: auto;
-    background: none;
-    /* Important: Remove any specific brand background colors here if they persist */
-    /* e.g., background: #3B5998; for .fa-facebook should be removed if it's there */
-}
-
 
 /* Adjustments for smaller screens */
 @media screen and (min-width: 320px) and (max-width: 767px) {
