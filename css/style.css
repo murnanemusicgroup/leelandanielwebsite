@@ -519,6 +519,51 @@ h3.lines:after {
 
 /*********************************************** FOOTER *******************************************/
 
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa-brands {
+    border-radius: 100px;
+    padding: 10px;
+    font-size: 15px;
+    width: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa-brands:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  color: #221e19;
+}
+
+.fa-instagram {
+  color: #221e19;
+}
+
+.fa-tiktok {
+  color: #221e19;
+}
+
+.fa-youtube {
+  color: #221e19;
+}
+
+.fa-x-twitter {
+  color: #221e19
+}
+
+.fa-snapchat {
+  color: #221e19
+}
+
 /* Footer (Entire Bottom under the Body) */
 footer {
     height: 90px; /* Adjusted height */
