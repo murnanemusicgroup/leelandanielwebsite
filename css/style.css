@@ -530,38 +530,17 @@ h3.lines:after {
 .fa-brands {
     border-radius: 100px;
     padding: 10px;
-    font-size: 15px;
-    width: 10px;
+    font-size: 2em; /* Make them larger. 2em means 2 times the parent's font-size. */
+    /* REMOVE: width: 10px; */ /* Font Awesome icons scale with font-size, width can mess them up */
     text-align: center;
     text-decoration: none;
+    /* Also, let's explicitly make sure the color is applied here if needed,
+       though the individual brand colors below should be more specific */
+    /* color: inherit; /* or a default color if you want them to be uniform */
 }
 
 .fa-brands:hover {
   opacity: 0.7;
-}
-
-.fa-facebook {
-  color: #221e19;
-}
-
-.fa-instagram {
-  color: #221e19;
-}
-
-.fa-tiktok {
-  color: #221e19;
-}
-
-.fa-youtube {
-  color: #221e19;
-}
-
-.fa-x-twitter {
-  color: #221e19
-}
-
-.fa-snapchat {
-  color: #221e19
 }
 
 /* Footer (Entire Bottom under the Body) */
@@ -619,12 +598,33 @@ footer {
 }
 
 .footer-right a {
-    /* Remove or comment out the color property, or set it to 'inherit' */
-    /* color: #a8a47c; */ /* <-- Comment this line out */
-    font-size: 1.5em; /* Adjust icon size as needed */
-    margin: 0 0.5em; /* Space between icons */
+    /* We removed this color from before, but if you want a fallback or uniform color for all, set it here.
+       Let's try a clearly visible color for testing. */
+    color: #f7f5e6; /* This is your light background color, should stand out on #6b4b20 */
+    font-size: 1.5em; /* This is for the link's text size, not the icon itself, which is handled by .fa-brands */
+    margin: 0 0.5em;
     transition: opacity 0.3s ease-in-out;
-    display: inline-block; /* Crucial for transform/opacity on inline elements */
+    display: inline-block;
+}
+
+/* Now, let's ensure the brand colors are applied to the `i` element directly */
+.footer-right a .fa-facebook { /* More specific selector: a .fa-facebook inside footer-right */
+    color: #f7f5e6; /* Let's try this bright color for visibility */
+}
+.footer-right a .fa-instagram {
+    color: #f7f5e6;
+}
+.footer-right a .fa-tiktok {
+    color: #f7f5e6;
+}
+.footer-right a .fa-youtube {
+    color: #f7f5e6;
+}
+.footer-right a .fa-x-twitter {
+    color: #f7f5e6;
+}
+.footer-right a .fa-snapchat {
+    color: #f7f5e6;
 }
 
 .footer-right a:hover {
