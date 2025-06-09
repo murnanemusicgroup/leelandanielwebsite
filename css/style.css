@@ -62,7 +62,7 @@ header {
 	display: block;
 	margin: .2em 0 0 0;
 	text-align: center;
-	font: normal 300% 'Playfair Display', sans-serif;
+	font: normal 300% 'Libre Caslon Text', sans-serif;
 	color: #FFF;
 }
 
@@ -74,7 +74,7 @@ header {
 	display: block;
 	text-align: center;
 	letter-spacing: .35em;
-	font: normal 90% 'Playfair Display', sans-serif;
+	font: normal 90% 'Libre Caslon Text', sans-serif;
 	color: #FFF;
 }
 
@@ -126,7 +126,7 @@ header {
 	margin: .2em 0 0 0;
 	text-align: center;
 	letter-spacing: .2em;
-	font: normal 250% 'Tajawal', sans-serif;
+	font: normal 250% 'Libre Caslon Text', sans-serif;
 	color: #FFF;
 	padding-top: .1875em;
 }
@@ -135,7 +135,7 @@ header {
  	display: block;
 	text-align: center;
 	letter-spacing: .35em;
-	font: normal 85% 'Tajawal', sans-serif;
+	font: normal 85% 'Libre Caslon Text', sans-serif;
 	color: #FFF;
 	padding-top: .1875em;
 }
@@ -156,7 +156,7 @@ header {
 	margin: 0 auto;
 	text-align: center;
 	letter-spacing: .2em;
-	font: normal 185% 'Tajawal', sans-serif;
+	font: normal 185% 'Libre Caslon Text', sans-serif;
 	color: #FFF;
 	padding-top: .5em;
 }
@@ -165,7 +165,7 @@ header {
  	display: block;
 	text-align: center;
 	letter-spacing: .35em;
-	font: normal 70% 'Tajawal', sans-serif;
+	font: normal 70% 'Libre Caslon Text', sans-serif;
 	color: #FFF;
 	padding-top: 1em;
 }
@@ -241,7 +241,7 @@ nav ul li a, nav ul ul li a {
 	color:#000;
 	letter-spacing: 0.1em;
     font-size: 1.15em;
-    font-family: 'Tajawal', sans-serif;
+    font-family: 'Libre Caslon Text', sans-serif;
 	line-height: 40px;
 	text-decoration:none;
 	text-align: center;
@@ -352,7 +352,7 @@ nav .scroll {
 
  /* Body Tag fonts */
 p, h1, h2, h3, h4, h5, h6 { 
-	font-family: 'Tajawal', sans-serif;
+	font-family: 'Libre Caslon Text', sans-serif;
 }
 
 /* Font + margin + letter spacing for Body Tags */
@@ -512,7 +512,7 @@ footer {
 	transform: translateX(-50%);
 	display: inline;
 	background-color: #6b4b20;
-	font: normal 80% 'Tajawal', sans-serif;
+	font: normal 80% 'Libre Caslon Text', sans-serif;
 	margin: .3em auto .3em auto;
 	max-width: 80%;
 }
@@ -584,21 +584,21 @@ footer {
 ul#btmtext {
 	position: relative;
     display: block;
-    text-align: center; 
+    text-align: left; 
 	clear: both;
 	list-style: none;
 }
 
 ul#btmtext li h6 {
 	display:inline-block;
-	text-align: center;
+	text-align: left;
 	color: #FFF;
 }
   
 ul#btmtext li h6 a {
 	display: inline-block;
 	color: #FFF;
-	font: normal 80% 'Tajawal', sans-serif;
+	font: normal 80% 'Libre Caslon Text', sans-serif;
 	text-transform: uppercase;
 	text-decoration: none;
 	letter-spacing: 0.2em;
@@ -612,13 +612,13 @@ ul#btmtext li h6 a {
 	transform: translateX(-50%);
 	display: inline;
 	background-color: #6b4b20;
-	font: normal 75% 'Tajawal', sans-serif;
+	font: normal 75% 'Libre Caslon Text', sans-serif;
 	margin: .3em auto .3em auto;
 	max-width: 90%;
 }
 
 ul#btmtext li h6 a {
-	font: normal 75% 'Tajawal', sans-serif;
+	font: normal 75% 'Libre Caslon Text', sans-serif;
 }
 
 #social_media li {
@@ -655,7 +655,7 @@ ul.pages, ul.pages li {
 ul.pages li a { 
 	display: inline-block;
 	letter-spacing: 0.2em;
-	font-family: 'Tajawal', sans-serif;
+	font-family: 'Libre Caslon Text', sans-serif;
 	font-weight: bold;
 	font-size: 1em;
 	margin: .5em 0 1.5em 0;
@@ -711,7 +711,7 @@ ul.pages-music , ul.pages-music li {
 ul.pages-music li a { 
 	display: inline-block;
 	letter-spacing: 0.2em;
-	font-family: 'Tajawal', sans-serif;
+	font-family: 'Libre Caslon Text', sans-serif;
 	font-weight: bold;
 	font-size: 1em;
 	margin: .5em 0 -.25em 0;
@@ -763,7 +763,7 @@ ul.pages-music li a {
 	width: 50%;
 	padding: .625em;
 	margin: .6em 0 .6em 0;	
-	font-family: 'Tajawal', sans-serif;
+	font-family: 'Libre Caslon Text', sans-serif;
   	font-weight: bold;
 	font-size: 1.15em;
 	border: 2px solid #000 ; 
@@ -778,7 +778,7 @@ ul.pages-music li a {
 }
   
 .form_settings .submit { 
-	font-family: 'Tajawal', sans-serif;
+	font-family: 'Libre Caslon Text', sans-serif;
 	letter-spacing: .35em;
   	font-weight: bold;
 	font-size: 1.15em;
@@ -808,7 +808,7 @@ ul.pages-music li a {
 	width: 100%;
 	padding: .625em; 
 	margin: .6em 0 .6em 0;
-	font-family: 'Tajawal', sans-serif;
+	font-family: 'Libre Caslon Text', sans-serif;
   	font-weight: bold;
 	font-size: 1em;
 	border: 2px solid #000000 ; 
@@ -818,7 +818,7 @@ ul.pages-music li a {
 }
   
 .form_settings .submit { 
-	font-family: 'Tajawal', sans-serif;
+	font-family: 'Libre Caslon Text', sans-serif;
 	letter-spacing: .35em;
   	font-weight: bold;
 	font-size: 1em;
@@ -894,7 +894,7 @@ ul.pages-music li a {
 .go-btm {
 	display: inline-block;
 	margin: 30px 0 0 0;
-	font-family: 'Tajawal', sans-serif;
+	font-family: 'Libre Caslon Text', sans-serif;
 	font-size: 1.15em;
 	color: white;
 	border: .094em solid white;
@@ -1082,7 +1082,7 @@ td, th {
     font-size: 1.250em;
 	margin: 0 0 .6em 0;
 	line-height: 1.75em;
-	font-family: 'Tajawal', sans-serif;
+	font-family: 'Libre Caslon Text', sans-serif;
 	padding: 25px;
 	text-align: center;
 }
@@ -1281,7 +1281,7 @@ div li.hide {
 	color: white;
 	letter-spacing: 0.2em;
 	line-height: 1.25em;
-	font-family: 'Tajawal', sans-serif;
+	font-family: 'Libre Caslon Text', sans-serif;
 	font-weight: bold;
 	width: 80%;
 	text-align: center;
