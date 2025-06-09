@@ -944,7 +944,7 @@ ul.pages-music li a {
 
 .hero {
 	background-image: url("../pictures/misc/hero-img.jpg");
-	height: 380px;
+	height: 550px;
 	z-index: 100;
 	margin-bottom: -46px;
 	border-bottom: .2em solid #6b4b20;
@@ -965,7 +965,7 @@ ul.pages-music li a {
 }
 
 #overlay {
-    height: 380px;
+    height: 550px;
 }
 
 #music-overlay {
