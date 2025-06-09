@@ -13,15 +13,21 @@ function checkContainerScrolled() {
   }
 }
 
-function myMenu(event) { // Add 'event' as a parameter
-  if (event) { // Check if event object exists (important for older browsers or direct calls)
-    event.preventDefault(); // Stop the default anchor behavior
-  }
-  var x = document.getElementById("scroll");
-  if (x.className === "scroll") {
-    x.className += " responsive";
-  } else {
-    x.className = "scroll";
-  }
-}
+document.addEventListener('DOMContentLoaded', function() {
+  var menuToggle = document.getElementById('menuToggle');
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function(event) {
+      event.preventDefault(); // Stop the default anchor behavior
 
+      var x = document.getElementById("scroll");
+      if (x.className === "scroll") {
+        x.className += " responsive";
+      } else {
+        x.className = "scroll";
+      }
+    });
+  }
+});
+
+// Remove or comment out your original myMenu() function if you use this option
+// function myMenu() { ... }
