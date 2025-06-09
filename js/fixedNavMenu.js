@@ -13,12 +13,15 @@ function checkContainerScrolled() {
   }
 }
 
-function myMenu() {
-    var x = document.getElementById("cfix");
-    if (x.className === "clearfix") {
-        x.className += " responsive";
-    } else {
-        x.className = "clearfix";
-    }
+function myMenu(event) { // Add 'event' as a parameter
+  if (event) { // Check if event object exists (important for older browsers or direct calls)
+    event.preventDefault(); // Stop the default anchor behavior
+  }
+  var x = document.getElementById("scroll");
+  if (x.className === "scroll") {
+    x.className += " responsive";
+  } else {
+    x.className = "scroll";
+  }
 }
 
