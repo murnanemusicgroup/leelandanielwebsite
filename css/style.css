@@ -9,16 +9,18 @@ html {
     box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%; /* Ensure both are explicitly 100% width */
-}
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 	background-color: #6b4b20;
 	margin: 0;
 	padding-top: 70px;
+}
+
+.page-content {
+    flex-grow: 1; /* This is the magic! It tells this section to grow and fill any available space */
 }
 
 .left {
@@ -60,6 +62,13 @@ body {
   font-style: italic;
 }
 
+.horizontal {
+	border: none;
+    height: 1px;
+    background-color: #f7f5e6;
+    margin: 2.5em 20px; /* Ensures 20px space from edges */
+    opacity: 1; /* Ensures full visibility */
+}
 
 /********************************************** HEADER ********************************************/
 
@@ -375,19 +384,81 @@ nav .scroll {
 
 /********************************************** BODY ***********************************************/
 
+/* --- */
+/* Discography Section Styles */
+/* --- */
+
+
+
+/* Basic styling for each music release block */
+.music-release {
+    text-align: center; /* Center content within each release block */
+    margin-bottom: 2em; /* Space between releases if stacked */
+}
+
+.music-release img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto;
+    display: block; /* Remove extra space below image */
+    margin: 0 auto 1em auto; /* Center image and add space below */
+    border: 2px solid #f7f5e6; /* Add a subtle border around album covers */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
+.music-release h4 {
+    margin-bottom: 0.5em; /* Space below title */
+    color: #f7f5e6; /* Ensure title is readable on dark background */
+}
+
+/* Flexbox for arranging releases (desktop) */
+@media screen and (min-width: 768px) {
+    .flexbox-music {
+        display: flex;
+        justify-content: center; /* Center the entire row of music releases */
+        flex-wrap: wrap; /* Allow items to wrap if screen is too narrow */
+        gap: 40px; /* Space between music releases */
+        padding: 20px; /* Add some padding around the flexbox container */
+    }
+
+    .music-release {
+        flex: 1; /* Allow items to grow and shrink */
+        min-width: 300px; /* Minimum width for each item before wrapping */
+        max-width: 400px; /* Maximum width for each item */
+        margin-bottom: 0; /* Remove bottom margin if they are side-by-side */
+    }
+}
+
+/* Specific adjustments for the "Stream" button in the music section */
+/* You already have pagesbar-music defined, but ensuring consistency */
+.pagesbar-music {
+    margin-top: 1em; /* Add some space above the button */
+}
+
+ul.pages-music li a {
+    border-color: #f7f5e6; /* Consistent with other buttons on dark background */
+    color: #f7f5e6;
+}
+
+ul.pages-music li a:hover,
+ul.pages-music li.selected a,
+ul.pages-music li.selected a:hover {
+    background-color: #f7f5e6;
+    color: #6b4b20;
+}
+
 /* Sets the position + display + formating for the body container */
 .site_content { 
 	font-size: 1em;
 	margin: .1em auto .1em auto;
 	padding: 4em 1.3em 0em 1.3em;
-	background-color: #f7f5e6;
+	background-color: #6b4b20;
 } 
 
 .site_content_index { 
 	font-size: 1em;
 	margin: .1em auto .1em auto;
 	padding: 2em 1.3em 0em 1.3em;
-	background-color: #f7f5e6;
+	background-color: #6b4b20;
 } 
 
 /* Padding for the page content */
@@ -450,14 +521,14 @@ h3 {
 	width: auto;
 	margin: .1em auto .1em auto;
 	padding: 2em .7em 1em .7em;
-	background-color: #f7f5e6;
+	background-color: #6b4b20;
 } 
 
 .site_content_index { 
 	font-size: 1em;
 	margin: .1em auto .1em auto;
 	padding: 2em 1.3em 1em 1.3em;
-	background-color: #f7f5e6;
+	background-color: #6b4b20;
 } 
 
 /* Padding for the page content */
@@ -495,7 +566,7 @@ h6 {
 }
 
 .horizontal {
-	visibility: hidden;
+	/* visibility: hidden; */
 	margin-bottom: 20px;
 	margin-top: 20px;
 }
@@ -511,11 +582,11 @@ h3.lines {
 }
 
 .anchor-box h3.lines:before, .anchor-box h3.lines:after {
-	background-color: #fff;
+	background-color: #6b4b20;
 }
 
 h3.lines:before, h3.lines:after {
-	background-color: #000;
+	background-color: #6b4b20;
 	content: "";
 	display: inline-block;
 	height: 1px;
@@ -534,12 +605,6 @@ h3.lines:after {
 	margin-right: -50%;
 }
 
-.horizontal {
-	display: none;
-}
-
-}
-
 /**************************************************************************************************/
 
 
@@ -548,11 +613,14 @@ h3.lines:after {
 
 /* Footer (Entire Bottom under the Body) */
 footer {
-    height: 90px; /* Adjusted height */
+    height: 60px; /* Adjusted height */
     background-color: #6b4b20;
     display: flex; /* Make footer a flex container */
     align-items: center; /* Vertically center content of footer */
     justify-content: center; /* Horizontally center the wrapper itself if it has a max-width */
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
 }
 
 /* New wrapper for footer content */
@@ -562,13 +630,14 @@ footer {
     align-items: center;
     width: 100%; /* Changed to 100% to span the full width */
     /* Removed margin: 0 auto; as it's no longer needed with width: 100% */
-    max-width: 1200px; /* Keep max-width to prevent it from getting too wide on large screens */
-    padding: 0 1.3em; /* This padding will now create space from the screen's left/right edges */
+    max-width: none; /* Keep max-width to prevent it from getting too wide on large screens */
+    padding: 0 20px; /* This padding will now create space from the screen's left/right edges */
 }
 
 .footer-left {
     text-align: left; /* Ensure text is left-aligned within its container */
     /* Flexbox will handle the overall positioning */
+    flex-grow: 1;
 }
 
 .footer-left h6 {
@@ -587,6 +656,7 @@ footer {
 .footer-right {
     text-align: right; /* Ensure icons are right-aligned within their container */
     /* Flexbox will handle the overall positioning */
+    flex-grow: 1;
 }
 
 .footer-right ul {
@@ -597,6 +667,7 @@ footer {
 
 .footer-right li {
     display: inline-block;
+    margin-left: 0;
     margin-right: 20px;
 }
 
@@ -604,7 +675,7 @@ footer {
     /* We removed this color from before, but if you want a fallback or uniform color for all, set it here.
        Let's try a clearly visible color for testing. */
     color: #f7f5e6; /* This is your light background color, should stand out on #6b4b20 */
-    font-size: 1.5em; /* This is for the link's text size, not the icon itself, which is handled by .fa-brands */
+    font-size: 1.2em; /* This is for the link's text size, not the icon itself, which is handled by .fa-brands */
     margin: 0 0.5em;
     transition: opacity 0.3s ease-in-out;
     display: inline-block;
@@ -649,7 +720,7 @@ ul#btmtext {
     }
 
     .footer-right a {
-        font-size: 1.2em; /* Adjust icon size for mobile */
+        font-size: 1em; /* Adjust icon size for mobile */
     }
 }
 /*******************************************************************************************/
@@ -950,7 +1021,7 @@ ul.pages-music li a {
 
 .hero {
 	background-image: url("../pictures/misc/hero-img.jpg");
-	height: 550px;
+	height: 650px;
 	z-index: 100;
 	margin-bottom: -46px;
 	border-bottom: .2em solid #6b4b20;
@@ -971,7 +1042,7 @@ ul.pages-music li a {
 }
 
 #overlay {
-    height: 550px;
+    height: 650px;
 }
 
 #music-overlay {
