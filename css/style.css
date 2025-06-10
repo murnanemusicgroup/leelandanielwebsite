@@ -995,7 +995,7 @@ ul.pages-music li a {
 
 .hero {
 	background-image: url("../pictures/misc/hero-img.jpg");
-	height: 420px;
+	height: 320px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1006,7 +1006,7 @@ ul.pages-music li a {
 #overlay {
     position: sticky;
     width: 100%;
-    height: 420px;
+    height: 320px;
     background-color: rgba(0,0,0,0.6);
 }
 
