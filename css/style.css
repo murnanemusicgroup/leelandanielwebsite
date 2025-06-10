@@ -124,7 +124,7 @@ header .logo {
 	background-color: #f7f5e6; 
 	color: #000; 
 	padding-top: 17px;
-	padding-bottom: 10px;
+	padding-bottom: 1.25em;
 	margin-right: -35px;
 	margin-left: -35px;
 }
@@ -140,6 +140,7 @@ header .logo {
 .anchor-box {
 	background-color: #f7f5e6; 
 	color: #000; 
+	padding-bottom: 1.125em;
 	margin-right: -21px;
 	margin-left: -21px;
 }
