@@ -1522,3 +1522,127 @@ tr:nth-child(odd) {
         margin: 0 auto; /* Center stacked buttons */
     }
 }
+
+/* --- Terms and Conditions Styling --- */
+
+.terms-container {
+    max-width: 800px; /* Adjust as needed for your desired width */
+    margin: 40px auto; /* Centers the content and adds top/bottom margin */
+    padding: 20px;
+    line-height: 1.75em; /* Matching your existing paragraph line-height */
+    color: #f7f5e6; /* Using your light off-white color for text on the dark background */
+    background-color: #6b4b20; /* Matching your body background color */
+}
+
+.terms-container .terms-title {
+    font-size: 3.5em; /* Adjust for "big letters" */
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 0.2em;
+    font-family: 'Playfair Display', serif; /* Consistent with your font imports */
+    color: #f7f5e6; /* Matching your primary text color */
+    /* You may want to add letter-spacing here if you want it similar to your logo/headers */
+    /* letter-spacing: 0.05em; */
+}
+
+.terms-container .terms-subtitle {
+    font-size: 2em; /* Adjust for "smaller, but still big letters" */
+    text-transform: uppercase;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-family: 'Playfair Display', serif; /* Consistent with your font imports */
+    color: #f7f5e6; /* Matching your primary text color */
+}
+
+.terms-container .last-revised {
+    text-align: left;
+    font-style: italic;
+    margin-bottom: 2em;
+    font-family: "Libre Caslon Text", serif; /* Consistent with your font imports */
+    color: #f7f5e6; /* Matching your primary text color */
+}
+
+.terms-container h3,
+.terms-container h4 {
+    text-align: left; /* Section titles are left aligned */
+    margin-top: 1.5em; /* Space above section titles */
+    margin-bottom: 0.5em;
+    font-family: 'Libre Caslon Text', sans-serif; /* Consistent with your h3/h4 declarations */
+    color: #f7f5e6; /* Matching your primary text color */
+    letter-spacing: .05em; /* Consistent with your h1/h2/h3 declarations */
+}
+
+.terms-container h3 {
+    font-size: 1.5em; /* Consistent with your general h3 size */
+}
+
+.terms-container h4 {
+    font-size: 1.250em; /* Consistent with your general h4/h5 size */
+}
+
+.terms-container p {
+    text-align: justify; /* Justifies the rest of the terms */
+    margin-bottom: 1em; /* Space between paragraphs */
+    font-family: 'Libre Caslon Text', sans-serif; /* Consistent with your general paragraph font */
+    font-size: 1.250em; /* Consistent with your general paragraph font size */
+    line-height: 1.75em; /* Consistent with your general paragraph line-height */
+    color: #f7f5e6; /* Matching your primary text color */
+}
+
+.terms-container ul {
+    text-align: justify; /* Justifies list items if they wrap */
+    list-style-type: disc; /* Standard bullet points */
+    margin-left: 2em; /* Indent list items - using em for responsiveness */
+    margin-bottom: 1em;
+    color: #f7f5e6; /* Matching your primary text color */
+}
+
+.terms-container ul li {
+    margin-bottom: 0.5em; /* Space between list items */
+    font-family: 'Libre Caslon Text', sans-serif; /* Consistent with your general paragraph font */
+    font-size: 1.250em; /* Consistent with your general paragraph font size */
+    line-height: 1.75em; /* Consistent with your general paragraph line-height */
+}
+
+.terms-container ul li strong {
+    font-weight: 700; /* Ensure strong text is bold */
+    font-family: "Libre Caslon Text", serif; /* Using a specific bold variant if preferred */
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 767px) { /* Using your mobile breakpoint */
+    .terms-container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .terms-container .terms-title {
+        font-size: 2.5em; /* Adjusted for mobile */
+    }
+
+    .terms-container .terms-subtitle {
+        font-size: 1.5em; /* Adjusted for mobile */
+    }
+
+    .terms-container p {
+        font-size: 1.125em; /* Consistent with your mobile paragraph font size */
+    }
+
+    .terms-container h3 {
+        font-size: 1.375em; /* Consistent with your mobile h1/h2/h3 size */
+    }
+
+    .terms-container h4 {
+        font-size: 1.125em; /* Consistent with your mobile h4/h5 size */
+    }
+
+    .terms-container ul li {
+        font-size: 1.125em; /* Consistent with your mobile paragraph font size */
+    }
+
+    .terms-container ul {
+        margin-left: 1.5em; /* Slightly less indent on mobile */
+    }
+}
