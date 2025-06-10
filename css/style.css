@@ -823,7 +823,7 @@ h3 {
 
 /* Footer (Entire Bottom under the Body) */
 footer {
-    padding: 0.5em 0; /* CHANGED: Reduced vertical padding from 1em to 0.5em */
+    padding: 0.5em 0;
     background-color: #6b4b20;
     display: flex;
     align-items: center;
@@ -850,17 +850,30 @@ footer {
 
 .footer-left h6 {
     margin: 0;
+    /* This will control the spacing *between* the links/text within the h6 */
+    display: flex; /* Use flexbox to control spacing between items */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    align-items: center; /* Vertically align items */
+    gap: 0.8em; /* Add space between items in the flex container */
 }
 
-.footer-left h6 a {
+.footer-left h6 a,
+.footer-left h6 span { /* Include span for 'Cookie Choices' for consistent styling */
     color: #f7f5e6;
-    font-family: sans-serif;
-    font-weight: 400;
+    font-family: 'Playfair Display', serif; /* Changed to Playfair Display */
+    font-weight: 400; /* Use a regular weight for Playfair Display */
     font-size: 0.9em;
-    text-transform: uppercase;
+    /* text-transform: uppercase; REMOVED to allow proper casing for 'Murnane Records, LLC' */
     text-decoration: none;
-    letter-spacing: 0.15em;
-    line-height: 1.5em;
+    letter-spacing: 0.05em; /* Slightly adjusted letter-spacing for Playfair Display */
+    line-height: 1.5em; /* Maintain consistent line height */
+    white-space: nowrap; /* Prevent individual links from breaking into multiple lines */
+}
+
+/* Hover effect for footer links */
+.footer-left h6 a:hover {
+    opacity: 0.7; /* Existing hover effect */
+    color: #f7f5e6; /* Ensure color stays consistent on hover */
 }
 
 .footer-right {
@@ -909,8 +922,11 @@ footer {
     }
     .footer-left h6 {
         margin-bottom: 0;
+        justify-content: center;
+        gap: 0.6em;
     }
-    .footer-left h6 a {
+    .footer-left h6 a,
+    .footer-left h6 span {
         font-size: 0.75em;
         letter-spacing: 0.1em;
     }
