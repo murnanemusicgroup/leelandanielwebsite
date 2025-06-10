@@ -39,11 +39,8 @@
                         <li><a href="https://store.leelandaniel.com/" target="_blank">Shop Now</a></li>
                         <li><a href="index.html#discography">Discography</a></li>
                         <li><a href="index.html#videos">Videos</a></li>
-                        <li><a href="#" id="signupLink">Signup</a></li>
+                        <li><a href="index.html#signup-section">Sign Up</a></li>
                     </ul>
-                </li>
-                <li class="icon">
-                    <a href="javascript:void(0);" onclick="myFunction()">☰</a>
                 </li>
             </ul>
         </nav>
@@ -62,6 +59,7 @@
                                 <li><a href="https://listen.leelandaniel.com/outoflove" target="_blank">Stream</a></li>
                             </ul>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -96,36 +94,29 @@
             </div>
         </div>
         <hr class="horizontal" />
-
-        <div id="signupModal" class="modal">
-            <div class="modal-content">
-                <span class="close-button">&times;</span>
-
-                <section id="signup-section" class="signup-section-wrapper">
-                    <div class="container signup-container">
-                        <h3 class="anchor">Get Release Notifications!</h3>
-                        <p class="center libre-caslon-text-regular">Sign up with your email to be the first to know when Leeland Daniel drops new music, videos, and exclusive content!</p>
-                        <form id="signupForm" class="signup-form">
-                            <div class="form-group">
-                                <label for="Name" class="libre-caslon-text-bold">Your Name (Optional):</label>
-                                <input type="text" id="Name" name="Name" placeholder="e.g., Alex">
-                            </div>
-                            <div class="form-group">
-                                <label for="Email" class="libre-caslon-text-bold">Email Address:</label>
-                                <input type="email" id="Email" name="Email" placeholder="your-email@example.com" required>
-                            </div>
-                            <div class="form-group consent-group">
-                                <input type="checkbox" id="Consent" name="Consent" value="Yes" required>
-                                <label for="Consent" class="libre-caslon-text-regular">I agree to receive email updates from Leeland Daniel.*</label>
-                            </div>
-                            <button type="submit" class="libre-caslon-text-bold">Sign Up Now!</button>
-                        </form>
-                        <div id="formMessage" class="signup-message"></div>
-                    </div>
-                </section>
+<section id="signup-section" class="signup-section-wrapper">
+    <div class="container signup-container">
+        <h3 class="anchor">Get Release Notifications!</h3>
+        <p class="center libre-caslon-text-regular">Sign up with your email to be the first to know when Leeland Daniel drops new music, videos, and exclusive content!</p>
+        <form id="signupForm" class="signup-form">
+            <div class="form-group">
+                <label for="Name" class="libre-caslon-text-bold">Your Name (Optional):</label>
+                <input type="text" id="Name" name="Name" placeholder="e.g., Alex">
             </div>
-        </div>
-        </main>
+            <div class="form-group">
+                <label for="Email" class="libre-caslon-text-bold">Email Address:</label>
+                <input type="email" id="Email" name="Email" placeholder="your-email@example.com" required>
+            </div>
+            <div class="form-group consent-group">
+                <input type="checkbox" id="Consent" name="Consent" value="Yes" required>
+                <label for="Consent" class="libre-caslon-text-regular">I agree to receive email updates from Leeland Daniel.*</label>
+            </div>
+            <button type="submit" class="libre-caslon-text-bold">Sign Up Now!</button>
+        </form>
+        <div id="formMessage" class="signup-message"></div>
+    </div>
+</section>
+    </main>
 
     <hr class="horizontal" />
 
@@ -142,7 +133,7 @@
             </div>
         </div>
     </div>
-    <footer>
+<footer>
         <div id="footer-content-wrapper">
             <div class="footer-left">
                 <h6>
@@ -150,7 +141,7 @@
                     <a href="terms">Terms</a>
                     <a href="privacy-policy">Privacy</a>
                     <a href="#" id="showCookieChoices">Cookie Choices</a>
-                </h6>
+                    </h6>
             </div>
             <div class="footer-right">
                 <ul>
@@ -168,49 +159,48 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="js/fixedNavMenu.js"></script>
     <script src="js/cookieConsent.js"></script>
-    <script src="js/script.js"></script>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbycTaz6CyvgL7Fxp-0Rb8Rm3qqGP6byywNXVFWhzYXtaS0qBD8X_Ev6IQMgC1ihPSyT/exec'; // *** IMPORTANT: PASTE YOUR WEB APP URL HERE ***
-        const signupForm = document.getElementById('signupForm');
-        const formMessage = document.getElementById('formMessage');
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbycTaz6CyvgL7Fxp-0Rb8Rm3qqGP6byywNXVFWhzYXtaS0qBD8X_Ev6IQMgC1ihPSyT/exec'; // *** IMPORTANT: PASTE YOUR WEB APP URL HERE ***
+    const signupForm = document.getElementById('signupForm');
+    const formMessage = document.getElementById('formMessage');
 
-        signupForm.addEventListener('submit', e => {
-            e.preventDefault(); // Prevent default browser form submission
+    signupForm.addEventListener('submit', e => {
+        e.preventDefault(); // Prevent default browser form submission
 
-            formMessage.style.display = 'none'; // Hide previous messages
-            formMessage.classList.remove('success', 'error');
+        formMessage.style.display = 'none'; // Hide previous messages
+        formMessage.classList.remove('success', 'error');
 
-            const formData = new FormData(signupForm);
+        const formData = new FormData(signupForm);
 
-            // Add a default value for 'Consent' if checkbox is not checked (to ensure the column is populated)
-            if (!formData.has('Consent')) {
-                formData.append('Consent', 'No');
-            }
+        // Add a default value for 'Consent' if checkbox is not checked (to ensure the column is populated)
+        if (!formData.has('Consent')) {
+            formData.append('Consent', 'No');
+        }
 
-            fetch(scriptURL, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.result === 'success') {
-                    formMessage.textContent = 'Thanks for signing up! You\'ll be the first to know about new music.';
-                    formMessage.classList.add('success');
-                    signupForm.reset(); // Clear the form
-                } else {
-                    formMessage.textContent = 'Error: ' + (data.error || 'Something went wrong with the submission.');
-                    formMessage.classList.add('error');
-                }
-                formMessage.style.display = 'block';
-            })
-            .catch(error => {
-                console.error('Submission Error!', error.message);
-                formMessage.textContent = 'Network error or unable to connect. Please try again.';
+        fetch(scriptURL, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.result === 'success') {
+                formMessage.textContent = 'Thanks for signing up! You\'ll be the first to know about new music.';
+                formMessage.classList.add('success');
+                signupForm.reset(); // Clear the form
+            } else {
+                formMessage.textContent = 'Error: ' + (data.error || 'Something went wrong with the submission.');
                 formMessage.classList.add('error');
-                formMessage.style.display = 'block';
-            });
+            }
+            formMessage.style.display = 'block';
+        })
+        .catch(error => {
+            console.error('Submission Error!', error.message);
+            formMessage.textContent = 'Network error or unable to connect. Please try again.';
+            formMessage.classList.add('error');
+            formMessage.style.display = 'block';
         });
-    </script>
+    });
+</script>
 
 </body>
 </html>
