@@ -1060,6 +1060,377 @@ ul.pages-music p {
 }
 
 /***********************************************************************************************/
+/********************************** Join Mailing List & Modal *********************************/
+.form_settings {
+    display: block;
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+
+.form_settings input,
+.form_settings textarea {
+    width: 50%;
+    padding: .625em;
+    margin: .6em 0 .6em 0;
+    font-family: 'Libre Caslon Text', sans-serif;
+    font-weight: bold;
+    font-size: 1.15em;
+    border: 2px solid #000;
+    background: #FFF;
+    /* White background */
+    color: #000;
+    border-radius: 10px;
+    /* Rounded corners */
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+    resize: none;
+}
+
+.form_settings .submit {
+    font-family: 'Libre Caslon Text', sans-serif;
+    letter-spacing: .35em;
+    font-weight: bold;
+    font-size: 1.15em;
+    width: 25%;
+    text-align: center;
+    margin: 1em 0 .5em 0;
+    padding: .6em 0 .6em 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: transparent;
+    border-color: #000;
+    color: #000;
+}
+
+.form_settings .submit:hover {
+    background-color: #5c421d;
+    color: #fff;
+}
+
+@media screen and (max-width:640px) {
+    .form_settings {
+        display: block;
+        text-align: center;
+        padding: 40px 0 40px 0;
+    }
+    .form_settings input,
+    .form_settings textarea {
+        width: 100%;
+        padding: .625em;
+        margin: .6em 0 .6em 0;
+        font-family: 'Libre Caslon Text', sans-serif;
+        font-weight: bold;
+        font-size: 1em;
+        border: 2px solid #000000;
+        background: #FFF;
+        /* White background for mobile */
+        color: #000;
+        border-radius: 10px;
+        /* Rounded corners for mobile */
+        resize: none;
+    }
+    .form_settings .submit {
+        font-family: 'Libre Caslon Text', sans-serif;
+        letter-spacing: .35em;
+        font-weight: bold;
+        font-size: 1em;
+        width: 50%;
+        text-align: center;
+        margin: .6em 0 .6em 0;
+        padding: .6em 0 .6em 0;
+        cursor: pointer;
+        text-transform: uppercase;
+        background: transparent;
+        border-color: #000;
+        color: #000;
+    }
+    .form_settings .submit:hover {
+        background-color: #5c421d;
+        color: #fff;
+    }
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Sit on top */
+    padding-top: 250px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 10px;
+    border: 2px solid;
+    width: 70%;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.modal-content p {
+    color: black;
+}
+
+/* The Close Button */
+.close,
+.close_error {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close_error:hover,
+.close:focus,
+.close_error:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*** Bottom button ***/
+.go-btm {
+    display: inline-block;
+    margin: 30px 0 0 0;
+    font-family: 'Libre Caslon Text', sans-serif;
+    font-size: 1.15em;
+    color: white;
+    border: .094em solid white;
+    border-radius: 2em;
+    text-decoration: none;
+    background-color: rgba(51, 58, 86);
+    font-size: 1.15em;
+    padding: .875em 1.188em .875em 1.188em;
+}
+
+#go-btm a {
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+}
+
+.go-btm:hover {
+    background-color: #5c421d;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .go-btm {
+        margin: 15px 0 0 0;
+    }
+}
+
+/******************************************************************************************/
+/************************************Hero Photos*******************************************/
+.hero {
+    background-image: url("../pictures/misc/hero-img.jpg");
+    height: 650px;
+    z-index: 100;
+    margin-bottom: -46px;
+    border-bottom: .2em solid #6b4b20;
+}
+
+.music-hero {
+    background-image: url("../pictures/misc/album-cover.jpg");
+    height: 300px;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.hero,
+.music-hero {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#overlay {
+    height: 650px;
+}
+
+#music-overlay {
+    height: 300px;
+}
+
+#overlay,
+#music-overlay {
+    position: sticky;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-text {
+    width: 80%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -42%);
+    color: white;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    #home {
+        padding-top: .5em;
+    }
+    .hero {
+        background-image: url("../pictures/misc/hero-img.jpg");
+        height: 320px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin-bottom: -56px;
+    }
+    #overlay {
+        position: sticky;
+        width: 100%;
+        height: 320px;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    .hero-text {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+}
+
+/******************************************************************************************/
+/******************************************Audio Player**************************************/
+.audioplayer {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    margin: 20px auto 40px auto;
+    border: .0625em solid #6b4b20;
+    border-radius: 20px;
+}
+
+#audio-players h4 {
+    text-align: center;
+    margin: 10px auto -10px auto;
+}
+
+.playbutton {
+    width: 60px;
+    height: 60px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.play {
+    background: url(../pictures/images/play.png);
+}
+
+.pause {
+    background: url(../pictures/images/pause.png);
+}
+
+.play,
+.pause {
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.timeline {
+    height: auto;
+    margin: -45px 35px auto 75px;
+    border-radius: 15px;
+    background-color: #5c421d;
+}
+
+.playhead {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-top: 1px;
+    background-color: #e8e8e8;
+    cursor: pointer;
+}
+
+/****************************************************************************************************/
+/*******************************************Press Comments and Shows*******************************************/
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2em auto 2em auto;
+}
+
+td,
+th {
+    border: 1px solid #e8e8e8;
+    font-size: 1.250em;
+    margin: 0 0 .6em 0;
+    line-height: 1.75em;
+    font-family: 'Libre Caslon Text', sans-serif;
+    padding: 25px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f7f5e6;
+}
+
+tr:nth-child(odd) {
+    background-color: #e8e8e8;
+}
+
+.shows-text {
+    margin-top: 1.5em;
+    margin-bottom: .5em;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    td,
+    th {
+        font-size: 1.125em;
+        margin: 0 0 .6em 0;
+        line-height: 1.75em;
+    }
+}
+
 /* --- Cookie Consent Popup Styles --- */
 .cookie-consent-popup {
     display: none; /* Hidden by default */
@@ -1292,107 +1663,27 @@ ul.pages-music p {
     }
 }
 
-/* --- The Modal Pop-up Structure --- */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place (covers the whole screen) */
-    z-index: 2000; /* Sit on top (higher than header's z-index: 1000) */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if content is too tall */
-    background-color: rgba(0,0,0,0.7); /* Black w/ 70% opacity overlay */
-    display: flex; /* Use flexbox to center content */
-    align-items: center; /* Vertically center content */
-    justify-content: center; /* Horizontally center content */
-    padding: 20px; /* Add some padding on smaller screens */
-    box-sizing: border-box; /* Ensures padding is included in width/height */
-}
+/* --- Signup Form Section Styles --- */
 
-/* Modal Content Box (This wraps your .signup-section-wrapper) */
-.modal-content {
-    background-color: #6b4b20; /* This background is for the main modal box */
-    padding: 0; /* No internal padding here, .signup-section-wrapper handles it */
-    border: none; /* Remove any default border */
-    position: relative; /* Needed for positioning the close button */
-    max-width: 600px; /* Max width for the pop-up box */
-    width: 90%; /* Responsive width for the pop-up */
-    border-radius: 8px; /* Matches your form's border-radius */
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5); /* Stronger shadow for pop-up effect */
-    overflow: hidden; /* Ensures the extended borders (if within this box) are contained */
-}
-
-/* Close Button for the modal */
-.close-button {
-    color: #f7f5e6; /* Light cream color */
-    font-size: 35px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 2001; /* Ensures the close button is on top of everything */
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: #ccc;
-    text-decoration: none;
-    outline: none;
-}
-
-/* --- Adjusted Signup Form Section Styles (now for modal content) --- */
-
-/* The signup-section-wrapper becomes the main padded area inside the modal-content */
+/* Wrapper for the entire signup section - matches your main content background */
 .signup-section-wrapper {
-    padding: 60px 20px; /* Vertical padding for content inside the modal */
-    background-color: transparent; /* No background here, it's on .modal-content */
+    padding: 60px 20px;
+    background-color: #6b4b20; /* Your primary dark brown background */
     text-align: center;
-    color: #f7f5e6;
-    position: relative;
-    overflow: hidden;
-    /* REMOVE any width/max-width properties from here, .modal-content controls it */
+    color: #f7f5e6; /* Default text color for elements directly in this section */
 }
 
-/* The extended border lines for the signup-section-wrapper within the modal */
-/* They will now extend to the edges of the .modal-content box */
-.signup-section-wrapper::before,
-.signup-section-wrapper::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0; /* Extends across the full width of the .signup-section-wrapper */
-    height: 2px;
-    background-color: #f7f5e6;
-    z-index: 0; /* Place behind the form container */
-}
-
-.signup-section-wrapper::before { top: 0; }
-.signup-section-wrapper::after { bottom: 0; }
-
-/* The actual form container inside the modal - no changes to its internal styling */
+/* Container for the form itself - now transparent with a defined border */
 .signup-container {
-    max-width: 500px; /* Keeps the form content at a readable width */
-    margin: 0 auto; /* Centers the form container horizontally */
-    background: transparent;
-    padding: 35px 60px; /* Wider horizontal padding */
+    max-width: 500px;
+    margin: 0 auto;
+    background: transparent; /* Makes the box transparent */
+    padding: 35px 60px; /* Increased horizontal padding for wider "margins" */
     border-radius: 8px;
-    border: 2px solid #f7f5e6;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    position: relative;
-    z-index: 1; /* Make sure this box is above its parent's pseudo-elements */
+    border: 2px solid #f7f5e6; /* Adds a subtle light border to define the box */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Still provides some depth */
 }
 
-/* Add a style to prevent body scrolling when the modal is open */
-body.modal-open {
-    overflow: hidden;
-}
-
-/* --- Rest of your Signup Form CSS (from previous response) --- */
-/* (e.g., h3, p, labels, inputs, buttons, etc. - all these remain the same as they are adjusted for the transparent box and dark background) */
-
-/* ... (Copy all the CSS from .signup-container h3 downwards from my previous response here) ... */
 /* Heading for the signup section - text color adjusted for dark background */
 .signup-container h3 {
     font-family: 'Playfair Display', serif;
