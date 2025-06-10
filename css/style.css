@@ -281,9 +281,13 @@ header {
 }
 
 /* Nav container to center and set width - Adjust for flex container */
-.container {
-    z-index: 150;
+.container { /* This is nav.container in your HTML */
+    z-index: 150; /* Keep its z-index if it needs to be above other things in header */
     height: auto;
+    /* Ensure it doesn't have properties that fight the flexbox */
+    position: static; /* It should flow normally within the flex header */
+    text-align: right; /* To align its contents (the nav list) to the right */
+    /* remove any specific top, left, right, width if they are set for desktop */
 }
 
 /* Background-color to the nav container. */
@@ -305,18 +309,43 @@ nav:after {
 nav ul {
     list-style: none;
     position: relative;
-    text-align: center;
+    /* text-align: center; <--- This needs to be removed or overridden for desktop */
+    /* For desktop, you want these floated or flexed */
+    display: flex; /* Make the ul a flex container for its li children */
+    align-items: center; /* Vertically center li items if they have different heights */
+    justify-content: flex-end; /* Push items to the right */
+    height: 70px; /* Ensure it takes the full height of the header if needed for vertical centering */
 }
+
 
 /* Positioning the navigation items inline for desktop */
 nav ul li {
-    display: inline-block;
-    text-align: center;
+    display: inline-block; /* Or use flex-items if ul is flex */
+    /* text-align: center; */ /* No longer needed if ul is flex and justified */
     background-color: transparent;
+    margin-left: 20px; /* Add some space between items */
+}
+
+nav ul li a {
+      display: block;
+    padding: 0 12px; /* Original desktop link padding */
+    color: #FFF;
+    letter-spacing: 0.1em;
+    font-size: 1.15em;
+    font-family: 'Libre Caslon Text', sans-serif;
+    line-height: 40px;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+    line-height: 40px; /* This sets the height of the button background */
+    padding: 0 12px; /* Adjust padding for button width */
 }
 
 /* Styling the links */
-nav ul li a,
 nav ul ul li a {
     display: block;
     padding: 0 12px; /* Original desktop link padding */
