@@ -84,39 +84,27 @@ body {
     margin-right: auto;
 }
 
+/* In your global CSS, but check for mobile overrides */
 header {
     background-color: #6b4b20;
     height: 70px;
-    /* Adjusted height to be more compact */
     display: flex;
-    /* Makes the header a flex container */
     justify-content: space-between;
-    /* Pushes logo to left, nav to right */
     align-items: center;
-    /* Vertically center items */
     padding: 0 20px;
-    /* Adds horizontal padding to the header itself */
-    position: fixed;
-    /* Keeps it fixed at the top */
+    position: fixed; /* Keep this */
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
-    /* Ensures it stays on top of other content */
+    z-index: 1000; /* Important: keeps header on top */
     box-sizing: border-box;
-    /* Includes padding in the width calculation */
 }
 
-/* Styling for the actual image logo */
+/* Ensure the logo is styled well within the header */
 header .logo {
     height: auto;
-    /* Maintains aspect ratio */
-    max-width: 60px;
-    /* Adjust this value for desired logo size */
-    margin: 0;
-    /* Resets margin; flexbox handles positioning */
+    max-width: 60px; /* Adjust logo size as needed */
     flex-shrink: 0;
-    /* Prevents the logo from shrinking if space is tight */
 }
 
 /* Big Name Logo (Logo 1) and Subtitle (Logo 2) */
@@ -233,6 +221,15 @@ header .logo {
 }
 
 /**************************************************************************************************/
+/* Universal Box-Sizing and Margin/Padding Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 /************************************* NAVIGATION *************************************************/
 /* Positions nav and content */
 .container,
@@ -252,25 +249,48 @@ header,
     top: 0;
 }
 
+.main-header {
+    width: 100%;
+    position: fixed; /* Or 'absolute' if you want it to scroll with the page but float above content */
+    top: 0;
+    left: 0;
+    background-color: #6b4b20; /* Add a background */
+    z-index: 1000; /* Ensures it stays on top of other content */
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: space-between; /* Puts space between logo and menu button */
+    align-items: center; /* Vertically centers items */
+    padding: 10px 20px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Adjust logo styles as needed */
+.main-header .logo-container {
+    /* Maybe some specific padding or margin for the logo */
+}
+
+.main-header .logo {
+    height: 50px; /* Adjust as needed */
+    width: auto;
+}
+
+/* Adjust menu button (icon) styles */
+.main-header .icon {
+    font-size: 24px; /* Or whatever size your menu button needs */
+    color: #fff; /* Or your desired color */
+    text-decoration: none;
+    /* No need for position: fixed here if parent is fixed and using flexbox */
+}
+
 /* Nav container to center and set width - Adjust for flex container */
 .container {
-    margin: 0;
-    /* Removes auto margin as flexbox will position it */
     z-index: 150;
     height: auto;
-    /* Lets content determine height, no fixed height needed */
-    margin-bottom: 0;
-    /* Removes negative margin as it's now inside header */
 }
 
 /* Background-color to the nav container. */
 nav {
-    padding: 0;
-    /* Removes padding as it's now part of the header's vertical alignment */
     background-color: transparent;
-    /* REMOVES PALE BACKGROUND */
     border-bottom: none;
-    /* REMOVES NAV BORDER */
 }
 
 /* Since we'll have the "ul li" "float:left"
@@ -284,34 +304,28 @@ nav:after {
 /* Removing padding, margin and "list-style" from the "ul",
  * and adding "position:reltive" */
 nav ul {
-    padding: 0;
-    margin: 0;
     list-style: none;
     position: relative;
     text-align: center;
 }
 
-/* Positioning the navigation items inline */
+/* Positioning the navigation items inline for desktop */
 nav ul li {
-    margin: 0px;
     display: inline-block;
     text-align: center;
     background-color: transparent;
-    /* Ensures LI background is transparent */
 }
 
 /* Styling the links */
 nav ul li a,
 nav ul ul li a {
     display: block;
-    padding: 0 12px;
+    padding: 0 12px; /* Original desktop link padding */
     color: #FFF;
-    /* Changed link color for visibility on dark header */
     letter-spacing: 0.1em;
     font-size: 1.15em;
     font-family: 'Libre Caslon Text', sans-serif;
     line-height: 40px;
-    /* Adjust line-height to vertically align text within link */
     text-decoration: none;
     text-align: center;
     -webkit-transition: all .25s ease;
@@ -341,63 +355,165 @@ nav ul ul a {
     font-size: 1em;
 }
 
+/* Hide hamburger icon on desktop */
 nav ul li.icon {
     display: none;
 }
 
+/* --- MOBILE SPECIFIC STYLES --- */
 @media screen and (min-width: 320px) and (max-width: 1023px) {
-    nav ul li:not(:nth-child(-n+0)) {
-        display: none;
+    /* Ensure body padding is correct to see fixed header/menu */
+    body {
+        padding-top: 70px !important;
+        margin: 0 !important;
+        overflow-x: hidden !important; /* Hide horizontal scrollbar for the entire page */
     }
-    nav ul li.icon {
-        display: inline-block;
-        text-align: center;
-        color: #FFF;
-        color: #fff;
+
+    /* Explicitly reset nav and ul within mobile context to ensure no offsets */
+    nav, nav ul {
+        margin: 0 !important;
+        padding: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+    }
+    
+    /* Default state on mobile: Hide all LIs that are not the icon */
+    /* This hides the original `li` that contains `ul.scroll` when menu is closed */
+    nav ul li:not(.icon) {
+        display: none !important;
         background-color: transparent;
+        float: none !important;
+    }
+
+    /* --- MOBILE MENU BUTTON (HAMBURGER ICON) STYLES --- */
+    nav ul li.icon {
+        display: block !important;
+        background-color: #6b4b20 !important; /* Background for the button */
+        text-align: center;
+        color: #FFF !important;
+        padding: 0 !important; /* Reset padding here, line-height will center text */
+        font-size: 2em !important; /* Keep font size for the "☰ Menu" text */
+        float: right !important; /* Float icon to the right */
+        width: 60px !important; /* Fixed width for square button */
+        height: 60px !important; /* Fixed height for square button */
+        line-height: 60px !important; /* Vertically center text in square */
+        margin: 0 !important; /* Ensure no external margins push it */
+        clear: none !important; /* Do not clear floats on icon */
+    }
+
+    /* Style the actual menu icon link inside the square button */
+    nav ul li.icon a {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        padding: 0 !important;
+        line-height: inherit !important; /* Inherit line-height from parent li */
+        color: #FFF !important;
+        font-size: inherit !important; /* Inherit font-size from parent li */
+        text-decoration: none;
+    }
+
+    /* The "responsive" class is added when the user clicks on the "menu" icon */
+    nav ul.responsive {
+    position: absolute !important; /* CHANGE THIS */
+    top: 70px !important; /* This should match your header's height */
+    left: 0 !important;
+    width: 100% !important;
+    background-color: #6b4b20 !important;
+    height: auto !important; /* Allow content to dictate height */
+    overflow: visible !important;
+    overflow-x: hidden !important;
+    display: block !important; /* This display:block might be the issue when the menu is closed */
+    z-index: 999 !important; /* Make sure it's below the header but above content */
+    margin: 0 !important;
+    padding: 0 !important;
+    clear: both !important;
+    float: none !important;
+}
+
+    /* --- WRAPPER LI FOR THE ACTUAL MENU ITEMS (the li containing ul.scroll) --- */
+    /* This makes sure the container for the scroll ul is transparent and centers it */
+    nav ul.responsive > li:not(.icon) { /* Target the li that holds ul.scroll */
+        display: block !important;
+        width: 90% !important; /* Makes this parent container narrower */
+        max-width: 300px !important; /* Optional: Max width for larger mobiles/tablets */
+        background-color: transparent !important; /* No background on this li */
+        padding: 0 !important;
+        margin: 0 auto !important; /* Center this wrapper horizontally */
+        clear: both !important;
+        float: none !important;
+    }
+
+    /* --- ACTUAL MENU ITEMS CONTAINER (ul.scroll) --- */
+    nav ul.responsive ul.scroll {
+        display: block !important;
+        width: 100% !important; /* 100% of its parent (which is 90% now) */
+        background-color: transparent !important; /* Background for the menu items block */
+        margin: 0 auto !important; /* Center the ul.scroll itself within its parent */
+        padding: 0 !important;
+        clear: both !important;
+        float: none !important;
+    }
+
+    /* --- INDIVIDUAL MENU ITEMS (Shop Now, Discography, Videos) --- */
+    nav ul.responsive ul.scroll li {
+    display: block !important;
+    width: 100% !important; /* Keep width 100% for the LI to occupy the row space */
+    background-color: transparent !important; /* Make the LI's background transparent */
+    text-align: center; /* This will center the 'a' tag inside */
+    padding: 0 !important;
+    margin: 0 !important;
+    clear: both !important;
+    float: none !important;
+}
+
+    /* --- LINKS INSIDE INDIVIDUAL MENU ITEMS --- */
+nav ul.responsive ul.scroll li a {
+    display: inline-block !important; /* CHANGE: Make it inline-block */
+    width: auto !important; /* CHANGE: Let content and padding determine width */
+    padding: 10px 25px !important; /* ADJUST THIS PADDING to control the "button" size */
+    color: #FFF !important;
+    font-size: 1em !important;
+    letter-spacing: 0.1em;
+    line-height: normal;
+    text-decoration: none;
+    text-align: center;
+    /* IMPORTANT: Ensure the transition property is still applied to 'nav ul li a' which should cover this. */
+    /* Your existing 'nav ul li a, nav ul ul li a' rule handles this: */
+    /* -webkit-transition: all .25s ease; */
+    /* transition: all .25s ease; */
+    border-radius: 5px; /* Optional: adds subtle rounded corners to the button */
+}
+
+    /* General rule for links within responsive menu for hover,
+       but specific rules above for li.icon a and ul.scroll li a are more specific. */
+    nav ul.responsive li a {
+        /* This rule now acts more as a general fallback or to apply common properties */
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important; /* Reset padding for general case */
+        color: #FFF !important;
+        letter-spacing: 0.2em;
+        font-size: 1.15em !important;
+        margin: 0 !important;
+    }
+
+    /* Your other mobile media query rules that are not navigation-related */
+    .spacer {
+        width: 100%;
+        height: 40px;
+    }
+    .anchor-box {
+        background-color: transparent;
+        background-color: #6b4b20;
+        color: #fff;
+        margin-right: -21px;
+        margin-left: -21px;
     }
 }
-
-/* The "responsive" class is added when the user clicks on the "menu" icon - for mobile support*/
-nav ul.responsive {
-    position: absolute;
-    /* Changes to absolute so it's not inline with logo */
-    text-align: center;
-    background-color: #6b4b20;
-    /* Keeps the header background color for dropdown */
-    top: 70px;
-    /* Positions it right below the header (header height is 70px) */
-    left: 0;
-    width: 100%;
-}
-
-nav ul.responsive li.icon {
-    display: inline;
-    text-align: center;
-}
-
-nav ul.responsive li {
-    display: inline;
-}
-
-nav ul.responsive li a {
-    display: block;
-    padding: 0 20px;
-    letter-spacing: 0.2em;
-}
-
-/* Display Dropdowns on Hover */
-nav li .down a {
-    display: block;
-    margin: 10px 0 -10px 0;
-}
-
-nav .scroll {
-    display: block;
-    width: 100%;
-}
-
 /***************************************************************************************************/
+
 /********************************************** BODY ***********************************************/
 /* --- */
 /* Discography Section Styles */
