@@ -239,10 +239,9 @@ header .logo {
 }
 
 /* Fixes nav on scroll */
-header,
-.container-scrolled {
+header {
     position: fixed;
-    text-align: right;
+    text-align: center;
     left: 0;
     right: 0;
     width: 100%;
