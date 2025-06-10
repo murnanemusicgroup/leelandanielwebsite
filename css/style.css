@@ -187,7 +187,6 @@ nav ul li a {
     transition: all .25s ease; /* Ensure transition is there */
     display: block; /* To apply padding and line-height uniformly */
 }
-/* Styling the links */
 nav ul ul li a {
     display: block;
     padding: 0 12px; /* Original desktop link padding */
@@ -204,12 +203,10 @@ nav ul ul li a {
     -o-transition: all .25s ease;
     transition: all .25s ease;
 }
-/* Background color change on Hover */
 nav a:hover,
 nav li.selected a,
 nav li.selected a:hover {
-    background-color: #5c421d; /* This applies the background color on hover/selection */
-    color: #fff;
+    opacity: 0.7;
 }
 
 nav li .down a {
@@ -780,8 +777,9 @@ ul.pages-music li a {
     text-decoration: none;
     background: transparent;
     border-style: solid;
-    border-width: .2em;
+    border-width: 1px; /* CHANGED: Thinner border from .2em to 1px */
     border-color: #fff;
+    border-radius: 20px; /* ADDED: Curved corners, adjust value as desired */
     height: 100%;
     -webkit-transition: all .25s ease;
     -moz-transition: all .25s ease;
@@ -808,7 +806,6 @@ ul.pages-music p {
         margin: .5em 0 1.25em 0;
     }
 }
-
 /***********************************************************************************************/
 
 /************************************Hero Photos*******************************************/
@@ -1122,7 +1119,7 @@ ul.pages-music p {
 
 /* Container for the form itself - now transparent with a defined border */
 .signup-container {
-    max-width: 500px;
+    max-width: 800px; /* CHANGED: Increased max-width from 500px to 700px */
     margin: 0 auto;
     background: transparent; /* Makes the box transparent */
     padding: 35px 60px; /* Increased horizontal padding for wider "margins" */
@@ -1146,7 +1143,7 @@ ul.pages-music p {
     margin-bottom: 28px;
     line-height: 1.7;
     color: #f7f5e6; /* Light cream text for readability */
-    font-size: 1.05em;
+    font-size: 0.7em;
 }
 
 /* Form element base styling */
@@ -1173,7 +1170,7 @@ ul.pages-music p {
     padding: 13px 18px;
     background: transparent; /* Input background also transparent */
     border: 2px solid #f7f5e6; /* Light cream border to define inputs */
-    border-radius: 10px;
+    border-radius: 20px;
     box-sizing: border-box;
     font-size: 1.0em;
     color: #f7f5e6; /* Light cream text for input values */
@@ -1221,12 +1218,12 @@ ul.pages-music p {
 .signup-form button[type="submit"].libre-caslon-text-bold {
     font-family: "Libre Caslon Text", serif;
     font-weight: 700;
-    width: 100%;
+    max-width: 300px;
     padding: 15px 20px;
     background: transparent; /* Transparent background */
     color: #f7f5e6; /* Light cream text */
     border: 2px solid #f7f5e6; /* Light cream border */
-    border-radius: 10px;
+    border-radius: 20px;
     font-size: 1.15em;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease, border-color 0.3s ease;
@@ -1241,6 +1238,13 @@ ul.pages-music p {
     border-color: #f7f5e6; /* Border matches background on hover */
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Form Link */
+.signuplink {
+    color: #f7f5e6; /* A contrasting color for links (e.g., gold) */
+    text-decoration: underline;
+    transition: color 0.3s ease;
 }
 
 /* Form Message (Success/Error) - keeping existing distinct colors for clarity */
@@ -1278,6 +1282,7 @@ ul.pages-music p {
 
     .signup-container {
         padding: 25px 30px; /* Adjusted padding for smaller screens */
+        max-width: 90%; /* Keeping it responsive for smaller screens */
     }
 
     .signup-container h3 {
