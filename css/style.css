@@ -315,13 +315,15 @@ nav ul {
 }
 
 nav ul.clearfix {
-    list-style: none;
-    display: flex; /* THIS IS THE KEY for horizontal items */
-    align-items: center; /* Vertically centers li items within the ul */
-    justify-content: flex-end; /* Pushes items to the right of the nav container */
+    list-style: none; /* Remove bullet points */
+    display: flex; /* THIS IS THE KEY: Makes LI children horizontal */
+    flex-direction: row; /* Explicitly set to row (default, but good for clarity) */
+    align-items: center; /* Vertically centers li items within the ul's height */
+    justify-content: flex-end; /* Pushes items to the right side of the nav container */
     height: 100%; /* Make the ul take full height of nav.container */
     padding: 0; /* Remove default ul padding */
     margin: 0; /* Remove default ul margin */
+    /* Make sure there's no width: 100% or similar that would make it wrap */
 }
 
 /* Positioning the navigation items inline for desktop */
