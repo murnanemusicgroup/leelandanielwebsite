@@ -1667,37 +1667,38 @@ tr:nth-child(odd) {
 
 /* Wrapper for the entire signup section - matches your main content background */
 .signup-section-wrapper {
-    padding: 60px 20px; /* More padding top/bottom for distinct section */
-    background-color: #6b4b20; /* Matches your body/header background color */
+    padding: 60px 20px;
+    background-color: #6b4b20; /* Your primary dark brown background */
     text-align: center;
     color: #f7f5e6; /* Default text color for elements directly in this section */
 }
 
-/* Container for the form itself, making it stand out on the dark background */
+/* Container for the form itself - now transparent with a defined border */
 .signup-container {
     max-width: 500px;
     margin: 0 auto;
-    background: #ffffff; /* White background for the form box */
-    padding: 35px;
+    background: transparent; /* Makes the box transparent */
+    padding: 35px 60px; /* Increased horizontal padding for wider "margins" */
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Stronger shadow to pop on dark background */
+    border: 2px solid #f7f5e6; /* Adds a subtle light border to define the box */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Still provides some depth */
 }
 
-/* Heading for the signup section */
+/* Heading for the signup section - text color adjusted for dark background */
 .signup-container h3 {
-    font-family: 'Playfair Display', serif; /* Use Playfair Display for headings for consistency */
+    font-family: 'Playfair Display', serif;
     margin-bottom: 15px;
-    color: #000; /* Black text for strong contrast on white background */
+    color: #f7f5e6; /* Light cream text for contrast on dark background */
     font-size: 2.2em;
     font-weight: 700;
 }
 
-/* Paragraph description for the form */
+/* Paragraph description for the form - text color adjusted for dark background */
 .signup-container p.libre-caslon-text-regular {
     font-family: "Libre Caslon Text", serif;
     margin-bottom: 28px;
     line-height: 1.7;
-    color: #333; /* Dark gray for good readability on white */
+    color: #f7f5e6; /* Light cream text for readability */
     font-size: 1.05em;
 }
 
@@ -1707,36 +1708,41 @@ tr:nth-child(odd) {
     text-align: left;
 }
 
-/* Labels for form inputs - consistent with your Libre Caslon Text bold */
+/* Labels for form inputs - text color adjusted for dark background */
 .signup-form label.libre-caslon-text-bold {
     font-family: "Libre Caslon Text", serif;
     font-weight: 700;
     display: block;
     margin-bottom: 8px;
-    color: #333; /* Dark gray for labels */
+    color: #f7f5e6; /* Light cream text for labels */
     font-size: 1.05em;
 }
 
-/* Styling for text and email input fields - matches your existing form_settings inputs */
+/* Styling for text and email input fields - now transparent with light borders and text */
 .signup-form input[type="text"],
 .signup-form input[type="email"] {
     font-family: "Libre Caslon Text", serif;
     width: 100%;
     padding: 13px 18px;
-    border: 2px solid #000; /* Black border from your existing form_settings */
-    border-radius: 10px; /* Rounded corners from your existing form_settings */
+    background: transparent; /* Input background also transparent */
+    border: 2px solid #f7f5e6; /* Light cream border to define inputs */
+    border-radius: 10px;
     box-sizing: border-box;
     font-size: 1.0em;
-    color: #000; /* Black text for inputs */
-    background-color: #FFF; /* White background for inputs */
+    color: #f7f5e6; /* Light cream text for input values */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Focus state for inputs - uses your brand color for focus */
+/* Placeholder text color for inputs */
+.signup-form input::placeholder {
+    color: rgba(247, 245, 230, 0.7); /* Slightly transparent light cream for placeholders */
+}
+
+/* Focus state for inputs - uses light cream for focus */
 .signup-form input[type="text"]:focus,
 .signup-form input[type="email"]:focus {
-    border-color: #6b4b20; /* Your primary brand color on focus */
-    box-shadow: 0 0 0 3px rgba(107, 75, 32, 0.25); /* Subtle shadow using brand color */
+    border-color: #f7f5e6; /* Your light cream color on focus */
+    box-shadow: 0 0 0 3px rgba(247, 245, 230, 0.25); /* Subtle shadow using light cream */
     outline: none;
 }
 
@@ -1752,41 +1758,42 @@ tr:nth-child(odd) {
     min-width: 18px;
     min-height: 18px;
     margin-top: 3px;
-    accent-color: #6b4b20; /* Colors the checkbox itself with your brand color */
+    accent-color: #f7f5e6; /* Colors the checkbox itself with light cream */
 }
 
+/* Consent text - text color adjusted for dark background */
 .consent-group label.libre-caslon-text-regular {
     font-family: "Libre Caslon Text", serif;
     margin-bottom: 0;
     font-size: 0.95em;
-    color: #666; /* Subtler color for consent text on white */
+    color: #f7f5e6; /* Light cream text for consent */
     line-height: 1.4;
 }
 
-/* Submit Button - matches your form_settings .submit button style */
+/* Submit Button - now transparent with light border and text, consistent with your music stream button */
 .signup-form button[type="submit"].libre-caslon-text-bold {
     font-family: "Libre Caslon Text", serif;
     font-weight: 700;
     width: 100%;
     padding: 15px 20px;
     background: transparent; /* Transparent background */
-    color: #000; /* Black text */
-    border: 2px solid #000; /* Black border */
-    border-radius: 10px; /* Rounded corners */
+    color: #f7f5e6; /* Light cream text */
+    border: 2px solid #f7f5e6; /* Light cream border */
+    border-radius: 10px;
     font-size: 1.15em;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease, border-color 0.3s ease;
     letter-spacing: 0.05em;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Submit Button Hover state - uses your consistent hover color */
+/* Submit Button Hover state - matches your music stream button's hover behavior */
 .signup-form button[type="submit"]:hover {
-    background-color: #5c421d; /* Darker brown on hover */
-    color: #fff; /* White text on hover */
-    border-color: #5c421d; /* Border color matches background on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+    background-color: #f7f5e6; /* Light cream background on hover */
+    color: #6b4b20; /* Dark brown text on hover */
+    border-color: #f7f5e6; /* Border matches background on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 /* Form Message (Success/Error) - keeping existing distinct colors for clarity */
@@ -1795,7 +1802,7 @@ tr:nth-child(odd) {
     padding: 18px;
     border-radius: 8px;
     text-align: center;
-    display: none; /* Hidden by default */
+    display: none;
     font-family: "Libre Caslon Text", serif;
     font-size: 1.0em;
     font-weight: bold;
@@ -1823,7 +1830,7 @@ tr:nth-child(odd) {
     }
 
     .signup-container {
-        padding: 25px;
+        padding: 25px 30px; /* Adjusted padding for smaller screens */
     }
 
     .signup-container h3 {
