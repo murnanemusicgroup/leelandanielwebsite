@@ -1109,6 +1109,17 @@ ul.pages-music p {
 
 /* --- Signup Form Section Styles --- */
 
+.form-group-inline-wrapper {
+    display: flex; /* Makes children (form-groups) sit side-by-side */
+    gap: 20px; /* Adds space between the Name and Email fields */
+    margin-bottom: 20px; /* Maintains vertical spacing below this row */
+}
+
+.form-group-inline-wrapper .form-group {
+    flex: 1; /* Allows each form-group to take up equal available space */
+    margin-bottom: 0; /* REMOVED: No vertical margin needed for individual form-groups within the row */
+}
+
 /* Wrapper for the entire signup section - matches your main content background */
 .signup-section-wrapper {
     padding: 60px 20px;
@@ -1124,8 +1135,8 @@ ul.pages-music p {
     background: transparent; /* Makes the box transparent */
     padding: 35px 60px; /* Increased horizontal padding for wider "margins" */
     border-radius: 8px;
-    border: 2px solid #f7f5e6; /* Adds a subtle light border to define the box */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Still provides some depth */
+    /* border: 2px solid #f7f5e6; /* Adds a subtle light border to define the box */
+    /* box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Still provides some depth */
 }
 
 /* Heading for the signup section - text color adjusted for dark background */
@@ -1162,31 +1173,32 @@ ul.pages-music p {
     font-size: 1.05em;
 }
 
-/* Styling for text and email input fields - now transparent with light borders and text */
 .signup-form input[type="text"],
 .signup-form input[type="email"] {
     font-family: "Libre Caslon Text", serif;
-    width: 100%;
-    padding: 13px 18px;
-    background: transparent; /* Input background also transparent */
-    border: 2px solid #f7f5e6; /* Light cream border to define inputs */
-    border-radius: 20px;
+    width: 100%; /* Important: ensures inputs fill their flex item's width */
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #f7f5e6;
     box-sizing: border-box;
     font-size: 1.0em;
-    color: #f7f5e6; /* Light cream text for input values */
+    color: #f7f5e6;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+
 /* Placeholder text color for inputs */
 .signup-form input::placeholder {
-    color: rgba(247, 245, 230, 0.7); /* Slightly transparent light cream for placeholders */
+    color: rgba(247, 245, 230, 0.7);
 }
 
 /* Focus state for inputs - uses light cream for focus */
 .signup-form input[type="text"]:focus,
 .signup-form input[type="email"]:focus {
-    border-color: #f7f5e6; /* Your light cream color on focus */
-    box-shadow: 0 0 0 3px rgba(247, 245, 230, 0.25); /* Subtle shadow using light cream */
+    border-color: #f7f5e6; /* Keeps the line color on focus */
+    border-bottom-color: #f7f5e6; /* Ensure bottom line stays solid */
+    box-shadow: 0 2px 0 0 rgba(247, 245, 230, 0.5); /* CHANGED: Adjusted shadow to emphasize the line */
     outline: none;
 }
 
@@ -1276,6 +1288,15 @@ ul.pages-music p {
 
 /* --- Responsive Adjustments for Signup Form --- */
 @media (max-width: 768px) {
+    .form-group-inline-wrapper {
+        flex-direction: column; /* Stacks the inputs vertically on smaller screens */
+        gap: 0; /* No gap when stacked */
+    }
+    
+    .form-group-inline-wrapper .form-group {
+        margin-bottom: 20px; /* Re-adds vertical margin when stacked on mobile */
+    }
+    
     .signup-section-wrapper {
         padding: 40px 15px;
     }
@@ -1299,11 +1320,102 @@ ul.pages-music p {
 
     .signup-form input[type="text"],
     .signup-form input[type="email"] {
-        padding: 10px 12px;
+        padding: 8px 0;
     }
 
     .signup-form button[type="submit"].libre-caslon-text-bold {
         font-size: 1em;
         padding: 12px 15px;
+    }
+}
+
+/* --- Announcement Popup Styles --- */
+.announcement-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+    z-index: 9998;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.announcement-content {
+    background-color: #6b4b20; /* Your brand color for the popup background */
+    color: #f7f5e6; /* Light text color */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+
+/* Removed styles for .announcement-close */
+
+.announcement-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto; /* Centers the image and adds space below it before the text */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.announcement-text {
+    font-family: "Libre Caslon Text", serif;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 25px; /* Added margin-bottom to create space above the button */
+    text-align: justify;
+}
+
+/* New styles for the Close button */
+.announcement-button {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 700;
+    width: 100%; /* Make button full width of the popup content */
+    padding: 15px 20px;
+    background: transparent; /* Transparent background */
+    color: #f7f5e6; /* Light cream text */
+    border: 2px solid #f7f5e6; /* Light cream border */
+    border-radius: 10px; /* Consistent rounded corners */
+    font-size: 1.15em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease, border-color 0.3s ease;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.announcement-button:hover {
+    background-color: #f7f5e6; /* Light cream background on hover */
+    color: #6b4b20; /* Dark brown text on hover */
+    border-color: #f7f5e6; /* Border matches background on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* --- Responsive adjustments for Announcement Popup --- */
+@media screen and (max-width: 767px) {
+    .announcement-content {
+        padding: 20px;
+    }
+
+    .announcement-image {
+        margin-bottom: 15px;
+    }
+
+    .announcement-text {
+        font-size: 0.9em;
+        margin-bottom: 20px; /* Adjust margin for mobile */
+    }
+
+    .announcement-button {
+        font-size: 1em; /* Smaller button text for mobile */
+        padding: 12px 15px; /* Smaller button padding for mobile */
     }
 }
