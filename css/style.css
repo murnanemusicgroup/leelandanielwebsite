@@ -246,6 +246,21 @@ nav {
 
 /* Since we'll have the "ul li" "float:left"
  * we need to add a clear after the container. */
+nav.container {
+	position: relative;
+
+nav.container::before {
+	content: '';
+	position: absolute;
+	height: 1px; /* Thickness of the line */
+	background-color: #FFF; /* Color of the line (matching your nav text) */
+	width: 100px; /* <-- ADJUST THIS: Controls the length of the line */
+	left: -110px; /* <-- ADJUST THIS: Controls its position relative to the nav container.
+                      It should be slightly more negative than 'width' to create a small gap. */
+	top: 50%; /* Vertically center the line with the navigation */
+	transform: translateY(-50%); /* Ensures perfect vertical centering */
+	z-index: 100; /* Ensure it's above other content if needed */
+}
 
 nav:after {
 	content:"";
@@ -311,6 +326,19 @@ nav ul li.icon {
 	display: none;
 }
 
+/* --- Hide the line and slashes on mobile (hamburger menu) --- */
+@media screen and (max-width: 900px) {
+    /* Hide the slashes when the menu is stacked */
+    nav ul li:not(:last-child)::after {
+        content: none;
+    }
+
+    /* Hide the line when the menu is stacked */
+    nav.container::before {
+        display: none;
+    }
+}
+	
 @media screen and (min-width: 320px) and (max-width: 1023px) {
  
 nav ul li:not(:nth-child(-n+0)) {
