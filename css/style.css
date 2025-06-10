@@ -281,12 +281,11 @@ header {
 }
 
 /* Nav container to center and set width - Adjust for flex container */
-nav.container {
+nav.container { /* This is the parent of your ul.clearfix */
     z-index: 150;
-    /* width: auto; /* This was from earlier attempts, might need fine-tuning */
-    height: 100%; /* Make the nav take full height of header */
-    display: flex; /* Use flexbox for nav to center its ul */
-    align-items: center; /* Vertically center the ul within nav */
+    height: 100%; /* Make nav take full height of header */
+    /* REMOVE display: flex; and align-items: center; here.
+       The ul.clearfix will handle its own alignment. */
 }
 /* Background-color to the nav container. */
 nav {
@@ -317,30 +316,33 @@ nav ul {
 
 nav ul.clearfix {
     list-style: none;
-    display: flex; /* Make the ul a flex container for its li children */
-    align-items: center; /* Vertically center li items within the ul */
-    justify-content: flex-end; /* Push items to the right within the ul */
-    height: 100%; /* Make the ul take full height of nav */
+    display: flex; /* THIS IS THE KEY for horizontal items */
+    align-items: center; /* Vertically centers li items within the ul */
+    justify-content: flex-end; /* Pushes items to the right of the nav container */
+    height: 100%; /* Make the ul take full height of nav.container */
     padding: 0; /* Remove default ul padding */
     margin: 0; /* Remove default ul margin */
 }
 
 /* Positioning the navigation items inline for desktop */
 nav ul li {
-    display: flex; /* Make li a flex container */
-    align-items: center; /* Vertically center the anchor within the li */
+    /* REMOVE display: flex; and align-items: center; from here.
+       The ul.clearfix is handling the layout. */
     background-color: transparent; /* Ensure no unwanted background */
     margin-left: 20px; /* Spacing between items */
-    height: 100%; /* Make the li take full height of ul */
+    /* Remove height: 100%; from here */
 }
+
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    line-height: normal; /* Change this from a fixed value if it's there */
-    padding: 10px 15px; /* Adjust padding to control button size */
+    /* line-height: normal; OR a fixed value like 50px */
+    line-height: 50px; /* A fixed line-height can help with vertical centering of text */
+    padding: 0 15px; /* Adjust padding for button size */
     background-color: transparent; /* No background on desktop unless hovered */
     transition: all .25s ease; /* Ensure transition is there */
+    display: block; /* To apply padding and line-height uniformly */
 }
 
 /* Styling the links */
@@ -382,6 +384,7 @@ nav ul ul a {
 }
 
 /* Hide hamburger icon on desktop */
+/* Hide the mobile icon on desktop */
 nav ul li.icon {
     display: none;
 }
