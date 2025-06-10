@@ -94,12 +94,13 @@ body {
     }
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
     .anchor-box {
         background-color: #6b4b20; /* You can remove the 'transparent' line, it's redundant */
         color: #fff;
         margin-right: -21px;
         margin-left: -21px;
+        margin-top: 1em;
     }
 }
 /**************************************************************************************************/
@@ -719,11 +720,17 @@ footer {
         padding: 0.3em 15px; /* CHANGED: Reduced vertical padding from 0.8em to 0.3em for mobile */
         gap: 1em;
     }
-    .footer-left,
+    .footer-left {
+           width: 100%;
+        text-align: center;
+        margin-bottom: 0;
+        order: 2; /* ADDED: Makes the copyright/text section appear second */
+    }
     .footer-right {
         width: 100%;
         text-align: center;
         margin-bottom: 0;
+        order: 1;
     }
     .footer-left h6 {
         margin-bottom: 0;
@@ -1399,6 +1406,27 @@ ul.pages-music p {
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
+.announcement-checkbox-group {
+    margin-top: 15px; /* Space above the checkbox group */
+    display: flex; /* Use flexbox to align checkbox and label */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 8px; /* Space between the checkbox and its label */
+    font-size: 0.9em; /* Smaller font size for the label */
+    color: #f7f5e6; /* Consistent text color */
+}
+
+.announcement-checkbox-group label {
+    font-family: "Libre Caslon Text", serif; /* Ensure the correct font is applied to the label */
+}
+
+.announcement-checkbox {
+    width: 16px; /* Standard checkbox size */
+    height: 16px;
+    accent-color: #6b4b20; /* Changes the checkbox color (modern browsers) to match your theme */
+    cursor: pointer;
+}
+
 /* --- Responsive adjustments for Announcement Popup --- */
 @media screen and (max-width: 767px) {
     .announcement-content {
@@ -1418,4 +1446,9 @@ ul.pages-music p {
         font-size: 1em; /* Smaller button text for mobile */
         padding: 12px 15px; /* Smaller button padding for mobile */
     }
+    .announcement-checkbox-group {
+        margin-top: 10px; /* Adjust margin for mobile */
+        font-size: 0.8em; /* Smaller font for mobile label */
+    }
 }
+
