@@ -12,16 +12,6 @@ html {
     box-sizing: border-box; /* This is the correct universal box-sizing */
 }
 
-/* REMOVE THIS DUPLICATE GLOBAL BOX-SIZING BLOCK ENTIRELY FROM YOUR CSS FILE:
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-*/
-
 body {
     display: flex;
     flex-direction: column;
@@ -34,18 +24,6 @@ body {
 .page-content {
     flex-grow: 1;
     /* This is the magic! It tells this section to grow and fill any available space */
-}
-
-.left {
-    float: left;
-    width: auto;
-    margin-right: 10px;
-}
-
-.right {
-    float: right;
-    width: auto;
-    margin-left: 10px;
 }
 
 .center {
@@ -72,12 +50,6 @@ body {
     font-style: normal;
 }
 
-.libre-caslon-text-regular-italic {
-    font-family: "Libre Caslon Text", serif;
-    font-weight: 400;
-    font-style: italic;
-}
-
 .horizontal {
     border: none;
     height: 1px;
@@ -88,15 +60,6 @@ body {
 }
 
 /********************************************** HEADER ********************************************/
-/* REMOVE THIS BLOCK ENTIRELY FROM YOUR CSS FILE:
-#main,
-#logo,
-.site_content,
-.site_content_index #footer {
-    margin-left: auto;
-    margin-right: auto;
-}
-*/
 
 .main-header {
     background-color: #6b4b20;
@@ -120,43 +83,9 @@ body {
     flex-shrink: 0; /* Prevents logo from shrinking if space is tight */
 }
 
-/* COMMENT OUT OR REMOVE the following #logo styles if you are only using an image for the logo.
-   Your HTML currently shows `<img src="favicon.png" alt="Leeland Daniel Official Logo" class="logo">`
-   If you plan to add text logo later, keep it but ensure it doesn't conflict.
-*/
-/*
-#logo {
-    position: relative;
-    max-width: 80%;
-    width: 80%;
-}
-#logo h1 {
-    display: block;
-    margin: .2em 0 0 0;
-    text-align: center;
-    font: normal 300% 'Libre Caslon Text', sans-serif;
-    color: #FFF;
-}
-#hidden {
-    display: none;
-}
-#logo h2 {
-    display: block;
-    text-align: center;
-    letter-spacing: .35em;
-    font: normal 90% 'Libre Caslon Text', sans-serif;
-    color: #FFF;
-}
-#logo h1 a,
-#logo h2 a {
-    text-decoration: none;
-    color: #FFF;
-}
-*/
 @media screen and (min-width: 768px) {
     .anchor-box {
-        background-color: transparent;
-        background-color: #6b4b20;
+        background-color: #6b4b20; /* You can remove the 'transparent' line, it's redundant */
         color: #fff;
         padding-top: 17px;
         padding-bottom: 10px;
@@ -166,73 +95,13 @@ body {
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
-    .spacer {
-        width: 100%;
-        height: 40px;
-    }
     .anchor-box {
-        background-color: transparent;
-        background-color: #6b4b20;
+        background-color: #6b4b20; /* You can remove the 'transparent' line, it's redundant */
         color: #fff;
         margin-right: -21px;
         margin-left: -21px;
     }
 }
-
-@media screen and (min-width: 480px) and (max-width: 767px) {
-    /* Resize width */
-    #logo {
-        position: relative;
-        max-width: 90%;
-        width: 90%;
-    }
-    /* Resize font for mobile */
-    #logo h1 {
-        display: block;
-        margin: .2em 0 0 0;
-        text-align: center;
-        letter-spacing: .2em;
-        font: normal 250% 'Libre Caslon Text', sans-serif;
-        color: #FFF;
-        padding-top: .1875em;
-    }
-    #logo h2 {
-        display: block;
-        text-align: center;
-        letter-spacing: .35em;
-        font: normal 85% 'Libre Caslon Text', sans-serif;
-        color: #FFF;
-        padding-top: .1875em;
-    }
-}
-
-@media screen and (min-width: 320px) and (max-width: 479px) {
-    /* Resize width */
-    #logo {
-        position: relative;
-        max-width: 95%;
-        width: 95%;
-    }
-    /* Resize font for mobile */
-    #logo h1 {
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-        letter-spacing: .2em;
-        font: normal 185% 'Libre Caslon Text', sans-serif;
-        color: #FFF;
-        padding-top: .5em;
-    }
-    #logo h2 {
-        display: block;
-        text-align: center;
-        letter-spacing: .35em;
-        font: normal 70% 'Libre Caslon Text', sans-serif;
-        color: #FFF;
-        padding-top: 1em;
-    }
-}
-
 /**************************************************************************************************/
 /* Universal Box-Sizing and Margin/Padding Reset */
 *,
@@ -251,46 +120,6 @@ body {
     position: relative;
 }
 
-/* REMOVE THIS DUPLICATE `header` RULE ENTIRELY FROM YOUR CSS FILE:
-header {
-    position: fixed;
-    text-align: center;
-    left: 0;
-    right: 0;
-    width: 100%;
-    top: 0;
-}
-*/
-
-/* REMOVE THIS DUPLICATE `.main-header` RULE ENTIRELY FROM YOUR CSS FILE:
-.main-header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #6b4b20;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    box-sizing: border-box;
-}
-*/
-
-/* REMOVE THIS BLOCK IF YOU ARE NOT USING A `.logo-container` IN YOUR HTML:
-.main-header .logo-container {
-    / Maybe some specific padding or margin for the logo /
-}
-*/
-
-/* REMOVE THIS BLOCK IF THE `.main-header .logo` RULE ABOVE IS SUFFICIENT:
-.main-header .logo {
-    height: 50px;
-    width: auto;
-}
-*/
-
 /* Adjust menu button (icon) styles */
 .main-header .icon {
     font-size: 24px;
@@ -300,8 +129,6 @@ header {
 /* Nav container to center and set width - Adjust for flex container */
 nav.container {
     z-index: 150;
-    /* REMOVED: height: 100%; - let ul.clearfix manage height */
-    /* REMOVED: display: flex; and align-items: center; - ul.clearfix will handle its own alignment. */
 }
 /* Background-color to the nav container. */
 nav {
@@ -329,8 +156,7 @@ nav ul {
     height: 100%; /* Make the ul take full height of header for vertical centering */
     display: flex; /* **THIS IS KEY:** Makes LI children horizontal */
     align-items: center; /* Vertically centers li items within the ul's height */
-    justify-content: flex-end; /* Pushes items to the right of the nav container */
-    /* REMOVED: text-align: center; - conflicts with flexbox */
+    justify-content: flex-end;
 }
 nav ul.clearfix {
     list-style: none; /* Remove bullet points */
@@ -340,8 +166,7 @@ nav ul.clearfix {
     justify-content: flex-end; /* Pushes items to the right side of the nav container */
     height: 100%; /* Make the ul take full height of nav.container */
     padding: 0; /* Remove default ul padding */
-    margin: 0; /* Remove default ul margin */
-    /* Make sure there's no width: 100% or similar that would make it wrap */
+    margin: 0;
 }
 
 
@@ -349,8 +174,7 @@ nav ul.clearfix {
 nav ul li {
     /* REMOVED: display: flex; and align-items: center; from here. The ul.clearfix is handling the layout. */
     background-color: transparent; /* Ensure no unwanted background */
-    margin-left: 20px; /* Spacing between items */
-    /* REMOVED: height: 100%; from here */
+    margin-left: 20px;
 }
 
 
@@ -551,18 +375,6 @@ nav ul.responsive ul.scroll li a {
         border-radius: 5px; /* Optional: adds subtle rounded corners to the button */
     }
 
-    /* REMOVE THIS DUPLICATE/LESS SPECIFIC RULE ENTIRELY FROM YOUR CSS FILE:
-    nav ul.responsive li a {
-        display: block !important;
-        width: 100% !important;
-        padding: 0 !important;
-        color: #FFF !important;
-        letter-spacing: 0.2em;
-        font-size: 1.15em !important;
-        margin: 0 !important;
-    }
-    */
-    /* Your other mobile media query rules that are not navigation-related */
     .spacer {
         width: 100%;
         height: 40px;
@@ -778,9 +590,6 @@ h3 {
         font-size: 1em;
         margin: 0 0 .2em 0;
     }
-    .vertical {
-        display: none;
-    }
      .horizontal {
         /* visibility: hidden; */
         margin-bottom: 5px; /* CHANGED: Reduced margin-bottom from 20px to 5px */
@@ -817,7 +626,6 @@ h3 {
         margin-right: -50%;
     }
 }
-
 /**************************************************************************************************/
 /*********************************************** FOOTER *******************************************/
 
@@ -942,64 +750,6 @@ footer {
 }
 
 /*************************************** BUTTONS *******************************************/
-.pagesbar {
-    display: block;
-    text-align: center;
-    clear: both;
-    height: 30%;
-}
-
-ul.pages,
-ul.pages li {
-    display: inline-block;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-ul.pages li a {
-    display: inline-block;
-    letter-spacing: 0.2em;
-    font-family: 'Libre Caslon Text', sans-serif;
-    font-weight: bold;
-    font-size: 1em;
-    margin: .5em 0 1.5em 0;
-    padding: .6em 1.2em .6em 1.2em;
-    text-align: center;
-    color: #000;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: transparent;
-    border-style: solid;
-    border-width: .2em;
-    border-color: #6b4b20;
-    height: 100%;
-    -webkit-transition: all .25s ease;
-    -moz-transition: all .25s ease;
-    -ms-transition: all .25s ease;
-    -o-transition: all .25s ease;
-    transition: all .25s ease;
-}
-
-ul.pages li a:hover,
-ul.pages li.selected a,
-ul.pages li.selected a:hover {
-    color: #fff;
-    background-color: #5c421d;
-}
-
-ul.pages p {
-    text-align: left;
-}
-
-@media screen and (min-width: 320px) and (max-width: 767px) {
-    ul.pages li a {
-        letter-spacing: 0.2em;
-        font-size: .9em;
-    }
-}
-
 .pagesbar-music {
     display: block;
     text-align: center;
@@ -1060,202 +810,7 @@ ul.pages-music p {
 }
 
 /***********************************************************************************************/
-/********************************** Join Mailing List & Modal *********************************/
-.form_settings {
-    display: block;
-    text-align: center;
-    padding: 20px 0 20px 0;
-}
 
-.form_settings input,
-.form_settings textarea {
-    width: 50%;
-    padding: .625em;
-    margin: .6em 0 .6em 0;
-    font-family: 'Libre Caslon Text', sans-serif;
-    font-weight: bold;
-    font-size: 1.15em;
-    border: 2px solid #000;
-    background: #FFF;
-    /* White background */
-    color: #000;
-    border-radius: 10px;
-    /* Rounded corners */
-    -webkit-transition: all .25s ease;
-    -moz-transition: all .25s ease;
-    -ms-transition: all .25s ease;
-    -o-transition: all .25s ease;
-    transition: all .25s ease;
-    resize: none;
-}
-
-.form_settings .submit {
-    font-family: 'Libre Caslon Text', sans-serif;
-    letter-spacing: .35em;
-    font-weight: bold;
-    font-size: 1.15em;
-    width: 25%;
-    text-align: center;
-    margin: 1em 0 .5em 0;
-    padding: .6em 0 .6em 0;
-    cursor: pointer;
-    text-transform: uppercase;
-    background: transparent;
-    border-color: #000;
-    color: #000;
-}
-
-.form_settings .submit:hover {
-    background-color: #5c421d;
-    color: #fff;
-}
-
-@media screen and (max-width:640px) {
-    .form_settings {
-        display: block;
-        text-align: center;
-        padding: 40px 0 40px 0;
-    }
-    .form_settings input,
-    .form_settings textarea {
-        width: 100%;
-        padding: .625em;
-        margin: .6em 0 .6em 0;
-        font-family: 'Libre Caslon Text', sans-serif;
-        font-weight: bold;
-        font-size: 1em;
-        border: 2px solid #000000;
-        background: #FFF;
-        /* White background for mobile */
-        color: #000;
-        border-radius: 10px;
-        /* Rounded corners for mobile */
-        resize: none;
-    }
-    .form_settings .submit {
-        font-family: 'Libre Caslon Text', sans-serif;
-        letter-spacing: .35em;
-        font-weight: bold;
-        font-size: 1em;
-        width: 50%;
-        text-align: center;
-        margin: .6em 0 .6em 0;
-        padding: .6em 0 .6em 0;
-        cursor: pointer;
-        text-transform: uppercase;
-        background: transparent;
-        border-color: #000;
-        color: #000;
-    }
-    .form_settings .submit:hover {
-        background-color: #5c421d;
-        color: #fff;
-    }
-}
-
-/* The Modal (background) */
-.modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1000;
-    /* Sit on top */
-    padding-top: 250px;
-    /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-    background-color: #fff;
-    margin: auto;
-    padding: 10px;
-    border: 2px solid;
-    width: 70%;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-/* Add Animation */
-@keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0;
-    }
-    to {
-        top: 0;
-        opacity: 1;
-    }
-}
-
-.modal-content p {
-    color: black;
-}
-
-/* The Close Button */
-.close,
-.close_error {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close_error:hover,
-.close:focus,
-.close_error:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/*** Bottom button ***/
-.go-btm {
-    display: inline-block;
-    margin: 30px 0 0 0;
-    font-family: 'Libre Caslon Text', sans-serif;
-    font-size: 1.15em;
-    color: white;
-    border: .094em solid white;
-    border-radius: 2em;
-    text-decoration: none;
-    background-color: rgba(51, 58, 86);
-    font-size: 1.15em;
-    padding: .875em 1.188em .875em 1.188em;
-}
-
-#go-btm a {
-    -webkit-transition: all .25s ease;
-    -moz-transition: all .25s ease;
-    -ms-transition: all .25s ease;
-    -o-transition: all .25s ease;
-    transition: all .25s ease;
-}
-
-.go-btm:hover {
-    background-color: #5c421d;
-}
-
-@media screen and (min-width: 320px) and (max-width: 767px) {
-    .go-btm {
-        margin: 15px 0 0 0;
-    }
-}
-
-/******************************************************************************************/
 /************************************Hero Photos*******************************************/
 .hero {
     background-image: url("../pictures/misc/hero-img.jpg");
@@ -1265,15 +820,7 @@ ul.pages-music p {
     border-bottom: .2em solid #6b4b20;
 }
 
-.music-hero {
-    background-image: url("../pictures/misc/album-cover.jpg");
-    height: 300px;
-    margin-bottom: 2em;
-    margin-top: 2em;
-}
-
-.hero,
-.music-hero {
+.hero {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1284,12 +831,7 @@ ul.pages-music p {
     height: 650px;
 }
 
-#music-overlay {
-    height: 300px;
-}
-
-#overlay,
-#music-overlay {
+#overlay {
     position: sticky;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
@@ -1336,101 +878,6 @@ ul.pages-music p {
 }
 
 /******************************************************************************************/
-/******************************************Audio Player**************************************/
-.audioplayer {
-    display: inline-block;
-    width: 100%;
-    height: 60px;
-    margin: 20px auto 40px auto;
-    border: .0625em solid #6b4b20;
-    border-radius: 20px;
-}
-
-#audio-players h4 {
-    text-align: center;
-    margin: 10px auto -10px auto;
-}
-
-.playbutton {
-    width: 60px;
-    height: 60px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
-.play {
-    background: url(../pictures/images/play.png);
-}
-
-.pause {
-    background: url(../pictures/images/pause.png);
-}
-
-.play,
-.pause {
-    background-size: 50% 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.timeline {
-    height: auto;
-    margin: -45px 35px auto 75px;
-    border-radius: 15px;
-    background-color: #5c421d;
-}
-
-.playhead {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    margin-top: 1px;
-    background-color: #e8e8e8;
-    cursor: pointer;
-}
-
-/****************************************************************************************************/
-/*******************************************Press Comments and Shows*******************************************/
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 2em auto 2em auto;
-}
-
-td,
-th {
-    border: 1px solid #e8e8e8;
-    font-size: 1.250em;
-    margin: 0 0 .6em 0;
-    line-height: 1.75em;
-    font-family: 'Libre Caslon Text', sans-serif;
-    padding: 25px;
-    text-align: center;
-}
-
-tr:nth-child(even) {
-    background-color: #f7f5e6;
-}
-
-tr:nth-child(odd) {
-    background-color: #e8e8e8;
-}
-
-.shows-text {
-    margin-top: 1.5em;
-    margin-bottom: .5em;
-}
-
-@media screen and (min-width: 320px) and (max-width: 767px) {
-    td,
-    th {
-        font-size: 1.125em;
-        margin: 0 0 .6em 0;
-        line-height: 1.75em;
-    }
-}
-
 /* --- Cookie Consent Popup Styles --- */
 .cookie-consent-popup {
     display: none; /* Hidden by default */
