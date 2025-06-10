@@ -1663,27 +1663,107 @@ tr:nth-child(odd) {
     }
 }
 
-/* --- Signup Form Section Styles --- */
+/* --- The Modal Pop-up Structure --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place (covers the whole screen) */
+    z-index: 2000; /* Sit on top (higher than header's z-index: 1000) */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if content is too tall */
+    background-color: rgba(0,0,0,0.7); /* Black w/ 70% opacity overlay */
+    display: flex; /* Use flexbox to center content */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    padding: 20px; /* Add some padding on smaller screens */
+    box-sizing: border-box; /* Ensures padding is included in width/height */
+}
 
-/* Wrapper for the entire signup section - matches your main content background */
+/* Modal Content Box (This wraps your .signup-section-wrapper) */
+.modal-content {
+    background-color: #6b4b20; /* This background is for the main modal box */
+    padding: 0; /* No internal padding here, .signup-section-wrapper handles it */
+    border: none; /* Remove any default border */
+    position: relative; /* Needed for positioning the close button */
+    max-width: 600px; /* Max width for the pop-up box */
+    width: 90%; /* Responsive width for the pop-up */
+    border-radius: 8px; /* Matches your form's border-radius */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5); /* Stronger shadow for pop-up effect */
+    overflow: hidden; /* Ensures the extended borders (if within this box) are contained */
+}
+
+/* Close Button for the modal */
+.close-button {
+    color: #f7f5e6; /* Light cream color */
+    font-size: 35px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 2001; /* Ensures the close button is on top of everything */
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #ccc;
+    text-decoration: none;
+    outline: none;
+}
+
+/* --- Adjusted Signup Form Section Styles (now for modal content) --- */
+
+/* The signup-section-wrapper becomes the main padded area inside the modal-content */
 .signup-section-wrapper {
-    padding: 60px 20px;
-    background-color: #6b4b20; /* Your primary dark brown background */
+    padding: 60px 20px; /* Vertical padding for content inside the modal */
+    background-color: transparent; /* No background here, it's on .modal-content */
     text-align: center;
-    color: #f7f5e6; /* Default text color for elements directly in this section */
+    color: #f7f5e6;
+    position: relative;
+    overflow: hidden;
+    /* REMOVE any width/max-width properties from here, .modal-content controls it */
 }
 
-/* Container for the form itself - now transparent with a defined border */
+/* The extended border lines for the signup-section-wrapper within the modal */
+/* They will now extend to the edges of the .modal-content box */
+.signup-section-wrapper::before,
+.signup-section-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0; /* Extends across the full width of the .signup-section-wrapper */
+    height: 2px;
+    background-color: #f7f5e6;
+    z-index: 0; /* Place behind the form container */
+}
+
+.signup-section-wrapper::before { top: 0; }
+.signup-section-wrapper::after { bottom: 0; }
+
+/* The actual form container inside the modal - no changes to its internal styling */
 .signup-container {
-    max-width: 500px;
-    margin: 0 auto;
-    background: transparent; /* Makes the box transparent */
-    padding: 35px 60px; /* Increased horizontal padding for wider "margins" */
+    max-width: 500px; /* Keeps the form content at a readable width */
+    margin: 0 auto; /* Centers the form container horizontally */
+    background: transparent;
+    padding: 35px 60px; /* Wider horizontal padding */
     border-radius: 8px;
-    border: 2px solid #f7f5e6; /* Adds a subtle light border to define the box */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Still provides some depth */
+    border: 2px solid #f7f5e6;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1; /* Make sure this box is above its parent's pseudo-elements */
 }
 
+/* Add a style to prevent body scrolling when the modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* --- Rest of your Signup Form CSS (from previous response) --- */
+/* (e.g., h3, p, labels, inputs, buttons, etc. - all these remain the same as they are adjusted for the transparent box and dark background) */
+
+/* ... (Copy all the CSS from .signup-container h3 downwards from my previous response here) ... */
 /* Heading for the signup section - text color adjusted for dark background */
 .signup-container h3 {
     font-family: 'Playfair Display', serif;
