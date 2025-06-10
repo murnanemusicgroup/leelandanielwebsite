@@ -1665,53 +1665,24 @@ tr:nth-child(odd) {
 
 /* --- Signup Form Section Styles --- */
 
-/* Wrapper for the entire signup section - this will now contain the full-width lines */
+/* Wrapper for the entire signup section - matches your main content background */
 .signup-section-wrapper {
-    padding: 60px 20px; /* Standard vertical padding for content inside */
+    padding: 60px 20px;
     background-color: #6b4b20; /* Your primary dark brown background */
     text-align: center;
     color: #f7f5e6; /* Default text color for elements directly in this section */
-    position: relative; /* Crucial for positioning the extended border lines */
-    overflow: hidden; /* Ensures any content or pseudo-elements don't leak out unexpectedly */
 }
 
-/* Horizontal lines extending across the entire screen, at the top and bottom of the section */
-.signup-section-wrapper::before,
-.signup-section-wrapper::after {
-    content: "";
-    position: absolute; /* Position relative to .signup-section-wrapper */
-    left: 0; /* Start from the left edge of the viewport */
-    right: 0; /* Extend to the right edge of the viewport */
-    height: 2px; /* Thickness of the extended border line */
-    background-color: #f7f5e6; /* Your light cream border color */
-    z-index: 0; /* Place these lines behind the actual form container */
-}
-
-/* Position the top extended line at the very top of the section */
-.signup-section-wrapper::before {
-    top: 0;
-}
-
-/* Position the bottom extended line at the very bottom of the section */
-.signup-section-wrapper::after {
-    bottom: 0;
-}
-
-/* Container for the form itself - transparent with a defined border and wider internal padding */
+/* Container for the form itself - now transparent with a defined border */
 .signup-container {
-    max-width: 500px; /* Keeps the form content at a readable width */
-    margin: 0 auto; /* Centers the form container horizontally */
-    background: transparent; /* Makes the box transparent as requested */
-    padding: 35px 60px; /* Wider horizontal padding (your "wider text margins") */
+    max-width: 500px;
+    margin: 0 auto;
+    background: transparent; /* Makes the box transparent */
+    padding: 35px 60px; /* Increased horizontal padding for wider "margins" */
     border-radius: 8px;
-    border: 2px solid #f7f5e6; /* Adds a subtle light border directly to the form box */
+    border: 2px solid #f7f5e6; /* Adds a subtle light border to define the box */
     box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Still provides some depth */
-    position: relative; /* Ensures the form box sits above the extended lines */
-    z-index: 1; /* Make sure the form content is above the extended lines */
 }
-
-/* --- Rest of your Signup Form CSS (from previous response) --- */
-/* These styles remain the same, as they are already adjusted for the transparent box and dark background */
 
 /* Heading for the signup section - text color adjusted for dark background */
 .signup-container h3 {
