@@ -9,6 +9,12 @@ html {
     box-sizing: border-box;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Ensure both are explicitly 100% width */
+}
+
 body {
 	background-color: #6b4b20;
 	margin: 0;
