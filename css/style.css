@@ -242,7 +242,7 @@ header .logo {
 header,
 .container-scrolled {
     position: fixed;
-    text-align: center;
+    text-align: right;
     left: 0;
     right: 0;
     width: 100%;
