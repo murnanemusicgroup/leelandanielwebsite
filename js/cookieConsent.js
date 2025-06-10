@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cookieConsentPopup = document.getElementById('cookieConsent');
     const acceptButton = document.getElementById('acceptCookies');
     const declineButton = document.getElementById('declineCookies');
+    const showCookieChoicesLink = document.getElementById('showCookieChoices'); // New: Get the "Cookie Choices" link
 
     // Function to show the popup
     function showCookieConsent() {
@@ -19,14 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Check if the user has already made a choice
-    // 'cookieAccepted' can be 'true', 'false', or null (if no choice yet)
+    // Check if the user has already made a choice on page load
     const consentGiven = localStorage.getItem('cookieConsent');
 
     if (consentGiven === null) {
         // If no choice has been made, show the popup after a short delay
-        // Delay helps ensure CSS transitions work and elements are rendered
-        setTimeout(showCookieConsent, 500); // Show after 0.5 seconds
+        setTimeout(showCookieConsent, 500);
     } else {
         // If a choice was made, hide the popup immediately (it's hidden by default anyway)
         hideCookieConsent();
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         acceptButton.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'accepted'); // Store 'accepted'
             hideCookieConsent();
-            // You can add more logic here, e.g., initialize analytics scripts
+            // You can add more logic here, e.g., initialize analytics scripts if you had them
             console.log('Cookies accepted.');
         });
     }
@@ -47,8 +46,17 @@ document.addEventListener('DOMContentLoaded', () => {
         declineButton.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'declined'); // Store 'declined'
             hideCookieConsent();
-            // You can add more logic here, e.g., disable certain features
+            // You can add more logic here, e_g., disable certain features if you had them
             console.log('Cookies declined.');
+        });
+    }
+
+    // NEW: Event listener for the "Cookie Choices" link in the footer
+    if (showCookieChoicesLink) {
+        showCookieChoicesLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default link behavior (e.g., jumping to top)
+            showCookieConsent(); // Show the cookie consent popup again
+            console.log('Cookie Choices link clicked, showing popup.');
         });
     }
 });
