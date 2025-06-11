@@ -15,30 +15,30 @@ function checkContainerScrolled() {
 
 function myMenu() {
     var x = document.getElementById("cfix"); // This is the UL that toggles 'responsive'
-    if (x.className === "clearfix") {
-        x.className += " responsive";
+    var body = document.body; // Get the body element
+
+    if (x.classList.contains("responsive")) { // Check if 'responsive' class is already present
+        x.classList.remove("responsive"); // If it is, remove it to close the menu
+        body.classList.remove("mobile-menu-open"); // Also remove the body class
     } else {
-        x.className = "clearfix";
+        x.classList.add("responsive"); // If not, add it to open the menu
+        body.classList.add("mobile-menu-open"); // Also add the body class
     }
 }
 
-// NEW CODE TO ADD: Close menu when a link inside it is clicked
+// Keep your existing NEW CODE TO ADD: Close menu when a link inside it is clicked
 document.addEventListener('DOMContentLoaded', function() {
-    // Select all anchor tags within the menu that becomes responsive
-    // In your case, these links are inside the 'scroll' ul, which is inside 'cfix'
-    const mobileMenuLinks = document.querySelectorAll('#scroll a');
+    const mobileMenuLinks = document.querySelectorAll('#scroll a'); // Targets links inside #scroll
 
-    // Loop through each link and add a click event listener
     mobileMenuLinks.forEach(link => {
         link.addEventListener('click', function() {
-            // Get the main menu element (cfix)
             const cfixMenu = document.getElementById("cfix");
+            const body = document.body; // Get the body element
 
-            // If the menu is currently open (has the 'responsive' class), close it
             if (cfixMenu && cfixMenu.classList.contains("responsive")) {
                 cfixMenu.classList.remove("responsive");
+                body.classList.remove("mobile-menu-open"); // Remove the body class when closing via link click
             }
-            // For anchor links (like #discography), the browser will handle the scroll automatically.
         });
     });
 });
