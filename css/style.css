@@ -985,7 +985,7 @@ ul.pages-music p {
 }
 
 .cookie-consent-content .cookie-link {
-    color: #ffd700; /* A contrasting color for links (e.g., gold) */
+    color: #f7f5e6; /* A contrasting color for links (e.g., gold) */
     text-decoration: underline;
     transition: color 0.3s ease;
 }
