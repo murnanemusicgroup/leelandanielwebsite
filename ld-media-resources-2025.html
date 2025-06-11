@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Press Kit - Leeland Daniel | Official Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Official Press Kit for Leeland Daniel. Includes bio, music, photos, videos, and contact information for media inquiries." />
+    <meta name="keywords" content="Leeland Daniel, press kit, music, bio, photos, videos, media, contact" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <script src="https://kit.fontawesome.com/475a75b18f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css" title="style" />
+</head>
+
+<body>
+
+    <script>
+        const CORRECT_PASSWORD = 'Pr3ssK1t0127!';
+
+        // It's best to get these element references inside DOMContentLoaded
+        // to ensure they exist before we try to manipulate them.
+        let presskitContent;
+        let passwordOverlay;
+
+        function checkPassword() {
+            let password = prompt("Please enter the password to access the Press Kit:");
+
+            if (password === CORRECT_PASSWORD) {
+                // Password is correct, show the content and hide the overlay
+                if (presskitContent) {
+                    presskitContent.style.display = 'block'; // Or 'flex', 'grid', whatever display your main content container uses
+                }
+                if (passwordOverlay) {
+                    passwordOverlay.style.display = 'none'; // This line should now correctly target the overlay
+                }
+            } else if (password !== null) { // User entered something but it was wrong
+                alert("Incorrect password. Access denied.");
+                window.location.href = ''; // Redirect back to homepage
+            } else { // User clicked 'Cancel'
+                window.location.href = ''; // Redirect back to homepage
+            }
+        }
+
+        // Run the password check when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Assign elements here, ensuring they are available
+            presskitContent = document.getElementById('presskit-content');
+            passwordOverlay = document.getElementById('password-overlay');
+
+            // Initially hide the content. This inline style also helps prevent flicker.
+            if (presskitContent) {
+                presskitContent.style.display = 'none';
+            }
+
+            checkPassword();
+        });
+    </script>
+    <div id="password-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; color: #f7f5e6; font-family: 'Playfair Display', serif; font-size: 2em; z-index: 9999;">
+        Loading Press Kit...
+    </div>
+
+    <header class="main-header">
+        <img src="favicon.png" alt="Leeland Daniel Official Logo" class="logo">
+        <nav class="container">
+            <ul class="clearfix" id="cfix">
+                <li class="icon" id="icon">
+                    <a href="javascript:void(0);" onclick="myMenu()">☰</a>
+                </li>
+                <li class="desktop-menu-wrapper">
+                    <ul class="scroll" id="scroll">
+                        <li><a href="https://store.leelandaniel.com/" target="_blank">Shop Now</a></li>
+                        <li><a href="index.html#discography">Discography</a></li>
+                        <li><a href="index.html#signup-section">Sign Up</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <div id="presskit-content" style="display: none;">
+            <section class="presskit-section">
+                <div class="site_content">
+                    <h1 class="terms-title">Leeland Daniel</h1>
+                    <h2 class="terms-subtitle">Official Press Kit</h2>
+                    <p class="last-revised">Last Updated: June 10, 2025</p>
+
+                    <hr class="horizontal" />
+
+                    <h3 class="anchor">Biography</h3>
+                    <p><strong>Short Bio:</strong> Leeland Daniel is an emerging artist known for his soulful vocals and heartfelt songwriting. With a unique blend of contemporary R&B and pop influences, he crafts music that resonates deeply with listeners.</p>
+                    <p><strong>Medium Bio:</strong> Born in Oklahoma City, OK and raised in Carmel, IN, Leeland Daniel discovered his passion for music at a young age. Drawing inspiration from Pop music, and R&B, he developed a distinctive sound characterized by layers of harmonies and simple instrumentals. His recent single, "out of love," has garnered 100 streams in the first week, setting the stage for a promising career.</p>
+                    <p><strong>Long Bio:</strong> Leeland Daniel (b. Leeland Daniel Murnane, on December 31, 2009) is a singer/songwriter, and producer from Indianapolis, Indiana. He is currently signed to his own label, LmDaniel Music which is licensed by Murnane Records, a division of Murnane Music Group.</p>
+
+                    <p>He is the co-founder of Murnane Music Group, which was founded by Marc Murnane.</p>
+
+                    <p>Since starting at just 12 years old, Leeland has released 2 solo singles under the name Leeland Daniel. His stage name, GoldenCraftr was the very beginning of Leeland's music career. He released his first song, Love You, on November 11, 2022, which was co-written by fellow producer, writer, and artist, Stephen Flickner He then went on and released his first EP, "Messing with my Feelings" which consisted of three tracks, Love You, Can't Love You, and Without You. GoldenCraftr has since been retired.</p>
+
+                    <p>Leeland Daniel's first single, "falling" was originally released under his stage name "GoldenCraftr" on February 7th, 2025 But shortly after he changed the artist name.</p>
+
+                    <p>In February 2025, Leeland rebranded from "GoldenCraftr" to "Leeland Daniel" he left his stage name in the past because he wanted a fresh start with his music.</p>
+
+                    <p>Leeland stated on his public Snapchat story, "I am no longer GoldenCraftr. I decided to make a fresh start with my music and in the next week or so, my artist profiles will be found under the name Leeland Daniel. The only song that is transferring artist profiles, is my newest one. (falling)".</p>
+
+                    <hr class="horizontal" />
+
+                    <h3 class="anchor">Music</h3>
+                    <div class="flexbox-music presskit-music">
+                        <div class="music-release">
+                            <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a2/40/4a/a2404a0a-2fe4-b728-0be4-d8545bb4c335/199355315355-copy-28fd912c.png/750x750bb.webp" alt="Out of Love Album Cover">
+                            <h4 class="center libre-caslon-text-bold">out of love</h4>
+                            <div class="pagesbar-music">
+                                <ul class="pages-music">
+                                    <li><a href="https://listen.leelandaniel.com/outoflove" target="_blank">Stream</a></li>
+                                    <li><a href="music/audio/outoflove_audio.mp3" download>Download Audio</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="music-release">
+                            <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f1/a9/86/f1a98677-9000-0dbb-329c-0e16c4f9492c/199041704791_3uc6G6m-copy-e4fbd43e.png/750x750bb.webp" alt="Falling Album Cover">
+                            <h4 class="center libre-caslon-text-bold">falling</h4>
+                            <div class="pagesbar-music">
+                                <ul class="pages-music">
+                                    <li><a href="https://listen.leelandaniel.com/falling" target="_blank">Stream</a></li>
+                                    <li><a href="music/audio/falling_audio.mp3" download>Download Audio</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="horizontal" />
+
+                    <h3 class="anchor">Photos</h3>
+                    <div class="presskit-gallery">
+                        <div class="photo-item">
+                            <img src="./pictures/presskit/promo-1-thumb.jpg" alt="Leeland Daniel Promo Shot 1">
+                            <a href="./pictures/presskit/promo-1-hires.jpg" download>Download High-Res</a>
+                        </div>
+                        <div class="photo-item">
+                            <img src="./pictures/presskit/promo-2-thumb.jpg" alt="Leeland Daniel Promo Shot 2">
+                            <a href="./pictures/presskit/promo-2-hires.jpg" download>Download High-Res</a>
+                        </div>
+                    </div>
+                    <p class="presskit-note libre-caslon-text-regular">For additional photos or specific requests, please contact us.</p>
+
+
+                    <hr class="horizontal" />
+
+                    <h3 class="anchor">Videos</h3>
+                    <div class="presskit-videos">
+                        <div class="video-item">
+                            <h4>Official Music Video: "out of love"</h4>
+                            <div class="video-embed-container">
+                                <iframe src="https://www.youtube.com/embed/7oFNrFE-_MU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <a href="https://www.youtube.com/watch?v=7oFNrFE-_MU" target="_blank">Watch on YouTube</a>
+                        </div>
+                        <div class="video-item">
+                            <h4>Official Lyrics Video: "falling"</h4>
+                            <div class="video-embed-container">
+                                <iframe src="https://www.youtube.com/embed/PWvvhEwleaQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <a href="https://www.youtube.com/watch?v=PWvvhEwleaQ" target="_blank">Watch on YouTube</a>
+                        </div>
+                    </div>
+
+                    <hr class="horizontal" />
+
+                    <h3 class="anchor">Logos & Branding</h3>
+                    <div class="presskit-logos">
+                        <div class="logo-item">
+                            <img src="favicon.png" alt="Leeland Daniel Logo (small)">
+                            <a href="favicon.png" download>Download Color PNG</a>
+                        </div>
+                    </div>
+                    <p class="presskit-note libre-caslon-text-regular">Please refer to our branding guidelines for proper usage.</p>
+
+                    <hr class="horizontal" />
+
+                    <h3 class="anchor">Contact for Press & Media</h3>
+                    <p>For all press inquiries, interview requests, or further information, please contact:</p>
+                    <p><strong>Emanuel Lennard</strong></p>
+                    <p>Email: <a href="mailto:press@leelandaniel.com">press@leelandaniel.com</a></p>
+                </div>
+            </section>
+        </div> 
+        </main>
+        
+        
+<!------------------------------------------------------------------------------------------->
+
+    <hr class="horizontal" />
+    <footer>
+        <div id="footer-content-wrapper">
+            <div class="footer-left">
+                <h6>
+                    <a href="https://www.leelandaniel.com">© 2025 Murnane Records, LLC</a>
+                    <a href="terms">Terms</a>
+                    <a href="privacy-policy">Privacy</a>
+                    <a href="#" id="showCookieChoices">Cookie Choices</a>
+                </h6>
+            </div>
+            <div class="footer-right">
+                <ul>
+                    <li><a href="https://facebook.com/leelandaniel" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="https://instagram.com/leelandaniel" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://x.com/leelandaniel" target="_blank" aria-label="X (formerly Twitter)"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li><a href="https://tiktok.com/@leelandaniel" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></li>
+                    <li><a href="https://www.youtube.com/@leelandaniel" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="https://snapchat.com/add/leelandaniel" target="_blank" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookieConsent" class="cookie-consent-popup">
+        <div class="cookie-consent-content">
+            <h4 class="libre-caslon-text-bold">This website uses cookies</h4>
+            <p class="libre-caslon-text-regular">
+                We use cookies to ensure you get the best experience on our website.
+                For more details, please see our <a href="privacy-policy.html" target="_blank" class="cookie-link">Privacy Policy</a>.
+            </p>
+            <div class="cookie-buttons">
+                <button id="acceptCookies" class="cookie-button libre-caslon-text-bold">Accept</button>
+                <button id="declineCookies" class="cookie-button libre-caslon-text-bold">Decline</button>
+            </div>
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="js/fixedNavMenu.js"></script>
+    <script src="js/cookieConsent.js"></script>
+</body>
+
+</html>
