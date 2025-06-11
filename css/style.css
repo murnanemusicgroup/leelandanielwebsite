@@ -13,6 +13,7 @@ html {
     /* Consider if you really need `overflow-x: hidden` globally; it can sometimes cut off content. */
     /* If you only need it for specific elements, apply it there. */
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -159,7 +160,6 @@ nav {
     border-bottom: none;
 }
 
-
 /* Since we'll have the "ul li" "float:left"
  * we need to add a clear after the container. */
 nav:after {
@@ -167,7 +167,6 @@ nav:after {
     display: table;
     clear: both;
 }
-
 
 /* Removing padding, margin and "list-style" from the "ul",
  * and adding "position:reltive" */
@@ -195,7 +194,6 @@ nav ul.clearfix {
 
 /* Positioning the navigation items inline for desktop */
 nav ul li {
-    /* REMOVED: display: flex; and align-items: center; from here. The ul.clearfix is handling the layout. */
     background-color: transparent; /* Ensure no unwanted background */
     margin-left: 20px;
 }
@@ -261,7 +259,7 @@ nav ul li.icon {
 /* Hide hamburger icon on desktop */
 @media screen and (min-width: 1024px) { /* Changed breakpoint to 1024px for consistency */
     nav ul li.icon {
-        display: none; /* Hide the hamburger icon on desktop */
+        display: none !important; /* Use !important to ensure it's hidden on desktop */
     }
     /* Ensure the desktop menu wrapper is visible on desktop */
     .desktop-menu-wrapper {
@@ -273,100 +271,120 @@ nav ul li.icon {
 @media screen and (max-width: 1023px) { /* Target screens up to 1023px for mobile styles */
     /* Ensure body padding is correct to see fixed header/menu */
     body {
-        padding-top: 70px; /* No !important needed here */
-        margin: 0; /* No !important needed here */
-        overflow-x: hidden; /* Keep for mobile if needed */
+        padding-top: 70px;
+        margin: 0;
+        overflow-x: hidden;
     }
 
     /* Explicitly reset nav and ul within mobile context to ensure no offsets */
-   nav, nav ul {
-        margin: 0; /* No !important needed here */
-        padding: 0; /* No !important needed here */
-        left: 0; /* No !important needed here */
-        right: 0; /* No !important needed here */
-        width: 100%; /* No !important needed here */
-    }
-
-    
-    /* Default state on mobile: Hide all LIs that are not the icon */
-    /* This hides the original `li` that contains `ul.scroll` when menu is closed */
-    nav ul li:not(.icon) {
-        display: none; /* No !important needed here */
-        background-color: transparent;
-        float: none; /* Important for preventing weird layouts */
+    nav, nav ul {
+        margin: 0;
+        padding: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
     }
 
     /* --- MOBILE MENU BUTTON (HAMBURGER ICON) STYLES --- */
     nav ul li.icon {
-        display: block; /* Ensure it's visible on mobile */
-        background-color: #6b4b20; /* Background for the button */
+        display: block; /* ENSURE THIS IS BLOCK ON MOBILE */
+        background-color: var(--primary-color); /* Use variable for consistency */
         text-align: center;
         color: #FFF;
-        padding: 0; /* No !important needed here */
-        font-size: 2em; /* No !important needed here */
-        float: right; /* Float icon to the right */
+        padding: 0;
+        font-size: 2em;
+
+        /* CRITICAL FIX: Make the icon fixed to the viewport */
+        position: fixed; /* Changed from absolute to fixed */
+        top: 5px; /* Adjust this value to position it correctly from the top, assuming 70px header */
+        right: 15px; /* Adjust as needed for spacing from the right edge */
+        
         width: 60px; /* Fixed width for square button */
         height: 60px; /* Fixed height for square button */
         line-height: 60px; /* Vertically center text in square */
-        margin: 0; /* No !important needed here */
-        clear: none; /* Do not clear floats on icon */
+        margin: 0; /* Remove any residual margins */
+        z-index: 1002; /* IMPORTANT: Higher than header (e.g., 1000) and menu (999) */
     }
 
     /* Style the actual menu icon link inside the square button */
     nav ul li.icon a {
-        display: block; /* No !important needed here */
-        width: 100%; /* No !important needed here */
-        height: 100%; /* No !important needed here */
-        padding: 0; /* No !important needed here */
-        line-height: inherit; /* No !important needed here */
-        color: #FFF; /* No !important needed here */
-        font-size: inherit; /* No !important needed here */
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        line-height: inherit;
+        color: #FFF;
+        font-size: inherit;
         text-decoration: none;
     }
 
     /* The "responsive" class is added when the user clicks on the "menu" icon */
-nav ul.responsive {
-        position: absolute; /* **CHANGED:** from `fixed` to `absolute`. This makes the menu scroll with content, but still position below the header. */
-        top: 70px; /* This should match your header's height */
+    nav ul.responsive {
+        position: fixed; /* CRITICAL: Make it fixed to the viewport */
+        top: 0; /* Start from the very top of the viewport (covers header) */
+        
         left: 0;
         width: 100%;
-        background-color: #6b4b20;
-        height: auto;
-        overflow: visible;
-        overflow-x: hidden;
-        display: block; /* This makes the UL visible when responsive class is active */
-        z-index: 999;
-        margin: 0; /* No !important needed here */
-        padding: 0; /* No !important needed here */
+        height: 100vh; /* Make it fill the entire viewport height */
+        
+        background-color: var(--primary-color); /* Use your variable for consistency */
+        overflow-y: auto; /* Allow scrolling within the menu if content is long */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        z-index: 999; /* This is correctly placed below your header's 1000 */
+        margin: 0;
+        padding: 60px 0 0 0; /* Top padding, then right, bottom, left */
+
         clear: both;
-        float: none;
-        text-align: center; /* Center menu items */
+        float: none; /* Ensure no floating issues */
+        /* --- NEW: Align content to the right (flex-end) --- */
+        text-align: right; /* Fallback for older browsers, but flexbox overrides for children */
+        
+        /* Animation for sliding in/out */
+        transform: translateY(-100%); /* Default state: hidden above the viewport */
+        transition: transform 0.3s ease-out; /* Smooth slide transition */
+
+        /* When the menu is responsive, handle its flex layout */
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-end; /* --- CHANGED: Align items to the right (flex-end) --- */
+        justify-content: flex-start; /* Align items to the start of the menu */
     }
 
+    /* When the 'responsive' class is applied by JS, slide the menu into view */
+    nav ul.responsive {
+        transform: translateY(0);
+    }
+    
+    /* NEW: Hide the menu items by default when the menu is NOT open */
+    nav ul.clearfix:not(.responsive) li.desktop-menu-wrapper {
+        display: none;
+    }
 
-    /* --- WRAPPER LI FOR THE ACTUAL MENU ITEMS (the li containing ul.scroll) --- */
-    /* This makes sure the container for the scroll ul is transparent and centers it */
-    nav ul.responsive > li.desktop-menu-wrapper { /* Target the specific li that holds ul.scroll */
-        display: block; /* Make it visible */
-        width: 90%; /* Makes this parent container narrower */
+    /* NEW: Display the menu items when the 'responsive' class IS applied */
+    nav ul.responsive li.desktop-menu-wrapper {
+        display: block; /* Ensure it's visible when the menu is open */
+        width: 90%; /* Keep its width */
         max-width: 300px; /* Optional: Max width for larger mobiles/tablets */
         background-color: transparent;
         padding: 0;
-        margin: 0 auto; /* Center this wrapper horizontally */
+        /* --- CHANGED: Removed margin: 0 auto; as align-items: flex-end handles alignment --- */
+        margin: 0; /* Or just remove this line if it's the only property changed here */
         clear: both;
         float: none;
     }
+
 
     /* --- ACTUAL MENU ITEMS CONTAINER (ul.scroll) --- */
     nav ul.responsive ul.scroll {
         display: block;
         width: 100%;
         background-color: transparent;
-        margin: 0 auto;
+        margin: 0; /* Ensure no auto margins from here */
         padding: 0;
         clear: both;
         float: none;
-        text-align: center; /* Important for centering the actual list items */
+        /* --- NEW: Align text to the right --- */
+        text-align: right; /* Important for aligning the actual list items' content */
     }
 
     /* --- INDIVIDUAL MENU ITEMS (Shop Now, Discography, Videos) --- */
@@ -374,26 +392,36 @@ nav ul.responsive {
         display: block; /* Stack items vertically */
         width: 100%;
         background-color: transparent;
-        text-align: center; /* This will center the 'a' tag inside */
+        /* --- NEW: Align text to the right --- */
+        text-align: right; /* This will center the 'a' tag inside */
         padding: 0;
-        margin: 0;
+        margin: 10px 0; /* Add vertical spacing between menu items */
         clear: both;
         float: none;
     }
 
     /* --- LINKS INSIDE INDIVIDUAL MENU ITEMS --- */
-nav ul.responsive ul.scroll li a {
-        display: block; /* **CHANGED:** from `inline-block` to `block` to make the entire clickable area full width */
+    nav ul.responsive ul.scroll li a {
+        display: block;
         width: auto; /* Let content and padding determine width */
         padding: 10px 25px; /* ADJUST THIS PADDING to control the "button" size */
         color: #FFF;
-        font-size: 1em;
+        font-size: 1.2em; /* Slightly larger font for readability */
         letter-spacing: 0.1em;
         line-height: normal;
         text-decoration: none;
-        text-align: center;
+        /* --- NEW: Align text to the right --- */
+        text-align: right; /* Ensure the text within the link is right-aligned */
         border-radius: 5px; /* Optional: adds subtle rounded corners to the button */
+        transition: background-color 0.25s ease, color 0.25s ease; /* Smooth transitions for hover */
     }
+
+    /* Mobile Menu Link Hover State */
+    nav ul.responsive ul.scroll li a:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Subtle highlight on hover */
+        color: #FFF;
+    }
+
 
     .spacer {
         width: 100%;
