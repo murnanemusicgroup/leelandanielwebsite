@@ -4,7 +4,6 @@ html {
     /* Consider if you really need `overflow-x: hidden` globally; it can sometimes cut off content. */
     /* If you only need it for specific elements, apply it there. */
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
 * {
@@ -120,6 +119,19 @@ body {
 .site_content,
 .site_content_index {
     position: relative;
+}
+
+/* Styling for the press email link specifically */
+.site_content p a[href^="mailto:"] {
+    color: #f7f5e6; /* White/light cream color */
+    text-decoration: underline; /* Add underline */
+}
+
+/* Optional: Add a hover state for the email link for better UX */
+.site_content p a[href^="mailto:"]:hover {
+    color: #ffffff; /* Brighter white on hover */
+    text-decoration: none; /* Remove underline on hover, or change to dotted, etc. */
+    opacity: 0.8; /* Slightly dim on hover */
 }
 
 /* Adjust menu button (icon) styles */
@@ -1453,3 +1465,224 @@ ul.pages-music p {
     }
 }
 
+/* --- Press Kit Section Styles --- */
+
+.presskit-section {
+    padding-top: 20px; /* Adjust spacing from header */
+    padding-bottom: 40px; /* Adjust spacing for footer */
+    background-color: #6b4b20;
+    color: #f7f5e6;
+}
+
+.presskit-section .site_content {
+    /* Inherits general site_content styling, no need to duplicate */
+    padding-top: 2em; /* Ensure enough space from top of content area */
+}
+
+/* Specific styling for music section within presskit */
+.flexbox-music.presskit-music {
+    justify-content: center; /* Center music releases */
+    gap: 30px; /* Slightly less gap than on index page if desired, or keep 40px */
+    padding: 20px 0; /* Add padding around music items */
+}
+
+.presskit-music .music-release {
+    max-width: 350px; /* Adjust max-width for consistency */
+}
+
+.presskit-music .pages-music li a {
+    font-size: 0.9em; /* Smaller button text for download links */
+    padding: 0.5em 1em; /* Smaller padding for download buttons */
+}
+
+/* Press Kit Gallery for Photos */
+.presskit-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* Space between photos */
+    margin-bottom: 25px;
+    padding: 20px 0;
+}
+
+.presskit-gallery .photo-item {
+    text-align: center;
+    flex: 0 1 280px; /* Allows items to shrink/grow, base width 280px */
+    max-width: 300px; /* Max width for each photo item */
+    background-color: #5c421d; /* Slightly darker background for photo cards */
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.presskit-gallery .photo-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Slightly rounded corners for images */
+    margin-bottom: 15px;
+    border: 1px solid #f7f5e6; /* Subtle border for images */
+}
+
+.presskit-gallery .photo-item a {
+    display: inline-block;
+    background-color: #f7f5e6; /* Light button background */
+    color: #6b4b20; /* Dark text */
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: "Libre Caslon Text", serif;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.presskit-gallery .photo-item a:hover {
+    background-color: #fff; /* Lighter on hover */
+    color: #4b3517; /* Darker text on hover */
+}
+
+/* Video Section Styling */
+.presskit-videos {
+    margin-bottom: 25px;
+    padding: 20px 0;
+}
+
+.presskit-videos .video-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.presskit-videos .video-item h4 {
+    margin-bottom: 15px;
+    color: #f7f5e6;
+    font-size: 1.5em; /* Adjusted for video titles */
+}
+
+.video-embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 800px; /* Limit max width of video embed */
+    margin: 0 auto 20px auto; /* Center embed and add space below */
+    border: 2px solid #f7f5e6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.video-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.presskit-videos .video-item a {
+    color: #f7f5e6;
+    text-decoration: underline;
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 400;
+    font-size: 1em;
+    transition: opacity 0.3s ease;
+}
+
+.presskit-videos .video-item a:hover {
+    opacity: 0.7;
+}
+
+/* Logos & Branding Section */
+.presskit-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+    padding: 20px 0;
+}
+
+.presskit-logos .logo-item {
+    text-align: center;
+    background-color: #5c421d;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    flex: 0 1 200px; /* Base width for logo items */
+    max-width: 250px;
+}
+
+.presskit-logos .logo-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    background-color: #f7f5e6; /* Background for logos if they are transparent */
+    padding: 10px; /* Padding for logos */
+    border-radius: 5px;
+}
+
+.presskit-logos .logo-item a {
+    display: inline-block;
+    background-color: #f7f5e6;
+    color: #6b4b20;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: "Libre Caslon Text", serif;
+    font-weight: bold;
+    font-size: 0.85em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.presskit-logos .logo-item a:hover {
+    background-color: #fff;
+    color: #4b3517;
+}
+
+.presskit-note {
+    font-style: italic;
+    font-size: 0.9em;
+    margin-top: 15px;
+    text-align: center;
+    color: rgba(247, 245, 230, 0.8); /* Slightly dimmed text */
+}
+
+/* Responsive adjustments for Press Kit */
+@media screen and (max-width: 767px) {
+    .presskit-section .site_content {
+        padding-top: 1em;
+        padding-left: 0.7em;
+        padding-right: 0.7em;
+    }
+
+    .flexbox-music.presskit-music {
+        flex-direction: column; /* Stack music releases vertically */
+        align-items: center;
+        gap: 25px;
+    }
+
+    .presskit-music .music-release {
+        max-width: 90%; /* Allow wider images on mobile */
+    }
+
+    .presskit-gallery {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .presskit-gallery .photo-item,
+    .presskit-logos .logo-item {
+        max-width: 90%;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .presskit-videos .video-item h4 {
+        font-size: 1.2em;
+    }
+
+    .presskit-logos {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
