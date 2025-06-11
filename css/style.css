@@ -868,13 +868,11 @@ ul.pages-music p {
 /************************************Hero Photos*******************************************/
 .hero {
     background-image: url("../pictures/misc/hero-img.jpg");
-    height: 650px;
+    /* REMOVE fixed height: 650px; */
+    min-height: calc(100vh - 70px); /* This makes the hero section fill the remaining viewport height */
     z-index: 100;
-    margin-bottom: -46px;
+    margin-bottom: -46px; /* Keep this if it's for spacing to the next section */
     border-bottom: .2em solid #6b4b20;
-}
-
-.hero {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -882,11 +880,11 @@ ul.pages-music p {
 }
 
 #overlay {
-    height: 650px;
-}
-
-#overlay {
-    position: sticky;
+    /* REMOVE fixed height: 650px; */
+    min-height: 100%; /* Make overlay fill the height of its parent (.hero) */
+    position: absolute; /* Changed to absolute to fit within the hero's dynamic height */
+    top: 0;
+    left: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
 }
@@ -907,17 +905,19 @@ ul.pages-music p {
     }
     .hero {
         background-image: url("../pictures/misc/hero-img.jpg");
-        height: 320px;
+        height: 320px; /* Keep fixed height for mobile as requested */
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
         margin-bottom: -56px;
+        /* Ensure min-height is reset or not applied on mobile if you want fixed height */
+        min-height: auto; /* Explicitly reset min-height for mobile */
     }
     #overlay {
-        position: sticky;
+        position: sticky; /* Keep sticky for mobile as requested */
         width: 100%;
-        height: 320px;
+        height: 320px; /* Keep fixed height for mobile as requested */
         background-color: rgba(0, 0, 0, 0.6);
     }
     .hero-text {
