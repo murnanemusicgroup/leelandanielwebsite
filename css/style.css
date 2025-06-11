@@ -13,7 +13,6 @@ html {
     /* Consider if you really need `overflow-x: hidden` globally; it can sometimes cut off content. */
     /* If you only need it for specific elements, apply it there. */
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
 * {
@@ -1374,6 +1373,10 @@ ul.pages-music p {
     display: flex;
     justify-content: center;
     align-items: center;
+    display: flex; /* Keep flex for centering even when hidden */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .announcement-content {
@@ -1476,6 +1479,22 @@ ul.pages-music p {
         margin-top: 10px; /* Adjust margin for mobile */
         font-size: 0.8em; /* Smaller font for mobile label */
     }
+}
+
+/* Class to show the popup */
+.announcement-popup.show-announcement {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Optional: Class to explicitly hide the popup, useful if you have conflicting display properties */
+.announcement-popup.hide-announcement {
+    opacity: 0;
+    visibility: hidden;
+    /* Delay display: none so transition can complete */
+    transition: opacity 0.5s ease, visibility 0.5s ease 0.5s; /* Keep it visible during opacity transition */
+    /* Use 'pointer-events: none;' if you want clicks to go through it while fading out */
+    pointer-events: none;
 }
 
 /* --- Press Kit Section Styles --- */
