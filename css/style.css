@@ -1095,6 +1095,9 @@ ul.pages-music p {
     line-height: 1.75em; /* Consistent with your general paragraph line-height */
 }
 
+
+----------------------------
+
 .terms-container ul li strong {
     font-weight: 700; /* Ensure strong text is bold */
     font-family: "Libre Caslon Text", serif; /* Using a specific bold variant if preferred */
