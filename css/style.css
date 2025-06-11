@@ -1,4 +1,13 @@
-/* --- Global Resets & Body (Keep as is, but ensure `box-sizing` is correct) --- */
+:root {
+    --primary-color: #6b4b20; /* Dark brown, likely your main background color */
+    --secondary-color: #f7f5e6; /* Light off-white/cream, likely for text and accents */
+    --accent-color: #5c421d; /* Slightly darker brown, for buttons/hover states */
+    --hover-color: #4b3517; /* Even darker brown for deeper hover */
+    --link-highlight-color: #ffd700; /* Gold/yellow for special links like in cookie popup */
+    --text-color-dark: #333333; /* For text on light backgrounds if you introduce them */
+    --border-color: #f7f5e6; /* For borders, often matching secondary color */
+}
+
 html {
     height: 100%;
     /* Consider if you really need `overflow-x: hidden` globally; it can sometimes cut off content. */
@@ -531,7 +540,7 @@ p {
 h1,
 h2,
 h3 {
-    font-size: 1.5em;
+    font-size: 3em;
     margin: 0 0 .6em 0;
     letter-spacing: .05em;
 }
@@ -1684,5 +1693,131 @@ ul.pages-music p {
         flex-direction: column;
         align-items: center;
         gap: 20px;
+    }
+}
+
+/* --- Videos Section --- */
+.videos-section {
+    background-color: var(--accent-color); /* Slightly different background for visual separation */
+    color: var(--secondary-color);
+    padding: 0 0; /* Consistent padding */
+    text-align: center; /* Center the title */
+}
+
+.videos-section .section-title {
+    font-family: "Playfair Display", serif;
+    font-size: 3em; /* Similar to your other section titles */
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+.videos-carousel-container {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+    scroll-snap-type: x mandatory; /* Makes items snap into place when scrolled */
+    padding: 20px 10px; /* Padding for scroll area */
+    gap: 30px; /* Space between video items */
+    margin: 0 auto;
+    max-width: 1200px; /* Limit overall width, matching your site_content_index */
+}
+
+/* Optional: Hide scrollbar for aesthetics, but keep functionality */
+.videos-carousel-container::-webkit-scrollbar {
+    height: 8px;
+    background-color: var(--hover-color); /* Darker background for the track */
+    border-radius: 4px;
+}
+
+.videos-carousel-container::-webkit-scrollbar-thumb {
+    background-color: #8c6e3b; /* This color isn't in your defined variables, so I left it as is. If you want a variable for this, you'd need to add it to :root. */
+    border-radius: 4px;
+}
+
+.videos-carousel-container::-webkit-scrollbar-track {
+    background-color: var(--hover-color);
+}
+
+.video-carousel-item {
+    flex: 0 0 auto; /* Prevent items from shrinking or growing in the flex container */
+    width: 380px; /* Fixed width for each video item */
+    scroll-snap-align: start; /* Snap to the start of each item when scrolling */
+    background-color: var(--primary-color); /* Background for the video card */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    display: flex; /* Use flex for internal layout of item */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: space-between; /* Distribute space vertically */
+    align-items: center; /* Center content horizontally */
+    min-width: 300px; /* Ensure a minimum width on very small screens */
+}
+
+.video-carousel-item h4 {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+/* Reusing the responsive video embed container from your press kit */
+.video-carousel-item .video-embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    width: 100%; /* Take full width of the item */
+    margin-bottom: 20px;
+    border-radius: 5px; /* Slightly rounded corners for the video iframe */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--secondary-color); /* Slight border to match design */
+}
+
+.video-carousel-item .video-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-carousel-item a {
+    display: inline-block;
+    background-color: var(--secondary-color); /* Light button background */
+    color: var(--primary-color); /* Dark text */
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: "Libre Caslon Text", serif;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: auto; /* Pushes the link to the bottom if content above varies */
+}
+
+.video-carousel-item a:hover {
+    background-color: #fff; /* Kept white for hover as it contrasts well, but consider using a variable if you have one for pure white. */
+    color: var(--hover-color);
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 767px) {
+    .videos-section .section-title {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .videos-carousel-container {
+        padding: 15px 5px; /* Adjust padding for smaller screens */
+        gap: 20px;
+    }
+
+    .video-carousel-item {
+        width: 90vw; /* Use viewport width for better fit on mobile */
+        max-width: 320px; /* Set a max-width to prevent overly wide items on some phones */
+        padding: 15px;
     }
 }
