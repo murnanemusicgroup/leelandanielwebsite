@@ -4,6 +4,7 @@ function closeAnnouncementPopup() {
 
     if (popup) {
         // Get the unique ID of the announcement that is currently being displayed
+        // This ID should be set in your HTML, e.g., <div id="announcementPopup" data-announcement-id="20250610-v1">...</div>
         const currentAnnouncementId = popup.getAttribute('data-announcement-id');
 
         // If an ID exists, store it in localStorage, indicating this specific announcement was dismissed
@@ -11,8 +12,23 @@ function closeAnnouncementPopup() {
             localStorage.setItem('lastDismissedAnnouncementId', currentAnnouncementId);
         }
 
-        // Hide the popup
-        popup.style.display = 'none';
+        // Hide the popup using CSS classes for smoother transition
+        popup.classList.remove('show-announcement');
+        popup.classList.add('hide-announcement');
+
+        // Fallback: Ensure display is set to none after a short delay (to allow transition to complete)
+        // This is important for accessibility and preventing interaction with hidden elements.
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 500); // Matches the transition duration in CSS
+    }
+}
+
+// Function to attach the close handler to the button
+function setupAnnouncementCloseButton() {
+    const closeButton = document.getElementById('announcementCloseButton'); // Make sure your button has this ID
+    if (closeButton) {
+        closeButton.addEventListener('click', closeAnnouncementPopup);
     }
 }
 
@@ -27,14 +43,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const lastDismissedAnnouncementId = localStorage.getItem('lastDismissedAnnouncementId');
 
         // Logic to decide whether to show or hide the popup:
-        // 1. If there's no current ID (unlikely if structured correctly) OR
-        // 2. If the current announcement's ID is DIFFERENT from the one last dismissed OR
-        // 3. If no announcement has been dismissed yet (lastDismissedAnnouncementId is null)
-        // THEN, show the popup.
+        // Show the popup ONLY if there's a current ID AND it's different from the one last dismissed.
         if (currentAnnouncementId && currentAnnouncementId !== lastDismissedAnnouncementId) {
-            popup.style.display = 'flex'; // Show the announcement (it's new or never seen)
+            popup.style.display = 'flex'; // Ensure display is flex for centering, initially
+            popup.classList.remove('hide-announcement'); // Remove any lingering hide class
+            popup.classList.add('show-announcement'); // Add class to trigger visibility/fade-in
         } else {
-            popup.style.display = 'none'; // Hide it (it's the same announcement already dismissed)
+            popup.style.display = 'none'; // Explicitly hide it if it's the same announcement or no current ID
+            popup.classList.remove('show-announcement'); // Ensure show class is removed
+            popup.classList.add('hide-announcement'); // Add hide class
         }
     }
+
+    // Setup the close button listener regardless of initial popup visibility
+    setupAnnouncementCloseButton();
 });
