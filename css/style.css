@@ -13,6 +13,7 @@ html {
     /* Consider if you really need `overflow-x: hidden` globally; it can sometimes cut off content. */
     /* If you only need it for specific elements, apply it there. */
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 * {
