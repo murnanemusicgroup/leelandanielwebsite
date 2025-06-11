@@ -596,7 +596,7 @@ h3 {
     h1,
     h2,
     h3 {
-        font-size: 1.375em;
+        font-size: 1.8em;
         margin: 0 0 .6em 0;
         letter-spacing: .05em;
     }
@@ -1028,7 +1028,7 @@ ul.pages-music p {
     text-transform: uppercase;
     text-align: left;
     margin-bottom: 0.2em;
-    font-family: 'Playfair Display', serif; /* Consistent with your font imports */
+    font-family: 'Libre Caslon Text', serif; /* Consistent with your font imports */
     color: #f7f5e6; /* Matching your primary text color */
     /* You may want to add letter-spacing here if you want it similar to your logo/headers */
     /* letter-spacing: 0.05em; */
@@ -1040,7 +1040,7 @@ ul.pages-music p {
     text-align: left;
     margin-top: 0;
     margin-bottom: 1em;
-    font-family: 'Playfair Display', serif; /* Consistent with your font imports */
+    font-family: 'Libre Caslon Text', serif; /* Consistent with your font imports */
     color: #f7f5e6; /* Matching your primary text color */
 }
 
@@ -1173,7 +1173,7 @@ ul.pages-music p {
 
 /* Heading for the signup section - text color adjusted for dark background */
 .signup-container h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Libre Caslon Text', serif;
     margin-bottom: 15px;
     color: #f7f5e6; /* Light cream text for contrast on dark background */
     font-size: 2.2em;
@@ -1728,7 +1728,7 @@ ul.pages-music p {
 }
 
 .videos-section .section-title {
-    font-family: "Playfair Display", serif;
+    font-family: "Libre Caslon Text", serif;
     font-size: 3em; /* Similar to your other section titles */
     font-weight: 700;
     margin-bottom: 40px;
@@ -1749,17 +1749,17 @@ ul.pages-music p {
 /* Optional: Hide scrollbar for aesthetics, but keep functionality */
 .videos-carousel-container::-webkit-scrollbar {
     height: 8px;
-    background-color: var(--hover-color); /* Darker background for the track */
+    background-color: transparent; /* Darker background for the track */
     border-radius: 4px;
 }
 
 .videos-carousel-container::-webkit-scrollbar-thumb {
-    background-color: #8c6e3b; /* This color isn't in your defined variables, so I left it as is. If you want a variable for this, you'd need to add it to :root. */
+    background-color: transparent; /* This color isn't in your defined variables, so I left it as is. If you want a variable for this, you'd need to add it to :root. */
     border-radius: 4px;
 }
 
 .videos-carousel-container::-webkit-scrollbar-track {
-    background-color: var(--hover-color);
+    background-color: transparent;
 }
 
 .video-carousel-item {
