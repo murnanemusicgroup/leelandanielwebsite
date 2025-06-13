@@ -278,23 +278,19 @@ nav ul li.icon {
 
     /* --- MOBILE MENU BUTTON (HAMBURGER ICON) STYLES --- */
     nav ul li.icon {
-        display: block; /* ENSURE THIS IS BLOCK ON MOBILE */
-        background-color: var(--primary-color); /* Use variable for consistency */
-        text-align: center;
-        color: #FFF;
-        padding: 0;
-        font-size: 2em;
-
-        /* CRITICAL FIX: Make the icon fixed to the viewport */
-        position: fixed; /* Changed from absolute to fixed */
-        top: 5px; /* Adjust this value to position it correctly from the top, assuming 70px header */
-        right: 15px; /* Adjust as needed for spacing from the right edge */
-        
-        width: 60px; /* Fixed width for square button */
-        height: 60px; /* Fixed height for square button */
-        line-height: 60px; /* Vertically center text in square */
-        margin: 0; /* Remove any residual margins */
-        z-index: 1002; /* IMPORTANT: Higher than header (e.g., 1000) and menu (999) */
+        display: flex; /* Centers the icon within the li */
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-color);
+        width: 60px; /* Fixed width for the button area */
+        height: 60px; /* Fixed height for the button area */
+        position: fixed; /* Position the button relative to the viewport */
+        top: 5px; /* Adjust as needed */
+        right: 15px; /* Adjust as needed */
+        z-index: 1002; /* Ensure it's above other content */
+        cursor: pointer;
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
     }
 
     /* Style the actual menu icon link inside the square button */
@@ -307,6 +303,45 @@ nav ul li.icon {
         color: #FFF;
         font-size: inherit;
         text-decoration: none;
+    }
+    
+    nav ul li.icon a.menu-toggle {
+        display: flex; /* Make it a flex container for the spans */
+        flex-direction: column; /* Stack spans vertically */
+        justify-content: space-around; /* Distribute space evenly between bars */
+        align-items: center; /* Center bars horizontally */
+        width: 30px; /* The width of the hamburger bars container */
+        height: 20px; /* The total height of the hamburger icon */
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        background-color: transparent; /* No background for the toggle itself */
+        border: none; /* No border for the toggle itself */
+        position: relative; /* For transitions if needed on the container */
+        overflow: hidden; /* Hide any overflow during animation */
+    }
+    
+    nav ul li.icon a.menu-toggle span {
+        display: block; /* Each span is a block line */
+        width: 100%; /* Spans take full width of their parent (a.menu-toggle) */
+        height: 3px; /* Thickness of the bars */
+        background-color: #FFF; /* Color of the bars */
+        border-radius: 2px; /* Slightly rounded ends */
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    /* --- Hamburger to X animation (when 'open' class is applied to a.menu-toggle) --- */
+
+    nav ul li.icon a.menu-toggle.open span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    nav ul li.icon a.menu-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    nav ul li.icon a.menu-toggle.open span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 
     /* The "responsive" class is added when the user clicks on the "menu" icon */
@@ -340,6 +375,7 @@ nav ul li.icon {
         align-items: flex-end; /* --- CHANGED: Align items to the right (flex-end) --- */
         justify-content: flex-start; /* Align items to the start of the menu */
     }
+    
 
     /* When the 'responsive' class is applied by JS, slide the menu into view */
     nav ul.responsive {
@@ -1086,6 +1122,10 @@ ul.pages-music p {
     margin-bottom: 0; /* Remove individual item bottom margin as gap handles spacing */
     cursor: pointer;
     font-size: 13px;
+}
+
+.checkbox-item label {
+    color: #000;
 }
 
 /* Custom Checkbox Styling */
