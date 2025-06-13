@@ -16,13 +16,16 @@ function checkContainerScrolled() {
 function myMenu() {
     var x = document.getElementById("cfix"); // This is the UL that toggles 'responsive'
     var body = document.body; // Get the body element
+    var menuToggle = document.querySelector("#icon .menu-toggle"); // Select the a.menu-toggle element
 
     if (x.classList.contains("responsive")) { // Check if 'responsive' class is already present
         x.classList.remove("responsive"); // If it is, remove it to close the menu
         body.classList.remove("mobile-menu-open"); // Also remove the body class
+        menuToggle.classList.remove("open"); // <--- ADD THIS LINE: Remove 'open' class for hamburger animation
     } else {
         x.classList.add("responsive"); // If not, add it to open the menu
         body.classList.add("mobile-menu-open"); // Also add the body class
+        menuToggle.classList.add("open"); // <--- ADD THIS LINE: Add 'open' class for hamburger animation
     }
 }
 
