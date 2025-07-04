@@ -1,0 +1,389 @@
+/* --- WIKI PAGE SPECIFIC STYLES --- */
+/* These styles are intended for wiki.html to mimic Wikipedia's appearance */
+
+/* Ensure the main content area of the wiki page is transparent */
+.site_content {
+    background-color: transparent; /* Make the main site content background transparent */
+    padding-top: 2em; /* Adjust padding to fit the header */
+    padding-bottom: 2em;
+}
+
+/* Container for the Wikipedia-like content */
+.wiki-container {
+    background-color: white;
+    border: 1px solid #a7d7f9; /* Wikipedia's light blue border */
+    padding: 20px 30px;
+    margin: 20px auto;
+    max-width: 900px; /* Standard Wikipedia content width */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    line-height: 1.6;
+    font-family: sans-serif; /* Wikipedia typically uses a sans-serif font */
+    color: #202122; /* Standard Wikipedia text color */
+}
+
+/* Headings within the wiki container */
+.wiki-container h1 {
+    font-size: 2.2em;
+    margin-bottom: 0.5em;
+    color: #000;
+    border-bottom: 1px solid #a2a9b1; /* Wikipedia heading line */
+    padding-bottom: 0.2em;
+}
+
+.wiki-container h2 {
+    font-size: 1.6em;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    color: #000;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 0.2em;
+}
+
+.wiki-container h3 {
+    font-size: 1.3em;
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+    color: #000;
+}
+
+/* Paragraphs within the wiki container */
+.wiki-container p {
+    font-size: 1em;
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+
+/* Links within the wiki container */
+.wiki-container a {
+    color: #0645ad; /* Wikipedia unvisited link color */
+    text-decoration: underline;
+}
+
+.wiki-container a:visited {
+    color: #0b0080; /* Wikipedia visited link color */
+}
+
+.wiki-container a:hover {
+    text-decoration: none;
+}
+
+/* Lists within the wiki container */
+.wiki-container ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+
+.wiki-container ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+
+/* Contents box styling */
+.wiki-container .contents-box {
+    border: 1px solid #a2a9b1;
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    margin: 1em 0;
+    font-size: 0.9em;
+    width: fit-content; /* Make box fit content */
+}
+
+.wiki-container .contents-box h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.wiki-container .contents-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wiki-container .contents-box ul li {
+    margin-bottom: 0.3em;
+}
+
+.wiki-container .contents-box ul li a {
+    text-decoration: none;
+    color: #0645ad;
+}
+
+.wiki-container .contents-box ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for the wiki page */
+@media screen and (max-width: 767px) {
+    .wiki-container {
+        padding: 15px; /* Reduce padding on smaller screens */
+        margin: 10px auto; /* Adjust margin */
+    }
+    .wiki-container h1 {
+        font-size: 1.8em;
+    }
+    .wiki-container h2 {
+        font-size: 1.4em;
+    }
+    .wiki-container h3 {
+        font-size: 1.1em;
+    }
+    .wiki-container p {
+        font-size: 0.95em;
+    }
+    .wiki-container .contents-box {
+        width: 100%; /* Make contents box full width on mobile */
+    }
+}
+
+/* --- WIKIPEDIA INFOBOX STYLES --- */
+.infobox-wrapper {
+    float: right;
+    margin: 0 0 1em 1em;
+    border: 1px solid #a2a9b1;
+    border-spacing: 3px;
+    background-color: #f8f9fa;
+    color: black;
+    font-size: 90%;
+    line-height: 1.5;
+    width: 22em; /* Standard infobox width */
+    clear: right; /* Ensures infobox clears other floated elements */
+}
+
+.infobox {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.infobox th, .infobox td {
+    padding: 0.2em 0.4em;
+    vertical-align: top;
+    text-align: left;
+}
+
+.infobox th {
+    background-color: #eaecf0; /* Light gray background for headers */
+    font-weight: bold;
+    text-align: right; /* Infobox labels are right-aligned */
+    width: 30%; /* Adjust as needed */
+}
+
+.infobox td {
+    border-top: 1px solid #a2a9b1;
+}
+
+.infobox tr:first-child th,
+.infobox tr:first-child td {
+    border-top: none;
+}
+
+.infobox .fn { /* For the name in the infobox title */
+    background-color: #eaecf0;
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.infobox img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: none; /* Remove default image border */
+}
+
+.infobox-caption {
+    font-size: 90%;
+    padding: 0.4em 0;
+    text-align: center;
+}
+
+/* --- WIKIPEDIA REFERENCE STYLES --- */
+.reflist {
+    font-size: 90%;
+    margin-top: 1em;
+    border-top: 1px solid #a2a9b1;
+    padding-top: 0.5em;
+}
+
+.reflist ol {
+    list-style-type: decimal;
+    margin-left: 2em; /* Indent the list */
+    padding: 0;
+}
+
+.reflist li {
+    margin-bottom: 0.5em;
+}
+
+.reflist .reference {
+    white-space: nowrap; /* Keep citation numbers together */
+}
+
+.reflist .mw-cite-backlink {
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+
+/* General Wikipedia-like link styling for references */
+.reflist a {
+    color: #0645ad; /* Standard Wikipedia link blue */
+    text-decoration: underline;
+}
+
+.reflist a:visited {
+    color: #0b0080; /* Standard Wikipedia visited link purple */
+}
+
+.reflist a:hover {
+    text-decoration: none;
+}
+
+/* Ensure the main content area of the wiki page is transparent */
+.site_content {
+    background-color: transparent; /* Make the main site content background transparent */
+    padding-top: 2em; /* Adjust padding to fit the header */
+    padding-bottom: 2em;
+}
+
+/* Container for the Wikipedia-like content */
+.wiki-container {
+    background-color: white;
+    border: 1px solid #a7d7f9; /* Wikipedia's light blue border */
+    padding: 20px 30px;
+    margin: 20px auto;
+    max-width: 900px; /* Standard Wikipedia content width */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    line-height: 1.6;
+    font-family: sans-serif; /* Wikipedia typically uses a sans-serif font */
+    color: #202122; /* Standard Wikipedia text color */
+    overflow: hidden; /* Clear floats within the container */
+}
+
+/* Headings within the wiki container */
+.wiki-container h1 {
+    font-size: 2.2em;
+    margin-bottom: 0.5em;
+    color: #000;
+    border-bottom: 1px solid #a2a9b1; /* Wikipedia heading line */
+    padding-bottom: 0.2em;
+}
+
+.wiki-container h2 {
+    font-size: 1.6em;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    color: #000;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 0.2em;
+}
+
+.wiki-container h3 {
+    font-size: 1.3em;
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+    color: #000;
+}
+
+/* Paragraphs within the wiki container */
+.wiki-container p {
+    font-size: 1em;
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+
+/* Links within the wiki container */
+.wiki-container a {
+    color: #0645ad; /* Wikipedia unvisited link color */
+    text-decoration: underline;
+}
+
+.wiki-container a:visited {
+    color: #0b0080; /* Wikipedia visited link color */
+}
+
+.wiki-container a:hover {
+    text-decoration: none;
+}
+
+/* Lists within the wiki container */
+.wiki-container ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+
+.wiki-container ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+
+/* Contents box styling */
+.wiki-container .contents-box {
+    border: 1px solid #a2a9b1;
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    margin: 1em 0;
+    font-size: 0.9em;
+    width: fit-content; /* Make box fit content */
+}
+
+.wiki-container .contents-box h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.wiki-container .contents-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wiki-container .contents-box ul li {
+    margin-bottom: 0.3em;
+}
+
+.wiki-container .contents-box ul li a {
+    text-decoration: none;
+    color: #0645ad;
+}
+
+.wiki-container .contents-box ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for the wiki page */
+@media screen and (max-width: 767px) {
+    .wiki-container {
+        padding: 15px; /* Reduce padding on smaller screens */
+        margin: 10px auto; /* Adjust margin */
+    }
+    .wiki-container h1 {
+        font-size: 1.8em;
+    }
+    .wiki-container h2 {
+        font-size: 1.4em;
+    }
+    .wiki-container h3 {
+        font-size: 1.1em;
+    }
+    .wiki-container p {
+        font-size: 0.95em;
+    }
+    .wiki-container .contents-box {
+        width: 100%; /* Make contents box full width on mobile */
+    }
+    .infobox-wrapper {
+        float: none; /* Remove float on mobile */
+        margin: 1em auto; /* Center infobox on mobile */
+        width: 90%; /* Adjust width for mobile */
+    }
+}
