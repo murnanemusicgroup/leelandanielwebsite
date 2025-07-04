@@ -1,0 +1,11 @@
+User-agent: GPTBot
+Disallow: /
+
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow:
+
+Sitemap: https://www.leelandaniel.com/sitemap.xml
+# ---------------------------
+# END YOAST BLOCK
