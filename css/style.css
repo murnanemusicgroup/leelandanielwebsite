@@ -1350,6 +1350,15 @@ ul.pages-music p {
     font-size: 1.250em; /* Consistent with your general h4/h5 size */
 }
 
+.terms-containera {
+    text-align: justify; /* Justifies the rest of the terms */
+    margin-bottom: 1em; /* Space between paragraphs */
+    font-family: 'Libre Caslon Text', sans-serif; /* Consistent with your general paragraph font */
+    font-size: 1em; /* Consistent with your general paragraph font size */
+    line-height: 1.75em; /* Consistent with your general paragraph line-height */
+    color: #f7f5e6; /* Matching your primary text color */
+}
+
 .terms-container p {
     text-align: justify; /* Justifies the rest of the terms */
     margin-bottom: 1em; /* Space between paragraphs */
