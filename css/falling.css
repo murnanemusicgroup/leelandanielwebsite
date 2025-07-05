@@ -3,12 +3,12 @@
 /**********************************************root css********************************************/
 :root {
     --primary-color: #29333e; /* Dark brown, likely your main background color */
-    --secondary-color: #958378; /* Light off-white/cream, likely for text and accents */
+    --secondary-color: #ffffff; /* Light off-white/cream, likely for text and accents */
     --accent-color: #202730; /* Slightly darker brown, for buttons/hover states */
     --hover-color: #15191f; /* Even darker brown for deeper hover */
     --link-highlight-color: #dcc3ac; /* Gold/yellow for special links like in cookie popup */
     --text-color-dark: #333333; /* For text on light backgrounds if you introduce them */
-    --border-color: #958378; /* For borders, often matching secondary color */
+    --border-color: #ffffff; /* For borders, often matching secondary color */
 }
 html {
     height: 100%;
@@ -59,7 +59,7 @@ body {
 .horizontal {
     border: none;
     height: 1px;
-    background-color: #958378;
+    background-color: #ffffff;
     margin: 2.5em 20px 0.5em 20px; /* CHANGED: Reduced bottom margin from 2.5em to 0.5em */
     opacity: 1;
     /* Ensures full visibility */
@@ -126,7 +126,7 @@ body {
 
 /* Styling for the press email link specifically */
 .site_content p a[href^="mailto:"] {
-    color: #958378; /* White/light cream color */
+    color: #ffffff; /* White/light cream color */
     text-decoration: underline; /* Add underline */
 }
 
@@ -490,7 +490,7 @@ nav ul li.icon {
     /* Remove extra space below image */
     margin: 0 auto 1em auto;
     /* Center image and add space below */
-    border: 2px solid #958378;
+    border: 2px solid #ffffff;
     /* Add a subtle border around album covers */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     /* Add a subtle shadow */
@@ -499,7 +499,7 @@ nav ul li.icon {
 .music-release h4 {
     margin-bottom: 0.5em;
     /* Space below title */
-    color: #958378;
+    color: #ffffff;
     /* Ensure title is readable on dark background */
 }
 
@@ -536,15 +536,15 @@ nav ul li.icon {
 }
 
 ul.pages-music li a {
-    border-color: #958378;
+    border-color: #ffffff;
     /* Consistent with other buttons on dark background */
-    color: #958378;
+    color: #ffffff;
 }
 
 ul.pages-music li a:hover,
 ul.pages-music li.selected a,
 ul.pages-music li.selected a:hover {
-    background-color: #958378;
+    background-color: #ffffff;
     color: #29333e;
 }
 
@@ -744,7 +744,7 @@ footer {
 
 .footer-left h6 a,
 .footer-left h6 span { /* Include span for 'Cookie Choices' for consistent styling */
-    color: #958378;
+    color: #ffffff;
     font-family: 'Playfair Display', serif; /* Changed to Playfair Display */
     font-weight: 400; /* Use a regular weight for Playfair Display */
     font-size: 0.9em;
@@ -758,7 +758,7 @@ footer {
 /* Hover effect for footer links */
 .footer-left h6 a:hover {
     opacity: 0.7; /* Existing hover effect */
-    color: #958378; /* Ensure color stays consistent on hover */
+    color: #ffffff; /* Ensure color stays consistent on hover */
 }
 
 .footer-right {
@@ -779,7 +779,7 @@ footer {
 }
 
 .footer-right a {
-    color: #958378;
+    color: #ffffff;
     font-size: 1.5em;
     transition: opacity 0.3s ease-in-out;
 }
@@ -1301,7 +1301,7 @@ ul.pages-music p {
     margin: 40px auto; /* Centers the content and adds top/bottom margin */
     padding: 20px;
     line-height: 1.75em; /* Matching your existing paragraph line-height */
-    color: #958378; /* Using your light off-white color for text on the dark background */
+    color: #ffffff; /* Using your light off-white color for text on the dark background */
     background-color: #29333e; /* Matching your body background color */
 }
 
@@ -1311,7 +1311,7 @@ ul.pages-music p {
     text-align: left;
     margin-bottom: 0.2em;
     font-family: 'Libre Caslon Text', serif; /* Consistent with your font imports */
-    color: #958378; /* Matching your primary text color */
+    color: #ffffff; /* Matching your primary text color */
     /* You may want to add letter-spacing here if you want it similar to your logo/headers */
     /* letter-spacing: 0.05em; */
 }
@@ -1323,7 +1323,7 @@ ul.pages-music p {
     margin-top: 0;
     margin-bottom: 1em;
     font-family: 'Libre Caslon Text', serif; /* Consistent with your font imports */
-    color: #958378; /* Matching your primary text color */
+    color: #ffffff; /* Matching your primary text color */
 }
 
 .terms-container .last-revised {
@@ -1331,7 +1331,7 @@ ul.pages-music p {
     font-style: italic;
     margin-bottom: 2em;
     font-family: "Libre Caslon Text", serif; /* Consistent with your font imports */
-    color: #958378; /* Matching your primary text color */
+    color: #ffffff; /* Matching your primary text color */
 }
 
 .terms-container h3,
@@ -1340,7 +1340,7 @@ ul.pages-music p {
     margin-top: 1.5em; /* Space above section titles */
     margin-bottom: 0.5em;
     font-family: 'Libre Caslon Text', sans-serif; /* Consistent with your h3/h4 declarations */
-    color: #958378; /* Matching your primary text color */
+    color: #ffffff; /* Matching your primary text color */
     letter-spacing: .05em; /* Consistent with your h1/h2/h3 declarations */
 }
 
@@ -1358,7 +1358,7 @@ ul.pages-music p {
     font-family: 'Libre Caslon Text', sans-serif; /* Consistent with your general paragraph font */
     font-size: 1em; /* Consistent with your general paragraph font size */
     line-height: 1.75em; /* Consistent with your general paragraph line-height */
-    color: #958378; /* Matching your primary text color */
+    color: #ffffff; /* Matching your primary text color */
 }
 
 .terms-container p {
@@ -1367,7 +1367,7 @@ ul.pages-music p {
     font-family: 'Libre Caslon Text', sans-serif; /* Consistent with your general paragraph font */
     font-size: 1.250em; /* Consistent with your general paragraph font size */
     line-height: 1.75em; /* Consistent with your general paragraph line-height */
-    color: #958378; /* Matching your primary text color */
+    color: #ffffff; /* Matching your primary text color */
 }
 
 .terms-container ul {
@@ -1375,7 +1375,7 @@ ul.pages-music p {
     list-style-type: disc; /* Standard bullet points */
     margin-left: 2em; /* Indent list items - using em for responsiveness */
     margin-bottom: 1em;
-    color: #958378; /* Matching your primary text color */
+    color: #ffffff; /* Matching your primary text color */
 }
 
 .terms-container ul li {
@@ -1448,7 +1448,7 @@ ul.pages-music p {
     padding: 60px 20px;
     background-color: #29333e; /* Your primary dark brown background */
     text-align: center;
-    color: #958378; /* Default text color for elements directly in this section */
+    color: #ffffff; /* Default text color for elements directly in this section */
 }
 
 /* Container for the form itself - now transparent with a defined border */
@@ -1458,7 +1458,7 @@ ul.pages-music p {
     background: transparent; /* Makes the box transparent */
     padding: 35px 60px; /* Increased horizontal padding for wider "margins" */
     border-radius: 8px;
-    /* border: 2px solid #958378; /* Adds a subtle light border to define the box */
+    /* border: 2px solid #ffffff; /* Adds a subtle light border to define the box */
     /* box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Still provides some depth */
 }
 
@@ -1466,7 +1466,7 @@ ul.pages-music p {
 .signup-container h3 {
     font-family: 'Libre Caslon Text', serif;
     margin-bottom: 15px;
-    color: #958378; /* Light cream text for contrast on dark background */
+    color: #ffffff; /* Light cream text for contrast on dark background */
     font-size: 2.2em;
     font-weight: 700;
 }
@@ -1476,7 +1476,7 @@ ul.pages-music p {
     font-family: "Libre Caslon Text", serif;
     margin-bottom: 28px;
     line-height: 1.7;
-    color: #958378; /* Light cream text for readability */
+    color: #ffffff; /* Light cream text for readability */
     font-size: 0.7em;
 }
 
@@ -1492,7 +1492,7 @@ ul.pages-music p {
     font-weight: 700;
     display: block;
     margin-bottom: 8px;
-    color: #958378; /* Light cream text for labels */
+    color: #ffffff; /* Light cream text for labels */
     font-size: 1.05em;
 }
 
@@ -1503,10 +1503,10 @@ ul.pages-music p {
     padding: 10px 0;
     background: transparent;
     border: none;
-    border-bottom: 2px solid #958378;
+    border-bottom: 2px solid #ffffff;
     box-sizing: border-box;
     font-size: 1.0em;
-    color: #958378;
+    color: #ffffff;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1519,8 +1519,8 @@ ul.pages-music p {
 /* Focus state for inputs - uses light cream for focus */
 .signup-form input[type="text"]:focus,
 .signup-form input[type="email"]:focus {
-    border-color: #958378; /* Keeps the line color on focus */
-    border-bottom-color: #958378; /* Ensure bottom line stays solid */
+    border-color: #ffffff; /* Keeps the line color on focus */
+    border-bottom-color: #ffffff; /* Ensure bottom line stays solid */
     box-shadow: 0 2px 0 0 rgba(247, 245, 230, 0.5); /* CHANGED: Adjusted shadow to emphasize the line */
     outline: none;
 }
@@ -1537,7 +1537,7 @@ ul.pages-music p {
     min-width: 18px;
     min-height: 18px;
     margin-top: 3px;
-    accent-color: #958378; /* Colors the checkbox itself with light cream */
+    accent-color: #ffffff; /* Colors the checkbox itself with light cream */
 }
 
 /* Consent text - text color adjusted for dark background */
@@ -1545,7 +1545,7 @@ ul.pages-music p {
     font-family: "Libre Caslon Text", serif;
     margin-bottom: 0;
     font-size: 0.95em;
-    color: #958378; /* Light cream text for consent */
+    color: #ffffff; /* Light cream text for consent */
     line-height: 1.4;
 }
 
@@ -1556,8 +1556,8 @@ ul.pages-music p {
     max-width: 300px;
     padding: 15px 20px;
     background: transparent; /* Transparent background */
-    color: #958378; /* Light cream text */
-    border: 2px solid #958378; /* Light cream border */
+    color: #ffffff; /* Light cream text */
+    border: 2px solid #ffffff; /* Light cream border */
     border-radius: 20px;
     font-size: 1.15em;
     cursor: pointer;
@@ -1568,16 +1568,16 @@ ul.pages-music p {
 
 /* Submit Button Hover state - matches your music stream button's hover behavior */
 .signup-form button[type="submit"]:hover {
-    background-color: #958378; /* Light cream background on hover */
+    background-color: #ffffff; /* Light cream background on hover */
     color: #29333e; /* Dark brown text on hover */
-    border-color: #958378; /* Border matches background on hover */
+    border-color: #ffffff; /* Border matches background on hover */
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 /* Form Link */
 .signuplink {
-    color: #958378; /* A contrasting color for links (e.g., gold) */
+    color: #ffffff; /* A contrasting color for links (e.g., gold) */
     text-decoration: underline;
     transition: color 0.3s ease;
 }
@@ -1672,7 +1672,7 @@ ul.pages-music p {
 
 .announcement-content {
     background-color: #29333e; /* Your brand color for the popup background */
-    color: #958378; /* Light text color */
+    color: #ffffff; /* Light text color */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -1708,8 +1708,8 @@ ul.pages-music p {
     width: 100%; /* Make button full width of the popup content */
     padding: 15px 20px;
     background: transparent; /* Transparent background */
-    color: #958378; /* Light cream text */
-    border: 2px solid #958378; /* Light cream border */
+    color: #ffffff; /* Light cream text */
+    border: 2px solid #ffffff; /* Light cream border */
     border-radius: 10px; /* Consistent rounded corners */
     font-size: 1.15em;
     cursor: pointer;
@@ -1719,9 +1719,9 @@ ul.pages-music p {
 }
 
 .announcement-button:hover {
-    background-color: #958378; /* Light cream background on hover */
+    background-color: #ffffff; /* Light cream background on hover */
     color: #29333e; /* Dark brown text on hover */
-    border-color: #958378; /* Border matches background on hover */
+    border-color: #ffffff; /* Border matches background on hover */
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
@@ -1733,7 +1733,7 @@ ul.pages-music p {
     align-items: center; /* Center vertically */
     gap: 8px; /* Space between the checkbox and its label */
     font-size: 0.9em; /* Smaller font size for the label */
-    color: #958378; /* Consistent text color */
+    color: #ffffff; /* Consistent text color */
 }
 
 .announcement-checkbox-group label {
@@ -1794,7 +1794,7 @@ ul.pages-music p {
     padding-top: 20px; /* Adjust spacing from header */
     padding-bottom: 40px; /* Adjust spacing for footer */
     background-color: #29333e;
-    color: #958378;
+    color: #ffffff;
 }
 
 .presskit-section .site_content {
@@ -1843,12 +1843,12 @@ ul.pages-music p {
     height: auto;
     border-radius: 5px; /* Slightly rounded corners for images */
     margin-bottom: 15px;
-    border: 1px solid #958378; /* Subtle border for images */
+    border: 1px solid #ffffff; /* Subtle border for images */
 }
 
 .presskit-gallery .photo-item a {
     display: inline-block;
-    background-color: #958378; /* Light button background */
+    background-color: #ffffff; /* Light button background */
     color: #29333e; /* Dark text */
     padding: 10px 20px;
     border-radius: 20px;
@@ -1877,7 +1877,7 @@ ul.pages-music p {
 
 .presskit-videos .video-item h4 {
     margin-bottom: 15px;
-    color: #958378;
+    color: #ffffff;
     font-size: 1.5em; /* Adjusted for video titles */
 }
 
@@ -1888,7 +1888,7 @@ ul.pages-music p {
     overflow: hidden;
     max-width: 800px; /* Limit max width of video embed */
     margin: 0 auto 20px auto; /* Center embed and add space below */
-    border: 2px solid #958378;
+    border: 2px solid #ffffff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -1901,7 +1901,7 @@ ul.pages-music p {
 }
 
 .presskit-videos .video-item a {
-    color: #958378;
+    color: #ffffff;
     text-decoration: underline;
     font-family: "Libre Caslon Text", serif;
     font-weight: 400;
@@ -1937,14 +1937,14 @@ ul.pages-music p {
     max-width: 100%;
     height: auto;
     margin-bottom: 15px;
-    background-color: #958378; /* Background for logos if they are transparent */
+    background-color: #ffffff; /* Background for logos if they are transparent */
     padding: 10px; /* Padding for logos */
     border-radius: 5px;
 }
 
 .presskit-logos .logo-item a {
     display: inline-block;
-    background-color: #958378;
+    background-color: #ffffff;
     color: #29333e;
     padding: 8px 15px;
     border-radius: 20px;
