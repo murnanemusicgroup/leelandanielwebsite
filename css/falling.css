@@ -2525,3 +2525,42 @@ ul.pages-music p {
         width: 90%; /* Adjust width for mobile */
     }
 }
+
+.error-container {
+            text-align: center;
+            padding: 80px 20px;
+            min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--primary-color); /* Light background matching your site's theme if applicable */
+        }
+        .error-container h1 {
+            font-family: 'Libre Caslon Text', serif; /* Use one of your defined fonts */
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: var(--secondary-color); /* Dark text for contrast */
+        }
+        .error-container p {
+            font-family: 'Libre Caslon Text', serif; /* Use one of your defined fonts */
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.6;
+            color: var(--secondary-color);
+        }
+        .error-container a {
+            display: inline-block;
+            background-color: var(--secondary-color); /* Your brand color */
+            color: var(--primary-color); /* Your light text color */
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            font-family: 'Libre Caslon Text', serif; /* Use one of your defined fonts */
+        }
+        .error-container a:hover {
+            background-color: var(--hover-color); /* A slightly darker shade for hover */
+        }
