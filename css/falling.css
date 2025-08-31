@@ -931,7 +931,7 @@ ul.pages-music p {
 		padding-top: 0.5em;
 	}
 	.hero {
-		background-image: url("../pictures/misc/hero-img-tellme.png");
+		background-image: url("/pictures/hero/fallinghero.png");
 		height: 320px; /* Keep fixed height for mobile as requested */
 		background-position: center;
 		background-repeat: no-repeat;
