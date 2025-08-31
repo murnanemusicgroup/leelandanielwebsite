@@ -30,12 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
 			.catch((error) => console.error("Error including HTML:", error));
 	};
 
-	includeHTML("/_components/privacy.html", "privacy-placeholder");
-	includeHTML("/_components/terms.html", "terms-placeholder");
-	includeHTML("/_components/hero.html", "hero-placeholder");
-    includeHTML("/_components/sign-up.html", "sign-up-placeholder");
-	includeHTML("/_components/header.html", "header-placeholder");
-	includeHTML("/_components/discography.html", "discography-placeholder");
-	includeHTML("/_components/videos.html", "videos-placeholder");
-	includeHTML("/_components/announcement.html", "announcement-placeholder");
+	includeHTML("/components/privacy.html", "privacy-placeholder");
+	includeHTML("/components/terms.html", "terms-placeholder");
+	includeHTML("/components/hero.html", "hero-placeholder");
+    includeHTML("/components/sign-up.html", "sign-up-placeholder");
+	includeHTML("/components/header.html", "header-placeholder");
+	includeHTML("/components/discography.html", "discography-placeholder");
+	includeHTML("/components/videos.html", "videos-placeholder");
+	includeHTML("/components/announcement.html", "announcement-placeholder");
 });
