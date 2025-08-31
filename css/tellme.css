@@ -1,37 +1,38 @@
-/******************************************out of love theme***************************************/
+/********************************************tell me theme*****************************************/
 
 /**********************************************root css********************************************/
 :root {
-	--primary-color: #6b4b20; /* Dark brown, likely your main background color */
-	--secondary-color: #f7f5e6; /* Light off-white/cream, likely for text and accents */
-	--accent-color: #5c421d; /* Slightly darker brown, for buttons/hover states */
-	--hover-color: #4b3517; /* Even darker brown for deeper hover */
-	--link-highlight-color: #ffd700; /* Gold/yellow for special links like in cookie popup */
-	--text-color-dark: #333333; /* For text on light backgrounds if you introduce them */
-	--border-color: #f7f5e6; /* For borders, often matching secondary color */
-	--main-font: "Libre Caslon Text";
+	--bg-color: #606060;
+	--text-color: #d7a197;
+	--accent-color: #56251c;
+	--hover-color: #0d0d0d;
+	--link-highlight-color: #d7a197;
+	--text-color-dark: #8f4a3d;
+	--border-color: #d7a197;
+	--main-font: "Archivo Black";
 }
+
 html {
 	height: 100%;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
+	text-transform: lowercase;
 }
 * {
 	margin: 0px;
 	padding: 0px;
-	box-sizing: border-box; /* This is the correct universal box-sizing */
+	box-sizing: border-box;
 }
 body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	background-color: #6b4b20;
+	background-color: var(--bg-color);
 	margin: 0;
-	padding-top: 70px; /* This padding ensures content is not hidden by the fixed header */
+	padding-top: 70px;
 }
 .page-content {
 	flex-grow: 1;
-	/* This is the magic! It tells this section to grow and fill any available space */
 }
 .center {
 	display: block;
@@ -39,27 +40,27 @@ body {
 	margin: 10px;
 }
 .anchor {
-	color: #f7f5e6;
+	color: var(--text-color);
 	padding-top: 75px;
 	margin-top: -75px;
 	z-index: 50;
 }
 
 .libre-caslon-text-regular {
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	font-weight: 400;
 	font-style: normal;
 }
 
 .libre-caslon-text-bold {
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	font-weight: 700;
 	font-style: normal;
 }
 .horizontal {
 	border: none;
 	height: 1px;
-	background-color: #f7f5e6;
+	background-color: var(--text-color);
 	margin: 2.5em 20px 0.5em 20px; /* CHANGED: Reduced bottom margin from 2.5em to 0.5em */
 	opacity: 1;
 	/* Ensures full visibility */
@@ -67,7 +68,7 @@ body {
 /********************************************** HEADER ********************************************/
 
 .main-header {
-	background-color: #6b4b20;
+	background-color: var(--bg-color);
 	height: 70px; /* Fixed height for your header */
 	display: flex; /* Use **Flexbox** to align logo and nav */
 	justify-content: space-between; /* Pushes logo to left, nav to right */
@@ -90,7 +91,7 @@ body {
 
 @media screen and (min-width: 768px) {
 	.anchor-box {
-		background-color: #6b4b20; /* You can remove the 'transparent' line, it's redundant */
+		background-color: var(--bg-color); /* You can remove the 'transparent' line, it's redundant */
 		color: #fff;
 		padding-top: 17px;
 		padding-bottom: 10px;
@@ -101,7 +102,7 @@ body {
 
 @media screen and (max-width: 767px) {
 	.anchor-box {
-		background-color: #6b4b20; /* You can remove the 'transparent' line, it's redundant */
+		background-color: var(--bg-color); /* You can remove the 'transparent' line, it's redundant */
 		color: #fff;
 		margin-right: -21px;
 		margin-left: -21px;
@@ -127,7 +128,7 @@ body {
 
 /* Styling for the press email link specifically */
 .site_content p a[href^="mailto:"] {
-	color: #f7f5e6; /* White/light cream color */
+	color: var(--text-color); /* White/light cream color */
 	text-decoration: underline; /* Add underline */
 }
 
@@ -285,7 +286,7 @@ nav ul li.icon {
 		display: flex; /* Centers the icon within the li */
 		align-items: center;
 		justify-content: center;
-		background-color: var(--primary-color);
+		background-color: var(--bg-color);
 		width: 60px; /* Fixed width for the button area */
 		height: 60px; /* Fixed height for the button area */
 		position: fixed; /* Position the button relative to the viewport */
@@ -357,7 +358,7 @@ nav ul li.icon {
 		width: 100%;
 		height: 100vh; /* Make it fill the entire viewport height */
 
-		background-color: var(--primary-color); /* Use your variable for consistency */
+		background-color: var(--bg-color); /* Use your variable for consistency */
 		overflow-y: auto; /* Allow scrolling within the menu if content is long */
 		overflow-x: hidden; /* Prevent horizontal scrolling */
 		z-index: 999; /* This is correctly placed below your header's 1000 */
@@ -457,7 +458,7 @@ nav ul li.icon {
 	}
 	.anchor-box {
 		background-color: transparent;
-		background-color: #6b4b20;
+		background-color: var(--bg-color);
 		color: #fff;
 		margin-right: -21px;
 		margin-left: -21px;
@@ -489,7 +490,7 @@ nav ul li.icon {
 	/* Remove extra space below image */
 	margin: 0 auto 1em auto;
 	/* Center image and add space below */
-	border: 2px solid #f7f5e6;
+	border: 2px solid var(--text-color);
 	/* Add a subtle border around album covers */
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 	/* Add a subtle shadow */
@@ -498,7 +499,7 @@ nav ul li.icon {
 .music-release h4 {
 	margin-bottom: 0.5em;
 	/* Space below title */
-	color: #f7f5e6;
+	color: var(--text-color);
 	/* Ensure title is readable on dark background */
 }
 
@@ -535,16 +536,16 @@ nav ul li.icon {
 }
 
 ul.pages-music li a {
-	border-color: #f7f5e6;
+	border-color: var(--text-color);
 	/* Consistent with other buttons on dark background */
-	color: #f7f5e6;
+	color: var(--text-color);
 }
 
 ul.pages-music li a:hover,
 ul.pages-music li.selected a,
 ul.pages-music li.selected a:hover {
-	background-color: #f7f5e6;
-	color: #6b4b20;
+	background-color: var(--text-color);
+	color: var(--bg-color);
 }
 
 /* Sets the position + display + formating for the body container */
@@ -552,14 +553,14 @@ ul.pages-music li.selected a:hover {
 	font-size: 1em;
 	margin: 0.1em auto 0.1em auto;
 	padding: 4em 1.3em 0em 1.3em;
-	background-color: #6b4b20;
+	background-color: var(--bg-color);
 }
 
 .site_content_index {
 	font-size: 1em;
 	margin: 0.1em auto 0.1em auto;
 	padding: 2em 1.3em 0em 1.3em;
-	background-color: #6b4b20;
+	background-color: var(--bg-color);
 }
 
 /* Padding for the page content */
@@ -630,13 +631,13 @@ h3 {
 		width: auto;
 		margin: 0.1em auto 0.1em auto;
 		padding: 2em 0.7em 1em 0.7em;
-		background-color: #6b4b20;
+		background-color: var(--bg-color);
 	}
 	.site_content_index {
 		font-size: 1em;
 		margin: 0.1em auto 0.1em auto;
 		padding: 2em 1.3em 1em 1.3em;
-		background-color: #6b4b20;
+		background-color: var(--bg-color);
 	}
 	/* Padding for the page content */
 	#content {
@@ -681,11 +682,11 @@ h3 {
 	}
 	.anchor-box h3.lines:before,
 	.anchor-box h3.lines:after {
-		background-color: #6b4b20;
+		background-color: var(--bg-color);
 	}
 	h3.lines:before,
 	h3.lines:after {
-		background-color: #6b4b20;
+		background-color: var(--bg-color);
 		content: "";
 		display: inline-block;
 		height: 1px;
@@ -708,7 +709,7 @@ h3 {
 /* Footer (Entire Bottom under the Body) */
 footer {
 	padding: 0.5em 0;
-	background-color: #6b4b20;
+	background-color: var(--bg-color);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -744,8 +745,8 @@ footer {
 .footer-left h6 a,
 .footer-left h6 span {
 	/* Include span for 'Cookie Choices' for consistent styling */
-	color: #f7f5e6;
-	font-family: var(--main-font), serif; /* Changed to Playfair Display */
+	color: var(--text-color);
+	font-family: var(--main-font); /* Changed to Playfair Display */
 	font-weight: 400; /* Use a regular weight for Playfair Display */
 	font-size: 0.9em;
 	/* text-transform: uppercase; REMOVED to allow proper casing for 'Murnane Records, LLC' */
@@ -758,7 +759,7 @@ footer {
 /* Hover effect for footer links */
 .footer-left h6 a:hover {
 	opacity: 0.7; /* Existing hover effect */
-	color: #f7f5e6; /* Ensure color stays consistent on hover */
+	color: var(--text-color); /* Ensure color stays consistent on hover */
 }
 
 .footer-right {
@@ -779,7 +780,7 @@ footer {
 }
 
 .footer-right a {
-	color: #f7f5e6;
+	color: var(--text-color);
 	font-size: 1.5em;
 	transition: opacity 0.3s ease-in-out;
 }
@@ -859,7 +860,6 @@ ul.pages-music li a {
 	padding: 0.6em 1.2em 0.6em 1.2em;
 	text-align: center;
 	color: #fff;
-	text-transform: uppercase;
 	text-decoration: none;
 	background: transparent;
 	border-style: solid;
@@ -878,7 +878,7 @@ ul.pages-music li a:hover,
 ul.pages-music li.selected a,
 ul.pages-music li.selected a:hover {
 	color: #fff;
-	background-color: #5c421d;
+	background-color: var(--accent-color);
 }
 
 ul.pages-music p {
@@ -896,12 +896,12 @@ ul.pages-music p {
 
 /************************************Hero Photos*******************************************/
 .hero {
-	background-image: url("/pictures/hero/outoflovehero.jpg");
+	background-image: url("/pictures/hero/tellmehero.png");
 	/* REMOVE fixed height: 650px; */
 	min-height: calc(100vh - 70px); /* This makes the hero section fill the remaining viewport height */
 	z-index: 100;
 	margin-bottom: -46px; /* Keep this if it's for spacing to the next section */
-	border-bottom: 0.2em solid #6b4b20;
+	border-bottom: 0.2em solid var(--bg-color);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -933,7 +933,7 @@ ul.pages-music p {
 		padding-top: 0.5em;
 	}
 	.hero {
-		background-image: url("../pictures/misc/hero-img.jpg");
+		background-image: url("../pictures/misc/hero-img-tellme.png");
 		height: 320px; /* Keep fixed height for mobile as requested */
 		background-position: center;
 		background-repeat: no-repeat;
@@ -988,7 +988,8 @@ ul.pages-music p {
 	transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, bottom 0.4s ease-in-out;
 	z-index: 1000;
 
-	font-family: Arial, sans-serif;
+	text-transform: none !important;
+	font-family: Arial, sans-serif !important;
 }
 
 .cookie-consent-popup.show {
@@ -1093,6 +1094,7 @@ ul.pages-music p {
 	line-height: 1.5;
 	margin-bottom: 10px; /* Slightly reduced margin */
 	color: #555;
+	font-family: Arial, sans-serif;
 }
 
 .detailed-cookie-text .text-link {
@@ -1301,8 +1303,8 @@ ul.pages-music p {
 	margin: 40px auto; /* Centers the content and adds top/bottom margin */
 	padding: 20px;
 	line-height: 1.75em; /* Matching your existing paragraph line-height */
-	color: #f7f5e6; /* Using your light off-white color for text on the dark background */
-	background-color: #6b4b20; /* Matching your body background color */
+	color: var(--text-color); /* Using your light off-white color for text on the dark background */
+	background-color: var(--bg-color); /* Matching your body background color */
 }
 
 .terms-container .terms-title {
@@ -1310,8 +1312,8 @@ ul.pages-music p {
 	text-transform: uppercase;
 	text-align: left;
 	margin-bottom: 0.2em;
-	font-family: var(--main-font), serif; /* Consistent with your font imports */
-	color: #f7f5e6; /* Matching your primary text color */
+	font-family: var(--main-font); /* Consistent with your font imports */
+	color: var(--text-color); /* Matching your primary text color */
 	/* You may want to add letter-spacing here if you want it similar to your logo/headers */
 	/* letter-spacing: 0.05em; */
 }
@@ -1322,16 +1324,16 @@ ul.pages-music p {
 	text-align: left;
 	margin-top: 0;
 	margin-bottom: 1em;
-	font-family: var(--main-font), serif; /* Consistent with your font imports */
-	color: #f7f5e6; /* Matching your primary text color */
+	font-family: var(--main-font); /* Consistent with your font imports */
+	color: var(--text-color); /* Matching your primary text color */
 }
 
 .terms-container .last-revised {
 	text-align: left;
 	font-style: italic;
 	margin-bottom: 2em;
-	font-family: var(--main-font), serif; /* Consistent with your font imports */
-	color: #f7f5e6; /* Matching your primary text color */
+	font-family: var(--main-font); /* Consistent with your font imports */
+	color: var(--text-color); /* Matching your primary text color */
 }
 
 .terms-container h3,
@@ -1340,7 +1342,7 @@ ul.pages-music p {
 	margin-top: 1.5em; /* Space above section titles */
 	margin-bottom: 0.5em;
 	font-family: var(--main-font), sans-serif; /* Consistent with your h3/h4 declarations */
-	color: #f7f5e6; /* Matching your primary text color */
+	color: var(--text-color); /* Matching your primary text color */
 	letter-spacing: 0.05em; /* Consistent with your h1/h2/h3 declarations */
 }
 
@@ -1358,7 +1360,7 @@ ul.pages-music p {
 	font-family: var(--main-font), sans-serif; /* Consistent with your general paragraph font */
 	font-size: 1em; /* Consistent with your general paragraph font size */
 	line-height: 1.75em; /* Consistent with your general paragraph line-height */
-	color: #f7f5e6; /* Matching your primary text color */
+	color: var(--text-color); /* Matching your primary text color */
 }
 
 .terms-container p {
@@ -1367,7 +1369,7 @@ ul.pages-music p {
 	font-family: var(--main-font), sans-serif; /* Consistent with your general paragraph font */
 	font-size: 1.25em; /* Consistent with your general paragraph font size */
 	line-height: 1.75em; /* Consistent with your general paragraph line-height */
-	color: #f7f5e6; /* Matching your primary text color */
+	color: var(--text-color); /* Matching your primary text color */
 }
 
 .terms-container ul {
@@ -1375,7 +1377,7 @@ ul.pages-music p {
 	list-style-type: disc; /* Standard bullet points */
 	margin-left: 2em; /* Indent list items - using em for responsiveness */
 	margin-bottom: 1em;
-	color: #f7f5e6; /* Matching your primary text color */
+	color: var(--text-color); /* Matching your primary text color */
 }
 
 .terms-container ul li {
@@ -1387,7 +1389,7 @@ ul.pages-music p {
 
 ---------------------------- .terms-container ul li strong {
 	font-weight: 700; /* Ensure strong text is bold */
-	font-family: var(--main-font), serif; /* Using a specific bold variant if preferred */
+	font-family: var(--main-font); /* Using a specific bold variant if preferred */
 }
 
 /* Responsive adjustments for smaller screens */
@@ -1443,9 +1445,9 @@ ul.pages-music p {
 /* Wrapper for the entire signup section - matches your main content background */
 .signup-section-wrapper {
 	padding: 60px 20px;
-	background-color: #6b4b20; /* Your primary dark brown background */
+	background-color: var(--bg-color); /* Your primary dark brown background */
 	text-align: center;
-	color: #f7f5e6; /* Default text color for elements directly in this section */
+	color: var(--text-color); /* Default text color for elements directly in this section */
 }
 
 /* Container for the form itself - now transparent with a defined border */
@@ -1455,25 +1457,25 @@ ul.pages-music p {
 	background: transparent; /* Makes the box transparent */
 	padding: 35px 60px; /* Increased horizontal padding for wider "margins" */
 	border-radius: 8px;
-	/* border: 2px solid #f7f5e6; /* Adds a subtle light border to define the box */
+	/* border: 2px solid var(--text-color); /* Adds a subtle light border to define the box */
 	/* box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Still provides some depth */
 }
 
 /* Heading for the signup section - text color adjusted for dark background */
 .signup-container h3 {
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	margin-bottom: 15px;
-	color: #f7f5e6; /* Light cream text for contrast on dark background */
+	color: var(--text-color); /* Light cream text for contrast on dark background */
 	font-size: 2.2em;
 	font-weight: 700;
 }
 
 /* Paragraph description for the form - text color adjusted for dark background */
 .signup-container p.libre-caslon-text-regular {
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	margin-bottom: 28px;
 	line-height: 1.7;
-	color: #f7f5e6; /* Light cream text for readability */
+	color: var(--text-color); /* Light cream text for readability */
 	font-size: 0.7em;
 }
 
@@ -1485,25 +1487,25 @@ ul.pages-music p {
 
 /* Labels for form inputs - text color adjusted for dark background */
 .signup-form label.libre-caslon-text-bold {
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	font-weight: 700;
 	display: block;
 	margin-bottom: 8px;
-	color: #f7f5e6; /* Light cream text for labels */
+	color: var(--text-color); /* Light cream text for labels */
 	font-size: 1.05em;
 }
 
 .signup-form input[type="text"],
 .signup-form input[type="email"] {
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	width: 100%; /* Important: ensures inputs fill their flex item's width */
 	padding: 10px 0;
 	background: transparent;
 	border: none;
-	border-bottom: 2px solid #f7f5e6;
+	border-bottom: 2px solid var(--text-color);
 	box-sizing: border-box;
 	font-size: 1em;
-	color: #f7f5e6;
+	color: var(--text-color);
 	transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1515,8 +1517,8 @@ ul.pages-music p {
 /* Focus state for inputs - uses light cream for focus */
 .signup-form input[type="text"]:focus,
 .signup-form input[type="email"]:focus {
-	border-color: #f7f5e6; /* Keeps the line color on focus */
-	border-bottom-color: #f7f5e6; /* Ensure bottom line stays solid */
+	border-color: var(--text-color); /* Keeps the line color on focus */
+	border-bottom-color: var(--text-color); /* Ensure bottom line stays solid */
 	box-shadow: 0 2px 0 0 rgba(247, 245, 230, 0.5); /* CHANGED: Adjusted shadow to emphasize the line */
 	outline: none;
 }
@@ -1533,27 +1535,27 @@ ul.pages-music p {
 	min-width: 18px;
 	min-height: 18px;
 	margin-top: 3px;
-	accent-color: #f7f5e6; /* Colors the checkbox itself with light cream */
+	accent-color: var(--text-color); /* Colors the checkbox itself with light cream */
 }
 
 /* Consent text - text color adjusted for dark background */
 .consent-group label.libre-caslon-text-regular {
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	margin-bottom: 0;
 	font-size: 0.95em;
-	color: #f7f5e6; /* Light cream text for consent */
+	color: var(--text-color); /* Light cream text for consent */
 	line-height: 1.4;
 }
 
 /* Submit Button - now transparent with light border and text, consistent with your music stream button */
 .signup-form button[type="submit"].libre-caslon-text-bold {
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	font-weight: 700;
 	max-width: 300px;
 	padding: 15px 20px;
 	background: transparent; /* Transparent background */
-	color: #f7f5e6; /* Light cream text */
-	border: 2px solid #f7f5e6; /* Light cream border */
+	color: var(--text-color); /* Light cream text */
+	border: 2px solid var(--text-color); /* Light cream border */
 	border-radius: 20px;
 	font-size: 1.15em;
 	cursor: pointer;
@@ -1564,16 +1566,16 @@ ul.pages-music p {
 
 /* Submit Button Hover state - matches your music stream button's hover behavior */
 .signup-form button[type="submit"]:hover {
-	background-color: #f7f5e6; /* Light cream background on hover */
-	color: #6b4b20; /* Dark brown text on hover */
-	border-color: #f7f5e6; /* Border matches background on hover */
+	background-color: var(--text-color); /* Light cream background on hover */
+	color: var(--bg-color); /* Dark brown text on hover */
+	border-color: var(--text-color); /* Border matches background on hover */
 	transform: translateY(-2px);
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Form Link */
 .signuplink {
-	color: #f7f5e6; /* A contrasting color for links (e.g., gold) */
+	color: var(--text-color); /* A contrasting color for links (e.g., gold) */
 	text-decoration: underline;
 	transition: color 0.3s ease;
 }
@@ -1585,7 +1587,7 @@ ul.pages-music p {
 	border-radius: 8px;
 	text-align: center;
 	display: none;
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	font-size: 1em;
 	font-weight: bold;
 	line-height: 1.5;
@@ -1667,8 +1669,8 @@ ul.pages-music p {
 }
 
 .announcement-content {
-	background-color: #6b4b20; /* Your brand color for the popup background */
-	color: #f7f5e6; /* Light text color */
+	background-color: var(--bg-color); /* Your brand color for the popup background */
+	color: var(--text-color); /* Light text color */
 	padding: 30px;
 	border-radius: 10px;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -1690,7 +1692,7 @@ ul.pages-music p {
 }
 
 .announcement-text {
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	font-size: 1em;
 	line-height: 1.6;
 	margin-bottom: 25px; /* Added margin-bottom to create space above the button */
@@ -1699,13 +1701,13 @@ ul.pages-music p {
 
 /* New styles for the Close button */
 .announcement-button {
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	font-weight: 700;
 	width: 100%; /* Make button full width of the popup content */
 	padding: 15px 20px;
 	background: transparent; /* Transparent background */
-	color: #f7f5e6; /* Light cream text */
-	border: 2px solid #f7f5e6; /* Light cream border */
+	color: var(--text-color); /* Light cream text */
+	border: 2px solid var(--text-color); /* Light cream border */
 	border-radius: 10px; /* Consistent rounded corners */
 	font-size: 1.15em;
 	cursor: pointer;
@@ -1715,9 +1717,9 @@ ul.pages-music p {
 }
 
 .announcement-button:hover {
-	background-color: #f7f5e6; /* Light cream background on hover */
-	color: #6b4b20; /* Dark brown text on hover */
-	border-color: #f7f5e6; /* Border matches background on hover */
+	background-color: var(--text-color); /* Light cream background on hover */
+	color: var(--bg-color); /* Dark brown text on hover */
+	border-color: var(--text-color); /* Border matches background on hover */
 	transform: translateY(-2px);
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -1729,17 +1731,17 @@ ul.pages-music p {
 	align-items: center; /* Center vertically */
 	gap: 8px; /* Space between the checkbox and its label */
 	font-size: 0.9em; /* Smaller font size for the label */
-	color: #f7f5e6; /* Consistent text color */
+	color: var(--text-color); /* Consistent text color */
 }
 
 .announcement-checkbox-group label {
-	font-family: var(--main-font), serif; /* Ensure the correct font is applied to the label */
+	font-family: var(--main-font); /* Ensure the correct font is applied to the label */
 }
 
 .announcement-checkbox {
 	width: 16px; /* Standard checkbox size */
 	height: 16px;
-	accent-color: #6b4b20; /* Changes the checkbox color (modern browsers) to match your theme */
+	accent-color: var(--bg-color); /* Changes the checkbox color (modern browsers) to match your theme */
 	cursor: pointer;
 }
 
@@ -1789,8 +1791,8 @@ ul.pages-music p {
 .presskit-section {
 	padding-top: 20px; /* Adjust spacing from header */
 	padding-bottom: 40px; /* Adjust spacing for footer */
-	background-color: #6b4b20;
-	color: #f7f5e6;
+	background-color: var(--bg-color);
+	color: var(--text-color);
 }
 
 .presskit-section .site_content {
@@ -1828,7 +1830,7 @@ ul.pages-music p {
 	text-align: center;
 	flex: 0 1 280px; /* Allows items to shrink/grow, base width 280px */
 	max-width: 300px; /* Max width for each photo item */
-	background-color: #5c421d; /* Slightly darker background for photo cards */
+	background-color: var(--accent-color); /* Slightly darker background for photo cards */
 	border-radius: 8px;
 	padding: 15px;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -1839,17 +1841,17 @@ ul.pages-music p {
 	height: auto;
 	border-radius: 5px; /* Slightly rounded corners for images */
 	margin-bottom: 15px;
-	border: 1px solid #f7f5e6; /* Subtle border for images */
+	border: 1px solid var(--text-color); /* Subtle border for images */
 }
 
 .presskit-gallery .photo-item a {
 	display: inline-block;
-	background-color: #f7f5e6; /* Light button background */
-	color: #6b4b20; /* Dark text */
+	background-color: var(--text-color); /* Light button background */
+	color: var(--bg-color); /* Dark text */
 	padding: 10px 20px;
 	border-radius: 20px;
 	text-decoration: none;
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	font-weight: bold;
 	font-size: 0.9em;
 	transition: background-color 0.3s ease, color 0.3s ease;
@@ -1857,7 +1859,7 @@ ul.pages-music p {
 
 .presskit-gallery .photo-item a:hover {
 	background-color: #fff; /* Lighter on hover */
-	color: #4b3517; /* Darker text on hover */
+	color: var(--hover-color); /* Darker text on hover */
 }
 
 /* Video Section Styling */
@@ -1873,7 +1875,7 @@ ul.pages-music p {
 
 .presskit-videos .video-item h4 {
 	margin-bottom: 15px;
-	color: #f7f5e6;
+	color: var(--text-color);
 	font-size: 1.5em; /* Adjusted for video titles */
 }
 
@@ -1884,7 +1886,7 @@ ul.pages-music p {
 	overflow: hidden;
 	max-width: 800px; /* Limit max width of video embed */
 	margin: 0 auto 20px auto; /* Center embed and add space below */
-	border: 2px solid #f7f5e6;
+	border: 2px solid var(--text-color);
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -1897,9 +1899,9 @@ ul.pages-music p {
 }
 
 .presskit-videos .video-item a {
-	color: #f7f5e6;
+	color: var(--text-color);
 	text-decoration: underline;
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	font-weight: 400;
 	font-size: 1em;
 	transition: opacity 0.3s ease;
@@ -1921,7 +1923,7 @@ ul.pages-music p {
 
 .presskit-logos .logo-item {
 	text-align: center;
-	background-color: #5c421d;
+	background-color: var(--accent-color);
 	border-radius: 8px;
 	padding: 20px;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -1933,19 +1935,19 @@ ul.pages-music p {
 	max-width: 100%;
 	height: auto;
 	margin-bottom: 15px;
-	background-color: #f7f5e6; /* Background for logos if they are transparent */
+	background-color: var(--text-color); /* Background for logos if they are transparent */
 	padding: 10px; /* Padding for logos */
 	border-radius: 5px;
 }
 
 .presskit-logos .logo-item a {
 	display: inline-block;
-	background-color: #f7f5e6;
-	color: #6b4b20;
+	background-color: var(--text-color);
+	color: var(--bg-color);
 	padding: 8px 15px;
 	border-radius: 20px;
 	text-decoration: none;
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	font-weight: bold;
 	font-size: 0.85em;
 	transition: background-color 0.3s ease, color 0.3s ease;
@@ -1953,7 +1955,7 @@ ul.pages-music p {
 
 .presskit-logos .logo-item a:hover {
 	background-color: #fff;
-	color: #4b3517;
+	color: var(--hover-color);
 }
 
 .presskit-note {
@@ -2009,17 +2011,17 @@ ul.pages-music p {
 /* --- Videos Section --- */
 .videos-section {
 	background-color: var(--accent-color); /* Slightly different background for visual separation */
-	color: var(--secondary-color);
+	color: var(--text-color);
 	padding: 0 0; /* Consistent padding */
 	text-align: center; /* Center the title */
 }
 
 .videos-section .section-title {
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	font-size: 3em; /* Similar to your other section titles */
 	font-weight: 700;
 	margin-bottom: 40px;
-	color: var(--secondary-color);
+	color: var(--text-color);
 }
 
 .videos-carousel-container {
@@ -2053,7 +2055,7 @@ ul.pages-music p {
 	flex: 0 0 auto; /* Prevent items from shrinking or growing in the flex container */
 	width: 380px; /* Fixed width for each video item */
 	scroll-snap-align: start; /* Snap to the start of each item when scrolling */
-	background-color: var(--primary-color); /* Background for the video card */
+	background-color: var(--bg-color); /* Background for the video card */
 	padding: 20px;
 	border-radius: 10px;
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
@@ -2066,10 +2068,10 @@ ul.pages-music p {
 }
 
 .video-carousel-item h4 {
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	font-weight: bold;
 	font-size: 1.3em;
-	color: var(--secondary-color);
+	color: var(--text-color);
 	margin-bottom: 15px;
 }
 
@@ -2083,7 +2085,7 @@ ul.pages-music p {
 	margin-bottom: 20px;
 	border-radius: 5px; /* Slightly rounded corners for the video iframe */
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-	border: 1px solid var(--secondary-color); /* Slight border to match design */
+	border: 1px solid var(--text-color); /* Slight border to match design */
 }
 
 .video-carousel-item .video-embed-container iframe {
@@ -2096,12 +2098,12 @@ ul.pages-music p {
 
 .video-carousel-item a {
 	display: inline-block;
-	background-color: var(--secondary-color); /* Light button background */
-	color: var(--primary-color); /* Dark text */
+	background-color: var(--text-color); /* Light button background */
+	color: var(--bg-color); /* Dark text */
 	padding: 10px 20px;
 	border-radius: 20px;
 	text-decoration: none;
-	font-family: var(--main-font), serif;
+	font-family: var(--main-font);
 	font-weight: bold;
 	font-size: 0.9em;
 	transition: background-color 0.3s ease, color 0.3s ease;
@@ -2532,32 +2534,32 @@ ul.pages-music p {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--primary-color); /* Light background matching your site's theme if applicable */
+	background-color: var(--bg-color); /* Light background matching your site's theme if applicable */
 }
 .error-container h1 {
-	font-family: var(--main-font), serif; /* Use one of your defined fonts */
+	font-family: var(--main-font); /* Use one of your defined fonts */
 	font-size: 4em;
 	margin-bottom: 20px;
-	color: var(--secondary-color); /* Dark text for contrast */
+	color: var(--text-color); /* Dark text for contrast */
 }
 .error-container p {
-	font-family: var(--main-font), serif; /* Use one of your defined fonts */
+	font-family: var(--main-font); /* Use one of your defined fonts */
 	font-size: 1.2em;
 	margin-bottom: 30px;
 	max-width: 600px;
 	line-height: 1.6;
-	color: var(--secondary-color);
+	color: var(--text-color);
 }
 .error-container a {
 	display: inline-block;
-	background-color: var(--secondary-color); /* Your brand color */
-	color: var(--primary-color); /* Your light text color */
+	background-color: var(--text-color); /* Your brand color */
+	color: var(--bg-color); /* Your light text color */
 	padding: 12px 25px;
 	text-decoration: none;
 	border-radius: 5px;
 	font-weight: bold;
 	transition: background-color 0.3s ease;
-	font-family: var(--main-font), serif; /* Use one of your defined fonts */
+	font-family: var(--main-font); /* Use one of your defined fonts */
 }
 .error-container a:hover {
 	background-color: var(--hover-color); /* A slightly darker shade for hover */
