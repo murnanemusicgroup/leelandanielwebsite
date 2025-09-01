@@ -1236,7 +1236,7 @@ ul.pages-music p {
 
 	.cookie-links {
 		width: 100%; /* Take full width when stacked */
-		text-align: right; /* Align links to left */
+		text-align: center; /* Align links to left */
 	}
 
 	.cookie-buttons {
