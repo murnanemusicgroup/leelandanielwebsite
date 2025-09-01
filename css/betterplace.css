@@ -9,7 +9,7 @@
 	--link-highlight-color: #91d7f1; /* Gold/yellow for special links like in cookie popup */
 	--text-color-dark: #333333; /* For text on light backgrounds if you introduce them */
 	--border-color: #beb7b2; /* For borders, often matching secondary color */
-	--main-font: "Libre Caslon Text";
+	--main-font: "Caveat";
 }
 html {
 	height: 100%;
