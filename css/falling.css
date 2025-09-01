@@ -966,7 +966,7 @@ ul.pages-music p {
 	transform: translateX(-50%); /* Only horizontal centering */
 
 	/* Box Model & Appearance */
-	background-color: var(--text-color);
+	background-color: white;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow for a floating effect */
 	border-radius: 0; /* NO rounded corners */
 	padding: 20px 30px; /* Adjusted padding: top/bottom 20px, left/right 30px */
@@ -984,7 +984,8 @@ ul.pages-music p {
 	transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, bottom 0.4s ease-in-out;
 	z-index: 1000;
 
-	font-family: Arial, sans-serif;
+	text-transform: none !important;
+	font-family: Arial, sans-serif !important;
 }
 
 .cookie-consent-popup.show {
@@ -1052,7 +1053,7 @@ ul.pages-music p {
 
 .cookie-button {
 	background-color: black;
-	color: var(--text-color);
+	color: white;
 	border: none;
 	padding: 8px 15px;
 	border-radius: 20px;
@@ -1089,6 +1090,7 @@ ul.pages-music p {
 	line-height: 1.5;
 	margin-bottom: 10px; /* Slightly reduced margin */
 	color: #555;
+	font-family: Arial, sans-serif;
 }
 
 .detailed-cookie-text .text-link {
@@ -1146,7 +1148,7 @@ ul.pages-music p {
 
 /* Style the custom background when unchecked */
 .checkbox-item input[type="checkbox"] {
-	background-color: var(--text-color); /* Default background for unchecked */
+	background-color: white; /* Default background for unchecked */
 	border-color: #555; /* Darker border for the checkbox box */
 }
 
@@ -1160,7 +1162,7 @@ ul.pages-music p {
 .checkbox-item input[type="checkbox"]:checked::before {
 	content: "\2713"; /* Unicode character for a checkmark (✓) */
 	font-size: 14px; /* Size of the checkmark */
-	color: var(--text-color); /* White checkmark color */
+	color: white; /* White checkmark color */
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -1234,13 +1236,14 @@ ul.pages-music p {
 
 	.cookie-links {
 		width: 100%; /* Take full width when stacked */
-		text-align: left; /* Align links to left */
+		text-align: right; /* Align links to left */
 	}
 
 	.cookie-buttons {
 		width: 100%; /* Take full width */
 		justify-content: flex-end; /* Still align buttons to the right within their full width */
 		gap: 8px;
+		margin: 10px 0 2px 0;
 	}
 
 	.cookie-button {
@@ -1272,8 +1275,9 @@ ul.pages-music p {
 	}
 
 	.cookie-buttons {
-		flex-direction: column; /* Force stack buttons vertically on small phones */
+		flex-direction: row; /* Force stack buttons vertically on small phones */
 		gap: 8px;
+		margin-top: 10px
 	}
 
 	.cookie-button {

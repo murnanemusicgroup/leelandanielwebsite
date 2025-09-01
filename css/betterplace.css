@@ -1238,13 +1238,14 @@ ul.pages-music p {
 
 	.cookie-links {
 		width: 100%; /* Take full width when stacked */
-		text-align: left; /* Align links to left */
+		text-align: right; /* Align links to left */
 	}
 
 	.cookie-buttons {
 		width: 100%; /* Take full width */
 		justify-content: flex-end; /* Still align buttons to the right within their full width */
 		gap: 8px;
+		margin: 10px 0 2px 0;
 	}
 
 	.cookie-button {
@@ -1276,8 +1277,9 @@ ul.pages-music p {
 	}
 
 	.cookie-buttons {
-		flex-direction: column; /* Force stack buttons vertically on small phones */
+		flex-direction: row; /* Force stack buttons vertically on small phones */
 		gap: 8px;
+		margin-top: 10px;
 	}
 
 	.cookie-button {
