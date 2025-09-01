@@ -1,5 +1,5 @@
-const mainStylesheetPath = "/css/betterplace.css";
-const faviconPath = "/favicons/betterplacefavicon.png";
+const mainStylesheetPath = "/css/outoflove.css";
+const faviconPath = "/favicons/outoflovefavicon.png";
 
 const stylesheetLink = document.createElement("link");
 stylesheetLink.rel = "stylesheet";
