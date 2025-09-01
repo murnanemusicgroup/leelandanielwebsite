@@ -901,7 +901,6 @@ ul.pages-music p {
 	min-height: calc(100vh - 70px); /* This makes the hero section fill the remaining viewport height */
 	z-index: 100;
 	margin-bottom: -46px; /* Keep this if it's for spacing to the next section */
-	border-bottom: 0.2em solid var(--bg-color);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -941,7 +940,6 @@ ul.pages-music p {
 		position: relative;
 		margin-bottom: -56px;
 		/* Ensure min-height is reset or not applied on mobile if you want fixed height */
-		min-height: auto; /* Explicitly reset min-height for mobile */
 	}
 	#overlay {
 		position: sticky; /* Keep sticky for mobile as requested */
