@@ -1,5 +1,5 @@
-const mainStylesheetPath = "/css/outoflove.css";
-const faviconPath = "/favicons/outoflovefavicon.png";
+const mainStylesheetPath = "/css/tellme.css";
+const faviconPath = "/favicons/tellmefavicon.png";
 
 const stylesheetLink = document.createElement("link");
 stylesheetLink.rel = "stylesheet";
