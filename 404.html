@@ -24,6 +24,14 @@
 		</script>
 
 		<style>
+			:root {
+				--bg-color: #606060;
+				--text-color: #d7a197;
+				--secondary-color: #8f4a3d;
+				--hover-color: #0d0d0d;
+				--main-font: 'Archivo Black', serif;
+			}
+			
 			/* Styles specifically for the 404 page content */
 			.error-container {
 				text-align: center;
@@ -33,13 +41,13 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				background-color: #6b4b20; /* Light background matching your site's theme if applicable */
+				background-color: var(--bg-color); /* Light background matching your site's theme if applicable */
 			}
 			.error-container h1 {
-				font-family: "Libre Caslon Text", serif; /* Use one of your defined fonts */
+				font-family: "Archivo Black", serif; /* Use one of your defined fonts */
 				font-size: 4em;
 				margin-bottom: 20px;
-				color: #f7f5e6; /* Dark text for contrast */
+				color: var(--text-color); /* Dark text for contrast */
 			}
 			.error-container p {
 				font-family: "Libre Caslon Text", serif; /* Use one of your defined fonts */
@@ -51,17 +59,17 @@
 			}
 			.error-container a {
 				display: inline-block;
-				background-color: #f7f5e6; /* Your brand color */
-				color: #6b4b20; /* Your light text color */
+				background-color: var(--secondary-color); /* Your brand color */
+				color: var(--text-color); /* Your light text color */
 				padding: 12px 25px;
 				text-decoration: none;
 				border-radius: 5px;
 				font-weight: bold;
 				transition: background-color 0.3s ease;
-				font-family: "Libre Caslon Text", serif; /* Use one of your defined fonts */
+				font-family: var(--main-font); /* Use one of your defined fonts */
 			}
 			.error-container a:hover {
-				background-color: #5a3c1a; /* A slightly darker shade for hover */
+				background-color: var(--hover-color); /* A slightly darker shade for hover */
 			}
 		</style>
 	</head>
