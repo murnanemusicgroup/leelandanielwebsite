@@ -1,6 +1,8 @@
-/********************************************tell me theme*****************************************/
+/********************************************love you theme*****************************************/
 
 /**********************************************root css********************************************/
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caprasimo&family=Caveat:wght@400..700&family=Faculty+Glyphic&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 :root {
 	--bg-color: #222222;
 	--text-color: #FFFFFF;
