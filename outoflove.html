@@ -135,7 +135,7 @@
         titleEl.textContent = RELEASE_CONFIG.title;
         artworkEl.src = RELEASE_CONFIG.artworkUrl;
         descriptionEl.textContent = RELEASE_CONFIG.description; 
-        document.title = `${RELEASE_CONFIG.artist} | ${RELEASE_CONFIG.title}`;
+        document.title = `${RELEASE_CONFIG.artist} - ${RELEASE_CONFIG.title}`;
 
         // New: Apply the album art URL to the blurred background element
         backgroundEl.style.backgroundImage = `url('${RELEASE_CONFIG.artworkUrl}')`;
