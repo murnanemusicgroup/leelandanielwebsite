@@ -1,5 +1,5 @@
-const mainStylesheetPath = "/css/tellme.css";
-const faviconPath = "/favicons/tellmefavicon.png";
+const mainStylesheetPath = "/css/gettingolder.css";
+const faviconPath = "/favicons/gettingolderfavicon.png";
 
 const stylesheetLink = document.createElement("link");
 stylesheetLink.rel = "stylesheet";

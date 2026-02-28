@@ -2,14 +2,14 @@
 
 /**********************************************root css********************************************/
 :root {
-	--bg-color: #7491a8;
-	--text-color: #beb7b2;
-	--accent-color: #3d5964;
-	--hover-color: #2a3d44;
+	--bg-color: #FFFFFF;
+	--text-color: #000000;
+	--accent-color: #a0a0a0;
+	--hover-color: #4d4d4d;
 	--link-highlight-color: #91d7f1;
 	--text-color-dark: #333333;
-	--border-color: #beb7b2;
-	--main-font: "Caveat";
+	--border-color: #b1b1b1;
+	--main-font: "Schoolbell";
 }
 
 html {
@@ -859,12 +859,12 @@ ul.pages-music li a {
 	margin: 0.5em 0 -0.25em 0;
 	padding: 0.6em 1.2em 0.6em 1.2em;
 	text-align: center;
-	color: #fff;
+	color: var(--text-color);
 	text-decoration: none;
 	background: transparent;
 	border-style: solid;
 	border-width: 1px; /* CHANGED: Thinner border from .2em to 1px */
-	border-color: #fff;
+	border-color: var(--border-color);
 	border-radius: 20px; /* ADDED: Curved corners, adjust value as desired */
 	height: 100%;
 	-webkit-transition: all 0.25s ease;
@@ -877,7 +877,7 @@ ul.pages-music li a {
 ul.pages-music li a:hover,
 ul.pages-music li.selected a,
 ul.pages-music li.selected a:hover {
-	color: #fff;
+	color: var(--bg-color);
 	background-color: var(--accent-color);
 }
 
@@ -896,7 +896,7 @@ ul.pages-music p {
 
 /************************************Hero Photos*******************************************/
 .hero {
-	background-image: url("/pictures/hero/betterplacehero.png");
+	background-image: url("/pictures/hero/gettingolderhero.png");
 	/* REMOVE fixed height: 650px; */
 	min-height: calc(100vh - 70px); /* This makes the hero section fill the remaining viewport height */
 	z-index: 100;
