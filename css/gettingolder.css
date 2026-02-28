@@ -330,7 +330,7 @@ nav ul li.icon {
 		display: block; /* Each span is a block line */
 		width: 100%; /* Spans take full width of their parent (a.menu-toggle) */
 		height: 3px; /* Thickness of the bars */
-		background-color: #fff; /* Color of the bars */
+		background-color: var(--text-color); /* Color of the bars */
 		border-radius: 2px; /* Slightly rounded ends */
 		transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 	}
@@ -435,7 +435,7 @@ nav ul li.icon {
 		display: block;
 		width: auto; /* Let content and padding determine width */
 		padding: 10px 25px; /* ADJUST THIS PADDING to control the "button" size */
-		color: #fff;
+		color: var(--text-color);
 		font-size: 1.2em; /* Slightly larger font for readability */
 		letter-spacing: 0.1em;
 		line-height: normal;
@@ -872,6 +872,14 @@ ul.pages-music li a {
 	-ms-transition: all 0.25s ease;
 	-o-transition: all 0.25s ease;
 	transition: all 0.25s ease;
+}
+
+#herobuttonlink {
+    color: var(--bg-color) !important;
+}
+
+#herobuttonlink:hover {
+    color: var(--text-color) !important;
 }
 
 ul.pages-music li a:hover,
@@ -1511,7 +1519,7 @@ ul.pages-music p {
 
 /* Placeholder text color for inputs */
 .signup-form input::placeholder {
-	color: rgba(247, 245, 230, 0.7);
+	color: rgba(103, 103, 103, 0.7);
 }
 
 /* Focus state for inputs - uses light cream for focus */
