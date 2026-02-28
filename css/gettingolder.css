@@ -204,7 +204,7 @@ nav ul li a {
 nav ul ul li a {
 	display: block;
 	padding: 0 12px; /* Original desktop link padding */
-	color: #fff;
+	color: var(--text-color);
 	letter-spacing: 0.1em;
 	font-size: 1.15em;
 	font-family: var(--main-font), sans-serif;
