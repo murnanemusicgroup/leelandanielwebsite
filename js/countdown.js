@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-	const releaseDate = new Date("2026-03-06T00:00:00-04:00").getTime();
+	const releaseDate = new Date("2026-07-13T00:00:00-04:00").getTime();
 
 	if (new Date().getTime() >= releaseDate) {
 		window.location.href = "/";
